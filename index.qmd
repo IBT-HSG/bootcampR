@@ -15,7 +15,7 @@ format:
 # install this package once, it'll then be used to install and load all remaining packages
 # install.packages("pacman")
 
-pacman::p_load(textreadr)
+pacman::p_load(patchwork, tidyverse, )
 ```
 
 ## Session 1
@@ -25,3 +25,13 @@ pacman::p_load(textreadr)
 ## Session 3
 
 # Welcome to Session 1
+
+{{< include sessions/session_1.qmd >}}
+
+# Welcome to Session 2
+
+{{< include sessions/session_2.qmd >}}
+
+# Welcome to Session 3
+
+{{< include sessions/session_3.qmd >}}

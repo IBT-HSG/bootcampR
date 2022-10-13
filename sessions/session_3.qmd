@@ -1,0 +1,282 @@
+
+
+```{r, include = FALSE}
+data("diamonds")
+diamonds <- diamonds[sample(nrow(diamonds), 1000), ]
+```
+
+## Recap Session 2
+
+-   Read in and export data
+-   Explore your data
+-   Manipulate data
+-   Analyze data
+
+## Any experienced difficulties? Anything we should repeat?
+
+## Recap: import and export data
+
+
+Reading in
+
+```{r}
+#| echo: true
+#| eval: false
+data <- read.table("data/raw/student_experiment.csv", sep = ";", header = T) # you need to adapt this to your working directory file path
+```
+
+Saving
+
+```{r}
+#| echo: true
+#| eval: false
+write.table(data, "data/processed/student_experiment_processed.csv") # writes the final dataframe as a .csv file into your specified directory
+```
+
+
+## Recap: Exploring data
+
+-   `head(data)` shows the first few rows of your data
+-   `names(data)` shows the column or variable names of your data
+-   `view(data)` shows the entire data in a new window
+
+## Overview Session 3
+
+1.  Visualization
+2.  Analysis Template: putting everything together
+3.  R6 intro (?)
+4.  Questions
+
+## Why visualization?
+
+Data visualization is the practice of representing data in a graphical form (e.g. plots). This is a powerful way to visualize information in a way that is understandable to the majority of the audience. For this reason it is crucial to select the type of visualization that best fits our data and our goal!
+
+## Ggplot bulding blocks {.smaller}
+
+-   `ggplot()` initializes the coordinate system of our visual representation. It takes as input the dataset of interest.
+-   `geom_*()` specifies the type of visualization. It needs a mapping argument which maps the variables from the dataset to the objects on the plot.
+-   `aes()` is assigned to the mapping argument. It takes as argument the values corresponding to the x and y axis, as well as other plot-specific characteristics (e.g., color, size, fill,...)
+-   Additional functions can be added to to specify labeling and thematic characteristics (`ggtitle()`,`xlab()`,`ylab()`,`theme()`).
+
+Remember: It is always possible to get help regarding these function by running `?functionName`
+
+## Type of data visualization I/III {.smaller}
+
+#### Univariate visualizations
+
+Univariate graphical representation visualize the distribution of data from a single continuous or discrete variables.
+
+-   Bar plot: representation of categorical categorical data.
+-   Histograms, distribution plot and box plot: representation of the distribution of numerical data.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-cap: bar plot (left) histogram with kernel distribution (right)
+p1 = ggplot(diamonds) + geom_bar(mapping=aes(x=cut))
+p2 = ggplot(diamonds, aes(x = depth)) + 
+  geom_histogram(aes(x=depth, y = ..density..),
+                 colour = 1, fill = "white") + geom_density()
+p1+p2
+```
+:::
+
+::: {.column width="50%"}
+```{r, echo=TRUE, eval=FALSE}
+ggplot(diamonds) + geom_bar(mapping=aes(x=cut))
+ggplot(diamonds, aes(x = depth)) + 
+        geom_histogram(aes(x=depth, y = ..density..),
+                 colour = 1, fill = "white") +
+        geom_density()
+
+```
+:::
+:::
+
+## Type of data visualization II/III {.smaller}
+
+#### Bivariate visualizations
+
+Bivariate visual analysis shows relationship between two variables. It is important to select the correct visualization type according to the variables analysed:
+
+-   Continuous v Continuous
+-   Discrete v Discrete
+-   Discrete v Continuous
+
+## Type of data visualization II/III
+
+#### Bivariate visualizations (Continuous v Continuous)
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| fig-cap: scatter plot
+
+ggplot(diamonds) +
+  geom_point(aes(
+           x = carat, 
+           y = price))
+
+
+
+
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| fig-cap: scatter plot and line of best fit
+
+ggplot(diamonds,aes(x = carat, 
+           y = price)) +
+  geom_point() +
+  geom_smooth(method = "lm") 
+```
+:::
+:::
+
+## Type of data visualization II/III
+
+#### Bivariate visualizations (Discrete v Discrete)
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| fig-cap: stacked bar plot 
+
+ggplot(diamonds) + 
+  geom_bar(aes(x = color, 
+           fill = cut), position = "stack")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| fig-cap: grouped bar plot
+
+ggplot(diamonds) + 
+  geom_bar(aes(x = color, 
+           fill = cut), position = "dodge")
+```
+:::
+:::
+
+## Type of data visualization II/III
+
+#### Bivariate visualizations (Discrete v Continous)
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| fig-cap: Box plots
+
+ggplot(diamonds, 
+       aes(x = color, 
+           y = price)) +
+  geom_boxplot() +
+  labs(title = "Salary distribution by rank")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| fig-cap: Grouped kernel distribution plots 
+
+ggplot(diamonds, 
+       aes(x = price, 
+           fill = color)) +
+  geom_density(alpha = 0.4) +
+  labs(title = "Salary distribution by rank")
+```
+:::
+:::
+
+## Type of data visualization III/III {.smaller}
+
+#### Multivariate visualizations 
+
+Multivariate presentation show the relationship of 3 or more variables. There are two main approaches *grouping* and *faceting*.
+
+-   Grouping represents the data on a single plot when the x and y axis represent two variables and the third is displayed through visual elements such as colors, dot shape, size, etc.
+-   Faceting simply include different plot in one single visualization.
+
+## Type of data visualization III/III
+
+#### Multivariate visualizations (Grouping)
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| fig-cap: multivarite scatter plot 
+
+ggplot(diamonds) +
+  geom_point(aes(x = carat, 
+           y = price, color=color, shape=cut))
+
+
+
+
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| fig-cap: multivarite scatter plot 
+
+ggplot(diamonds) +
+  geom_point(aes(x = carat, 
+           y = price, color=color, size=depth))
+```
+:::
+:::
+
+## Type of data visualization III/III
+
+#### Multivariate visualizations (Faceting)
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-cap: price ($1000) histogram by color and cut
+
+# plot salary histograms by rank and sex
+ggplot(diamonds, aes(x = price/1000)) +
+  geom_histogram(color = "white",
+                 fill = "cornflowerblue") +
+  facet_grid(cut ~ color)
+
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: True
+#| fig-cap: price ($1000) histogram by color and cut
+#| eval: false
+
+# plot salary histograms by rank and sex
+ggplot(diamonds, aes(x = price/1000)) +
+  geom_histogram(color = "white",
+                 fill = "cornflowerblue") +
+  facet_grid(cut ~ color)
+
+```
+:::
+:::
+
+https://rkabacoff.github.io/datavis/
+
+
+## Break
+
+## Analysis Template: putting everything together

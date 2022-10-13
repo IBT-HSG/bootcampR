@@ -1,0 +1,433 @@
+
+## Outline
+
+In this session we will
+
+- make sure [R & RStudio](https://learnr-examples.shinyapps.io/ex-setup-r/) are up and running on all of your machines,
+- show why we like R,
+- introduce you to RStudio's User Interface,
+- demonstrate some basic concepts and data structures.
+
+## Getting started
+
+::: {layout-ncol=2}
+![QR to Survey](img/QR_survey.png)
+
+![QR to Setup](img/QR_setup.png)
+:::
+
+## Why we like R {.smaller}
+
+**Scripts vs. WYSIWYG (Excel or SPSS)**
+
+Analyses conducted in R are transparent, easily shareable, and reproducible. This helps not only others to run and understand your code but also your future selves.
+
+**Open Source**
+
+R is 100% free of charge and as a result, has a huge support community. it means that a huge community of R programmers will constantly develop an distribute new R functionality. It also means that you find a lot of help online as others ran into the same problems as you do.
+
+**Versatility**
+
+Yes, R is not Python. You can still use it to do a lot of stuff. If you can imagine an analytical task, you can almost certainly implement (and automate) it in R.
+
+**RStudio**
+
+RStudio helps you write R code. You can easily and seamlessly organize and combine R code, analyses, plots, and written text into elegant documents all in one place.
+
+## Examples & Use Cases
+
+- [Dashboards](https://beta.rstudioconnect.com/jjallaire/htmlwidgets-highcharter/htmlwidgets-highcharter.html#sales-by-category)
+- [Master Thesis](https://howquez.github.io/Are-there-hidden-Benefits-of-Monitoring/Predictions.html#the-self-interested-agents-expected-utility) [& Research Paper](https://github.com/Howquez/coopUncertainty/blob/main/analysis/quarto/paper.pdf)
+- [Fraud Detection](http://rstudio-pubs-static.s3.amazonaws.com/334864_28050f7860dd4927a596872f0cd52401.html)
+- [These Slides](https://github.com/Howquez/r-basics/blob/main/session_1.qmd)
+
+
+## R & RStudio
+
+RStudio is an integrated development environment (IDE) for R. It helps the user effectively use R by making things easier with features such as:
+
+- Syntax highlighting,
+- Code completion,
+- Smart indentation,
+- Workspaces (more on that later), etc.
+
+
+## RStudio GUI {.smaller}
+
+Opening RStudio, you will see four window panes:
+
+- bottom left: The `Console` executes code. You can use it to test code that is not saved.
+- upper left: The `Source` opens your scripts, markdown documents or notebooks. It is the one you'll use the most as it allows you to write and save both comments and code. You have to actively run the code, though.
+- upper right: The `Environment Pane` displays the objects (e.g. data, variables, custom functions) you can access in your current memory.
+- bottom right: This pane shows you many different, yet important, tabs. You can browse your directory, view plots, get help and see installed packages.
+
+::: footer
+See this [cheat sheet](https://github.com/Howquez/r-basics/blob/main/material/rstudio-ide.pdf)
+:::
+
+## {background-image="https://raw.githubusercontent.com/Howquez/r-basics/main/img/GUI.png"}
+
+## Computational Empathy
+
+Know your audience, i.e. yourself. And don't be naive.
+
+```{r}
+#| eval: false
+#| echo: true
+#
+# Dear programmer:
+# When I wrote this code, only god and I knew how it worked.
+# Now, only god knows it!
+#
+# Therefore, if you are trying to optimize this routine
+# and it fails (most surely), please increase this counter
+# as a warning for the next person
+#
+# total_hours_wasted_here = 254
+#
+```
+
+::: footer
+source: [reddit](https://www.reddit.com/r/ProgrammerHumor/comments/8pdebc/only_god_and_i_knew/)
+:::
+
+
+# Vamos!
+
+## Operators
+
+::: {layout-ncol=2}
+
+In the most simple form, R is an advanced calculator. Operators are symbols you know from any other program (Excel, etc.), such as `+` or `-`.
+
+| Operation | Description      |
+|-----------|------------------|
+| x + y     | Addition         |
+| x - y     | Subtraction      |
+| x * y     | Multiplication   |
+| x / y     | Division         |
+| x ^ y     | Exponentiation   |
+| x %/% y   | Integer Division |
+| x %% y    | Remainder        |
+
+:::
+
+## Algebra
+
+```{r}
+#| echo: true
+#| eval: false
+
+2+2
+2 * 4
+2^4
+2 + (2 * 3) ^ 2
+(1 + 3) / 2 + 45
+13 %/% 3
+13 %% 5
+```
+
+## Boolean Algebra {.smaller}
+
+| Operation | Description           | Output                                                       |
+|-----------|-----------------------|--------------------------------------------------------------|
+| x < y     | Less than             | TRUE if x is smaller than y. FALSE otherwhise                |
+| x <= y    | Less or equal than    | TRUE if x is smaller or equal than y. FALSE otherwhise       |
+| x > y     | Greater than          | TRUE if x is greater than y. FALSE otherwhise                |
+| x >= y    | Greater or equal than | TRUE if x is greater or equal than y. FALSE otherwhise       |
+| x == y    | Exactly equal to      | TRUE if and only if x is equal to y. FALSE otherwhise        |
+| x != y    | Not equal to          | TRUE if and only if x is not equal to y. FALSE otherwhise    |
+|           |                       |                                                              |
+| !x        | Negation              | TRUE if x is equal to FALSE or 0. FALSE otherwhise           |
+| x \| y    | OR                    | TRUE if x or y or both are TRUE . FALSE otherwhise           |
+| x & y     | AND                   | TRUE if and only if x and y are both TRUE . FALSE otherwhise |
+
+
+## Boolean Algebra
+
+
+::: callout-tip
+
+A Boolean expression is a logical statement that is either `TRUE` or `FALSE.` 
+:::
+
+```{r}
+#| echo: true
+#| eval: false
+
+3 < 4
+3 >= 4
+3 == 4
+3 != 4
+
+!TRUE
+TRUE | FALSE
+TRUE & FALSE
+```
+
+
+## Data Types 
+
+There are many different data types. We will focus on the most basic ones:
+
+| Data Type | Example       |
+|-----------|---------------|
+| Numeric   | `42`          |
+| Character | `"forty two"` |
+| Logical   | `TRUE`        |
+
+
+::: callout-tip
+
+Use `class()` to identify data types. `class(42)` will return `numeric`, for instance. What's the output of `class(NA)`?
+:::
+
+<!--
+You can create obejcts such as vectors^[We'll cover this today.], data.frames^[On tomorrow's menu.], lists, etc. to store these data types in multiple dimensions.
+-->
+
+
+## Assign Values to Variables
+
+- R can keep several objects in memory at the same time
+- To distinguish them, object have names.
+- Objects are assigned with `<-` or `=` (we recommend the former).
+
+Below, we create two objects and _call_ the latter one:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# create
+a <- 2+2
+txt <- "Hello world!"
+# call 
+txt
+# [1] "Hello world!"
+```
+
+
+## Naming Conventions
+
+
+- Variable and function names should be lowercase. 
+- Use an underscore `_` to separate words within a name. 
+- Strive for names that are concise and meaningful (this is not easy!).
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Good
+day_one
+day_1
+
+# Bad
+first_day_of_the_month
+dayone
+```
+
+## Naming Conventions
+
+Where possible, avoid using names of existing functions and variables. Doing so will cause confusion for the readers of your code.
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Bad
+T <- FALSE
+c <- 10
+mean <- function(x) sum(x)
+```
+
+::: callout-note
+
+Also, try to avoid special symbols such as `+`, for example. If you really need them, you can escape them using the back tick ` 
+:::
+
+## Naming Conventions
+
+::: callout-warning
+
+Importantly, be careful to not reassign an object unintentionally.
+:::
+
+```{r}
+#| echo: true
+#| eval: false
+
+a <- log(42)
+a
+# [1] 3.73767
+
+# imagine to do some stuff in between...
+# ...forgot about your object...
+# ...and that you want to create another object called "a".
+
+a <- 40 + 2
+a
+# [1] 42
+```
+
+## Naming Conventions
+
+::: callout-tip
+## Case Sensitivity
+Uppercase and lowercase letters are treated as distinct.
+:::
+
+```{r}
+#| echo: true
+#| eval: false
+
+A <- 12
+a <- 42
+a == A
+
+# [1] FALSE
+```
+
+This is not only important, but also helpful in some cases. However, try not to name two different objects with the same name and varying cases. This will confuse you later on.
+
+## Vectors
+
+We can **c**ombine objects `c()` command to create a vector. The documentation says:
+
+> The default method combines its arguments to form a vector. All arguments are coerced to a common type which is the type of the returned value [...].
+
+```{r}
+#| eval: false
+#| echo: true
+a     <- c(1, 2, 3)
+cntry <- c("CH", "FR", "NL", "DK")
+test  <- c(1, 3, 5, "seven")
+```
+
+# Subsetting
+
+`[]` is your friend.
+
+## Functions
+
+So far, you have seen at least two built-in functions: `class()` & `c()`.
+Another useful function is `mean()`.
+
+You can recognize a function either via `class()`^[`class(class)` returns `"function"`, for instance.] or by the parentheses.
+
+To call a function, you have to provide some argument(s). The `mean()` function needs some sort of vector, for instance.
+
+## How to get Help? {.smaller}
+
+Assume you want to learn how to use the `mean()` function.
+
+- `?mean` or `help(mean)`
+- Use [stackoverflow](https://stackoverflow.com/questions/16801340/mean-in-r-by-using-mean)
+
+
+## Packages
+
+- Packages are the fundamental units of reproducible R code. They include reusable R functions, the documentation that describes how to use them, and sample data.
+
+- The comprehensive R Archive Network currently features [18.694 packages](https://cran.r-project.org/index.html).
+
+- The majority of packages is quite niche-specific.
+
+- To get started, we'll show you how to install [Tidyverse](https://www.tidyverse.org/), an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+
+## {background-image="https://hbctraining.github.io/Intro-to-R/img/tidyverse_website.png" background-size="contain" background-repeat="no-repeat"}
+
+```{r}
+#| echo: true
+#| eval: false
+
+#
+# run this only once
+install.packages("package_name")
+#
+# run this at the beginning of each session (if needed)
+library(package_name)
+#
+#
+# your turn: install & load tidyverse
+```
+
+::: footer
+[Source](https://hbctraining.github.io/Intro-to-R/lessons/08_intro_tidyverse.html)
+:::
+
+## The %>% Operator {background-image="https://magrittr.tidyverse.org/logo.png" background-size="contain" background-repeat="no-repeat"}
+
+```{r}
+#| eval: false
+#| echo: true
+
+a <- c(1, 2, 3, 4, 5, NA)
+#
+as.character(mean(a, na.rm = TRUE))
+#
+# We can do the same with the so called pipe operator %>% 
+# Stems from the mgrittr package and is included in the tidyverse
+#
+a %>% mean(na.rm = TRUE) %>% as.character()
+```
+
+
+::: footer
+[Source](https://magrittr.tidyverse.org/)
+:::
+
+## Exercise {.smaller}
+
+::: callout-tip
+## Generate three objects
+
+- `my_pi` should contain the number pi (try out the command `pi`)
+- a vector, called `a`, should contain the numbers `1` to `3`
+- `b` should the multiplication of `1*pi`, `2*pi` `3*pi`
+:::
+
+## Workspace & Environment
+
+- We can see all objects currently in our workspace by typing `ls()`.
+- You can remove objects using `rm()`
+
+```{r}
+#| eval: false
+ls()
+rm(a)
+
+# What do you think is going to happen here?
+rm(list = ls())
+```
+
+
+![Don't!](img/workspace.png)
+
+## Bonus: Scripts, Markdown & Project {.smaller}
+
+- Scripts are a great way to document _how_ you analyzed your data.
+- Like a recipe, scripts make it easy (for you and others) to reproduce your process _exactly_.
+- You can also use RMarkdown, which allows you to blend code chunks with text.^[Which is great for reports and quantitative master theses, for instance.]
+- To make your code even more organized and reproducible, use R Projects (We'll show an example).
+
+
+## Ressources 
+
+swirl is a great start as it teaches you R interactively, at your own pace, and right in the R console! Run the following code to get started.
+
+```{r eval = FALSE, echo = TRUE}
+install.packages("swirl") # install this package once
+library(swirl)
+siwrl()
+```
+
+## Ressources 
+
+Resources we found helpful creating the slides:
+
+- [YaRrrr](https://bookdown.org/ndphillips/YaRrr/)
+- [Introduction to R by John Mushcelli and Andrew Jaffe](https://users.phhp.ufl.edu/rlp176/Courses/PHC6089/R_notes/index.html)
+- [R for Data Science](http://r4ds.had.co.nz/)
+

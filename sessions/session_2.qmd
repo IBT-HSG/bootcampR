@@ -1,0 +1,440 @@
+
+## Recap Session 1 - What we did
+
+-   Setting up R
+-   Get to know the UI
+-   Objects, classes, operations
+-   Packages
+
+## Any experienced difficulties? Anything we should repeat?
+
+## Recap: Packages in R {.smaller}
+
+Beyond `base` R's core functions, packages provide additional functionality for (almost) [all of your problems](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages).
+
+Some of the most widely-used packages are included in the [`tidyverse`](https://www.tidyverse.org/packages/#core-tidyverse) collection `install.packages("tidyverse")` and `library(tidyverse)` brings you most of the functions you will need (at this point):
+
+For example:
+
+-   manipulate data: `dplyr`
+-   tidy data: `tidyr`
+-   visualize data: `ggplot2`
+
+There are many more packages [available](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
+
+::: aside
+Info on any package can be found in its CRAN documentation.
+:::
+
+## Recap: Practical Advice {.smaller}
+
+::: callout-note
+## Pitfall
+
+Failing to load a package is a common `error` source - one you can easily avoid by loading everything you need right at the start.
+:::
+
+This is how the very beginning of your code could look like:
+
+```{r, include = T, echo=T}
+setwd("/Users/haukeroggenkamp/Documents/coursework/bootcampR") #set your working directory
+#install.packages("ggplot2") # only needed for installing once
+#install.packages("tidyverse") # only needed for installing once
+library(tidyverse) # load package
+```
+
+::: aside
+You might also directly specify a package (without loading it globally) by using the following syntax: `tidyverse::mutate()`
+:::
+
+## Overview Session 2 - Working with data
+
+1.  Read in and export data
+2.  Explore your data
+
+Exercise & Break
+
+3.  Manipulate data
+4.  Analyze data
+
+Exercise & Time for Questions
+
+# What's next: We need some data to work with!
+
+## Reading in and storing data {.smaller}
+
+Data can come in various file formats, e.g., `.csv`, `.xlsx`, `.sav` etc. We can read all these files into our `environment`.
+
+For that, we always specify the location path to the local data source (and we directly assign our data to an object called `data`)
+
+::: columns
+::: {.column width="50%"}
+Reading in
+
+```{r, echo=TRUE}
+data <- read.table(file = "data/raw/student_experiment.csv",
+                   sep = ";", 
+                   header = TRUE) # you need to adapt this to your working directory file path
+```
+:::
+
+::: {.column width="50%"}
+Saving
+
+```{r, echo=T}
+write.table(x    = data, 
+            file = "data/processed/student_experiment_processed.csv") # writes the final dataframe as a .csv file into your specified directory
+```
+:::
+:::
+
+::: callout-note
+## Good to know
+
+We recommend text files (`.csv` or `.txt`), however, there are packages for reading in other file formats (`haven`, `foreign` or `rio`).
+:::
+
+## Exploring data I/II {.smaller}
+
+You should know how your data is structured before processing it and R has some neat functions to do that:
+
+-   `head(data)` shows the first few rows of your data
+-   `names(data)` shows the column or variable names of your data
+-   `view(data)` shows the entire data in a new window
+
+```{r, echo =T, eval=F}
+head(data)
+names(data)
+```
+
+```{r, echo=FALSE, eval=T}
+head <- head(data)
+head[1:5, 1:5]
+names <- names(data)
+names[1:10]
+```
+
+## Exploring data II/II {.smaller}
+
+To get a feeling for your data, you can investigate summary statistics:
+
+::: columns
+::: {.column width="50%"}
+```{r echo=T}
+summary(data$rent) 
+```
+:::
+
+::: {.column width="50%"}
+```{r echo=T}
+rstatix::get_summary_stats(data, rent, type="five_number") 
+```
+:::
+:::
+
+We can calculate the mean rent of this course individually:
+
+```{r echo = T}
+mean(data$rent)
+```
+
+How about the course's gender distribution?
+
+```{r, echo=TRUE}
+table(data$gender) # 1 = male, 2 = female
+```
+
+Or the mean shoe size by gender?
+
+```{r, echo=T}
+stats::aggregate(shoesize ~ gender, data, FUN = mean)
+```
+
+## Break (10min) and Exercises
+
+-   Load the survey data and assign it to a dataframe object named `df` (if not done so already)
+
+-   How many rows and columns does `df` contain?
+
+-   Calculate simple summary statistics for the `df`
+
+-   Calculate the standard error for the variable `shoesize`
+
+## Manipulate your data {.smaller}
+
+Some important functions from `dplyr`:
+
+-   `select` Choose which columns to include.
+-   `filter` Filter which rows to include.
+-   `arrange` Sort the data, by size for continuous variables, by date, or alphabetically.
+-   `group_by` Group the data by a categorical variable.
+-   `n()` Count the number of records. Here there isn't a variable in the brackets of the function, because the number of records applies to all variables.
+-   `mutate` Create new column(s) in the data, or change existing column(s).
+-   `rename` Rename column(s).
+-   `bind_rows` Append one data data frame to another, combining data from columns with the same name.
+
+## Manipulate: `select` and `filter`{.smaller}
+
+```{r echo = T, eval=FALSE}
+data %>% 
+  select(gender, rent) # show just the specified columns
+```
+
+```{r}
+t <- data %>% 
+  select(gender, rent) # show just the columns gender and rent
+t[1:3,]
+```
+
+```{r echo = T}
+data %>%
+  filter(gender==1 & shoesize ==44) %>% select(gender, shoesize) # show just males with a shoesize of 44
+```
+
+::: callout-note
+## Recap: `%>%`(pipe) operator
+
+`%>%` makes code easier to write and read. It works similar to a + sign and is an integral part of the tidyverse syntax
+:::
+
+## Manipulate: `arrange` and `n`{.smaller}
+
+```{r echo = T}
+data %>% 
+     filter(gender == 2 & rent >= 900) %>% # only females with rent above 900CHF
+     arrange(desc(rent)) %>% # sort by descending rent 
+        select(gender, rent) # show only the columns gender and rent
+```
+
+```{r echo = T}
+data %>%
+  filter(gender == 2) %>% # only female
+  summarise(
+    n = n()) # number of instances written in new column with name n
+```
+
+::: callout-note
+## `summarise()`
+
+`summarise()` reduces multiple values down to a single summary.
+:::
+
+## Manipulate: `group_by`{.smaller}
+
+```{r echo = T}
+data %>%
+  group_by(gender) %>% # group by gender
+  summarise(
+    n = n(), # counte the instances and write in column named n
+    avg_height = mean(height, na.rm = TRUE),
+    avg_rent = mean (rent, na.rm = TRUE)) # calculate the mean height and write in avg_height column
+```
+
+::: callout-note
+## Removing `NAs`
+
+`na.rm` allows you to exclude instances of missing value. This helps to prevent `error` messages. But check why is that data missing!
+:::
+
+## Manipulate: `mutate` and `rename`{.smaller}
+
+```{r echo = T, eval=F}
+data %>% 
+  mutate(gender, sq_height = height ^ 2) %>% # adds variable that is a function of existing ones
+  select(gender, sq_height) # ashow only the columns gender and the new variable
+```
+
+```{r}
+t <- data %>% 
+   mutate(gender, sq_height = height ^ 2) %>% # adds variable that is a function of existing ones
+  select(gender, sq_height)
+t[1:5,]
+```
+
+```{r echo = T, eval = F}
+data %>% 
+  rename(
+    cost_for_living = rent, # renames a column (new name = old name)
+    )
+```
+
+```{r}
+t <- data %>% 
+  rename(
+    cost_for_living = rent,
+    )
+t[1:5,1:5]
+```
+
+## Put it all together {.smaller}
+
+```{r echo = T}
+data %>%  # Start with the data 
+               filter(r_experience <= 6) %>% # Oonly those with R experience below 6
+               group_by(gender) %>%    # Group by gender
+               summarise( 
+                        age.mean = mean(age),      # Define first summary...
+                        height.mean = median(height), # you get the idea...
+                        n = n()) %>% # How many are in each group?
+        select(age.mean, height.mean, n)
+```
+
+::: callout-note
+## Help
+
+It can sometimes be hard to understand what a command is doing with the data. [Tidy data tutor](https://tidydatatutor.com/vis.html) visualizes what is happening to your data in every code step which is extremely helpful.
+:::
+
+## Break (10 min) and Exercises {.smaller}
+
+-   Build a new dataframe called `df_demographics` that contains just the demographic information from our survey data
+
+-   Rename the `gender` column to `sex` column in this dataframe
+
+-   Calculate the mean age by gender in this dataframe
+
+-   Calculate the logarithmic rent of all male participants of the AIBS course and store it in a column named `log_rent`
+
+## Advanced: Join two dataframes {.smaller}
+
+-   `inner_join`: To keep only rows that match from the data frames, specify the argument `all=FALSE`. To keep all rows from both data frames, specify `all=TRUE`.
+-   `left_join`: To include all the rows of your data frame x and only those from y that match.
+
+Example: Calculate year born of members of this class:
+
+```{r echo=T}
+age_table <- read.csv(file = "data/raw/age_table.csv") # read in age table from directory
+data_new <- left_join(data, select(age_table, c(X2022_after, year_born)), by = c("age" = "X2022_after")) # perform join to get the birthyear
+data_new %>% select(age, year_born) %>% filter(age<24) # show the results
+```
+
+::: aside
+[Here](https://paldhous.github.io/ucb/2018/dataviz/week7.html) is a great tutorial on applying these functions.
+:::
+
+## Advanced: Long to wide dataformat {.smaller}
+
+::: columns
+::: {.column width="50%"}
+`data_long` to `data_wide`
+
+```{r echo = T}
+ncol(data) # number of columns in long format
+data_wide <- pivot_wider(data = data, names_from = age, values_from = height)
+ncol(data_wide) # number of columns in wide format
+```
+:::
+
+::: {.column width="50%"}
+The arguments to pivot_longer():
+
+-   data: Data object
+-   names_from: Name of column containing the new column names
+-   values_from: Name of column containing values
+
+::: callout-note
+## Reverse Way
+
+The reverse way from wide to long format via `pivot_wider`
+:::
+:::
+:::
+
+## Analyze your data: Statistical Analysis with R {.smaller}
+
+You (R) can do a lot:
+
+-   *t-Test*
+-   *ANOVA*
+-   *Regression*
+-   Structural Equation Models
+-   Multilevel Models
+-   Machine Learning Models
+-   Bayesian Statistics
+-   ...
+
+## Stats 1: t-Test {.smaller}
+
+Recap: Mean comparisons (\>= 2 groups)
+
+```{r echo=T}
+t.test(formula = rent ~ gender, data = data, alternative = 'two.sided') # base R
+```
+
+```{r echo=T}
+rstatix::t_test(data = data, formula = rent~gender, alternative = "two.sided") # the same works with other packages, here `rstatix`
+```
+
+Notice the difference in the code?
+
+::: callout-note
+## Caution
+
+There are similar functions `t.test` and `t_test` from *different* packages using *different* syntax
+:::
+
+## Stats 2: Analysis of Variance {.smaller}
+
+Recap: Mean comparisons (\> 2 groups)
+
+Is there a difference in XYZ?
+
+```{r echo=T}
+data$course <- as.factor(data$education) # this ensures our factor to be of the right class
+summary(aov(formula = rent~education, data = data))
+```
+
+::: callout-note
+## Caution
+
+The underlying grouping variable needs to be `as.factor`. Always check first!
+:::
+
+```{r echo=T}
+anova(lm(formula = rent~education, data = data)) # Same analysis possible by running a linear model and wrapping the `anova` function for omnibus test
+```
+
+## Stats 3: Regression {.smaller}
+
+Recap: Relationship between two (or more) variables
+
+Is there a relationship between height and shoesize?
+
+```{r echo=T}
+summary(lm(formula = shoesize~height, data = data)) # runs a linear model and provides statistical summary
+```
+
+## Remember: Live-saving advice: How to get help when stuck? {.smaller}
+
+-   `?lm()` will immediately provide you with Help in the panel
+-   [CRAN](https://cran.r-project.org/) documentations and Cheat Sheets are a comprehensive source of support (hard to read at the beginning)
+-   Google is your friend: Chance is high that someone else had a very similar question to yours on [stackoverflow.com](https://stackoverflow.com/questions/tagged/r); try different search terms and exact language
+
+::: aside
+R studio provides a long list of [cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
+:::
+
+## Jump in: Time for exercising {.smaller}
+
+### Basic Exercises
+
+-   Regress `rent` on `height` and `shoesize`
+
+-   Calculate the mean difference between `r_experience` by `class` and perform a t-test
+
+-   Do `r_experience` and `interest_data` correlate?
+
+### Advanced exercises:  {.smaller}
+
+-   Add a column containing the shoe size converted to the US system and correlate US with EU shoesize
+-   Hint: load the `shoesizes` dataset from Canvas and look for potential information that might match with our data
+
+```{=html}
+<!-- -->
+```
+
+## Prepare your questions for tomorrow's Q&A
+
+-   Specific to your projects?
+
+-   Put them on Canvas or bring them to the lecture

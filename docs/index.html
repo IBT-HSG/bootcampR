@@ -28,6 +28,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -344,13 +408,1462 @@
 <section id="session-3" class="slide level2">
 <h2>Session 3</h2>
 </section></section>
+<section>
 <section id="welcome-to-session-1" class="title-slide slide level1 center">
 <h1>Welcome to Session 1</h1>
+
+</section>
+<section id="outline-1" class="slide level2">
+<h2>Outline</h2>
+<p>In this session we will</p>
+<ul>
+<li>make sure <a href="https://learnr-examples.shinyapps.io/ex-setup-r/">R &amp; RStudio</a> are up and running on all of your machines,</li>
+<li>show why we like R,</li>
+<li>introduce you to RStudio’s User Interface,</li>
+<li>demonstrate some basic concepts and data structures.</li>
+</ul>
+</section>
+<section id="getting-started" class="slide level2">
+<h2>Getting started</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/QR_survey.png"></p>
+<p></p><figcaption>QR to Survey</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/QR_setup.png"></p>
+<p></p><figcaption>QR to Setup</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="why-we-like-r" class="slide level2 smaller">
+<h2>Why we like R</h2>
+<p><strong>Scripts vs.&nbsp;WYSIWYG (Excel or SPSS)</strong></p>
+<p>Analyses conducted in R are transparent, easily shareable, and reproducible. This helps not only others to run and understand your code but also your future selves.</p>
+<p><strong>Open Source</strong></p>
+<p>R is 100% free of charge and as a result, has a huge support community. it means that a huge community of R programmers will constantly develop an distribute new R functionality. It also means that you find a lot of help online as others ran into the same problems as you do.</p>
+<p><strong>Versatility</strong></p>
+<p>Yes, R is not Python. You can still use it to do a lot of stuff. If you can imagine an analytical task, you can almost certainly implement (and automate) it in R.</p>
+<p><strong>RStudio</strong></p>
+<p>RStudio helps you write R code. You can easily and seamlessly organize and combine R code, analyses, plots, and written text into elegant documents all in one place.</p>
+</section>
+<section id="examples-use-cases" class="slide level2">
+<h2>Examples &amp; Use Cases</h2>
+<ul>
+<li><a href="https://beta.rstudioconnect.com/jjallaire/htmlwidgets-highcharter/htmlwidgets-highcharter.html#sales-by-category">Dashboards</a></li>
+<li><a href="https://howquez.github.io/Are-there-hidden-Benefits-of-Monitoring/Predictions.html#the-self-interested-agents-expected-utility">Master Thesis</a> <a href="https://github.com/Howquez/coopUncertainty/blob/main/analysis/quarto/paper.pdf">&amp; Research Paper</a></li>
+<li><a href="http://rstudio-pubs-static.s3.amazonaws.com/334864_28050f7860dd4927a596872f0cd52401.html">Fraud Detection</a></li>
+<li><a href="https://github.com/Howquez/r-basics/blob/main/session_1.qmd">These Slides</a></li>
+</ul>
+</section>
+<section id="r-rstudio" class="slide level2">
+<h2>R &amp; RStudio</h2>
+<p>RStudio is an integrated development environment (IDE) for R. It helps the user effectively use R by making things easier with features such as:</p>
+<ul>
+<li>Syntax highlighting,</li>
+<li>Code completion,</li>
+<li>Smart indentation,</li>
+<li>Workspaces (more on that later), etc.</li>
+</ul>
+</section>
+<section id="rstudio-gui" class="slide level2 smaller">
+<h2>RStudio GUI</h2>
+<p>Opening RStudio, you will see four window panes:</p>
+<ul>
+<li>bottom left: The <code>Console</code> executes code. You can use it to test code that is not saved.</li>
+<li>upper left: The <code>Source</code> opens your scripts, markdown documents or notebooks. It is the one you’ll use the most as it allows you to write and save both comments and code. You have to actively run the code, though.</li>
+<li>upper right: The <code>Environment Pane</code> displays the objects (e.g.&nbsp;data, variables, custom functions) you can access in your current memory.</li>
+<li>bottom right: This pane shows you many different, yet important, tabs. You can browse your directory, view plots, get help and see installed packages.</li>
+</ul>
+<div class="footer">
+<p>See this <a href="https://github.com/Howquez/r-basics/blob/main/material/rstudio-ide.pdf">cheat sheet</a></p>
+</div>
+</section>
+<section id="section" class="slide level2" data-background-image="https://raw.githubusercontent.com/Howquez/r-basics/main/img/GUI.png">
+<h2></h2>
+</section>
+<section id="computational-empathy" class="slide level2">
+<h2>Computational Empathy</h2>
+<p>Know your audience, i.e.&nbsp;yourself. And don’t be naive.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># Dear programmer:</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># When I wrote this code, only god and I knew how it worked.</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Now, only god knows it!</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># Therefore, if you are trying to optimize this routine</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># and it fails (most surely), please increase this counter</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># as a warning for the next person</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># total_hours_wasted_here = 254</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer">
+<p>source: <a href="https://www.reddit.com/r/ProgrammerHumor/comments/8pdebc/only_god_and_i_knew/">reddit</a></p>
+</div>
+</section></section>
+<section>
+<section id="vamos" class="title-slide slide level1 center">
+<h1>Vamos!</h1>
+
+</section>
+<section id="operators" class="slide level2">
+<h2>Operators</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>In the most simple form, R is an advanced calculator. Operators are symbols you know from any other program (Excel, etc.), such as <code>+</code> or <code>-</code>.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">x + y</td>
+<td style="text-align: left;">Addition</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">x - y</td>
+<td style="text-align: left;">Subtraction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x * y</td>
+<td style="text-align: left;">Multiplication</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">x / y</td>
+<td style="text-align: left;">Division</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x ^ y</td>
+<td style="text-align: left;">Exponentiation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">x %/% y</td>
+<td style="text-align: left;">Integer Division</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x %% y</td>
+<td style="text-align: left;">Remainder</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="algebra" class="slide level2">
+<h2>Algebra</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">4</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span>) <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span>) <span class="sc">/</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">45</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="dv">13</span> <span class="sc">%/%</span> <span class="dv">3</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="dv">13</span> <span class="sc">%%</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="boolean-algebra" class="slide level2 smaller">
+<h2>Boolean Algebra</h2>
+<table>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Description</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>x &lt; y</td>
+<td>Less than</td>
+<td>TRUE if x is smaller than y. FALSE otherwhise</td>
+</tr>
+<tr class="even">
+<td>x &lt;= y</td>
+<td>Less or equal than</td>
+<td>TRUE if x is smaller or equal than y. FALSE otherwhise</td>
+</tr>
+<tr class="odd">
+<td>x &gt; y</td>
+<td>Greater than</td>
+<td>TRUE if x is greater than y. FALSE otherwhise</td>
+</tr>
+<tr class="even">
+<td>x &gt;= y</td>
+<td>Greater or equal than</td>
+<td>TRUE if x is greater or equal than y. FALSE otherwhise</td>
+</tr>
+<tr class="odd">
+<td>x == y</td>
+<td>Exactly equal to</td>
+<td>TRUE if and only if x is equal to y. FALSE otherwhise</td>
+</tr>
+<tr class="even">
+<td>x != y</td>
+<td>Not equal to</td>
+<td>TRUE if and only if x is not equal to y. FALSE otherwhise</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>!x</td>
+<td>Negation</td>
+<td>TRUE if x is equal to FALSE or 0. FALSE otherwhise</td>
+</tr>
+<tr class="odd">
+<td>x | y</td>
+<td>OR</td>
+<td>TRUE if x or y or both are TRUE . FALSE otherwhise</td>
+</tr>
+<tr class="even">
+<td>x &amp; y</td>
+<td>AND</td>
+<td>TRUE if and only if x and y are both TRUE . FALSE otherwhise</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="boolean-algebra-1" class="slide level2">
+<h2>Boolean Algebra</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>A Boolean expression is a logical statement that is either <code>TRUE</code> or <code>FALSE.</code></p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">3</span> <span class="sc">&lt;</span> <span class="dv">4</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="dv">3</span> <span class="sc">&gt;=</span> <span class="dv">4</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="dv">3</span> <span class="sc">==</span> <span class="dv">4</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="dv">3</span> <span class="sc">!=</span> <span class="dv">4</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="sc">!</span><span class="cn">TRUE</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-types" class="slide level2">
+<h2>Data Types</h2>
+<p>There are many different data types. We will focus on the most basic ones:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Data Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Numeric</td>
+<td><code>42</code></td>
+</tr>
+<tr class="even">
+<td>Character</td>
+<td><code>"forty two"</code></td>
+</tr>
+<tr class="odd">
+<td>Logical</td>
+<td><code>TRUE</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Use <code>class()</code> to identify data types. <code>class(42)</code> will return <code>numeric</code>, for instance. What’s the output of <code>class(NA)</code>?</p>
+</div>
+</div>
+</div>
+<!--
+You can create obejcts such as vectors^[We'll cover this today.], data.frames^[On tomorrow's menu.], lists, etc. to store these data types in multiple dimensions.
+-->
+</section>
+<section id="assign-values-to-variables" class="slide level2">
+<h2>Assign Values to Variables</h2>
+<ul>
+<li>R can keep several objects in memory at the same time</li>
+<li>To distinguish them, object have names.</li>
+<li>Objects are assigned with <code>&lt;-</code> or <code>=</code> (we recommend the former).</li>
+</ul>
+<p>Below, we create two objects and <em>call</em> the latter one:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># create</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>txt <span class="ot">&lt;-</span> <span class="st">"Hello world!"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># call </span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>txt</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co"># [1] "Hello world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="naming-conventions" class="slide level2">
+<h2>Naming Conventions</h2>
+<ul>
+<li>Variable and function names should be lowercase.</li>
+<li>Use an underscore <code>_</code> to separate words within a name.</li>
+<li>Strive for names that are concise and meaningful (this is not easy!).</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Good</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>day_one</span>
+<span id="cb5-3"><a href="#cb5-3"></a>day_1</span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># Bad</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>first_day_of_the_month</span>
+<span id="cb5-7"><a href="#cb5-7"></a>dayone</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="naming-conventions-1" class="slide level2">
+<h2>Naming Conventions</h2>
+<p>Where possible, avoid using names of existing functions and variables. Doing so will cause confusion for the readers of your code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Bad</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>T <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Also, try to avoid special symbols such as <code>+</code>, for example. If you really need them, you can escape them using the back tick `</p>
+</div>
+</div>
+</div>
+</section>
+<section id="naming-conventions-2" class="slide level2">
+<h2>Naming Conventions</h2>
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Importantly, be careful to not reassign an object unintentionally.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>a <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="dv">42</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>a</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># [1] 3.73767</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co"># imagine to do some stuff in between...</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># ...forgot about your object...</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co"># ...and that you want to create another object called "a".</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a>a <span class="ot">&lt;-</span> <span class="dv">40</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>a</span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co"># [1] 42</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="naming-conventions-3" class="slide level2">
+<h2>Naming Conventions</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Case Sensitivity</strong></p>
+</div>
+<div class="callout-content">
+<p>Uppercase and lowercase letters are treated as distinct.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>A <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>a <span class="ot">&lt;-</span> <span class="dv">42</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>a <span class="sc">==</span> A</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># [1] FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is not only important, but also helpful in some cases. However, try not to name two different objects with the same name and varying cases. This will confuse you later on.</p>
+</section>
+<section id="vectors" class="slide level2">
+<h2>Vectors</h2>
+<p>We can <strong>c</strong>ombine objects <code>c()</code> command to create a vector. The documentation says:</p>
+<blockquote>
+<p>The default method combines its arguments to form a vector. All arguments are coerced to a common type which is the type of the returned value […].</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb9-2"><a href="#cb9-2"></a>cntry <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"CH"</span>, <span class="st">"FR"</span>, <span class="st">"NL"</span>, <span class="st">"DK"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>test  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="st">"seven"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="subsetting" class="title-slide slide level1 center">
+<h1>Subsetting</h1>
+<p><code>[]</code> is your friend.</p>
+</section>
+<section id="functions" class="slide level2">
+<h2>Functions</h2>
+<p>So far, you have seen at least two built-in functions: <code>class()</code> &amp; <code>c()</code>. Another useful function is <code>mean()</code>.</p>
+<p>You can recognize a function either via <code>class()</code><sup>1</sup> or by the parentheses.</p>
+<p>To call a function, you have to provide some argument(s). The <code>mean()</code> function needs some sort of vector, for instance.</p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><code>class(class)</code> returns <code>"function"</code>, for instance.</p></li></ol></aside></section>
+<section id="how-to-get-help" class="slide level2 smaller">
+<h2>How to get Help?</h2>
+<p>Assume you want to learn how to use the <code>mean()</code> function.</p>
+<ul>
+<li><code>?mean</code> or <code>help(mean)</code></li>
+<li>Use <a href="https://stackoverflow.com/questions/16801340/mean-in-r-by-using-mean">stackoverflow</a></li>
+</ul>
+</section>
+<section id="packages" class="slide level2">
+<h2>Packages</h2>
+<ul>
+<li><p>Packages are the fundamental units of reproducible R code. They include reusable R functions, the documentation that describes how to use them, and sample data.</p></li>
+<li><p>The comprehensive R Archive Network currently features <a href="https://cran.r-project.org/index.html">18.694 packages</a>.</p></li>
+<li><p>The majority of packages is quite niche-specific.</p></li>
+<li><p>To get started, we’ll show you how to install <a href="https://www.tidyverse.org/">Tidyverse</a>, an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.</p></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2" data-background-image="https://hbctraining.github.io/Intro-to-R/img/tidyverse_website.png" data-background-size="contain" data-background-repeat="no-repeat">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">#</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="co"># run this only once</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="fu">install.packages</span>(<span class="st">"package_name"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co">#</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="co"># run this at the beginning of each session (if needed)</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="fu">library</span>(package_name)</span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="co">#</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="co">#</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="co"># your turn: install &amp; load tidyverse</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer">
+<p><a href="https://hbctraining.github.io/Intro-to-R/lessons/08_intro_tidyverse.html">Source</a></p>
+</div>
+</section>
+<section id="the-operator" class="slide level2" data-background-image="https://magrittr.tidyverse.org/logo.png" data-background-size="contain" data-background-repeat="no-repeat">
+<h2>The %&gt;% Operator</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="cn">NA</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="co">#</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">as.character</span>(<span class="fu">mean</span>(a, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co">#</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co"># We can do the same with the so called pipe operator %&gt;% </span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="co"># Stems from the mgrittr package and is included in the tidyverse</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="co">#</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>a <span class="sc">%&gt;%</span> <span class="fu">mean</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">as.character</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer">
+<p><a href="https://magrittr.tidyverse.org/">Source</a></p>
+</div>
+</section>
+<section id="exercise" class="slide level2 smaller">
+<h2>Exercise</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Generate three objects</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><code>my_pi</code> should contain the number pi (try out the command <code>pi</code>)</li>
+<li>a vector, called <code>a</code>, should contain the numbers <code>1</code> to <code>3</code></li>
+<li><code>b</code> should the multiplication of <code>1*pi</code>, <code>2*pi</code> <code>3*pi</code></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="workspace-environment" class="slide level2">
+<h2>Workspace &amp; Environment</h2>
+<ul>
+<li>We can see all objects currently in our workspace by typing <code>ls()</code>.</li>
+<li>You can remove objects using <code>rm()</code></li>
+</ul>
+<div class="cell">
+
+</div>
+
+<img data-src="img/workspace.png" class="r-stretch quarto-figure-center"><p class="caption">Don’t!</p></section>
+<section id="bonus-scripts-markdown-project" class="slide level2 smaller">
+<h2>Bonus: Scripts, Markdown &amp; Project</h2>
+<ul>
+<li>Scripts are a great way to document <em>how</em> you analyzed your data.</li>
+<li>Like a recipe, scripts make it easy (for you and others) to reproduce your process <em>exactly</em>.</li>
+<li>You can also use RMarkdown, which allows you to blend code chunks with text.<sup>1</sup></li>
+<li>To make your code even more organized and reproducible, use R Projects (We’ll show an example).</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Which is great for reports and quantitative master theses, for instance.</p></li></ol></aside></section>
+<section id="ressources" class="slide level2">
+<h2>Ressources</h2>
+<p>swirl is a great start as it teaches you R interactively, at your own pace, and right in the R console! Run the following code to get started.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">install.packages</span>(<span class="st">"swirl"</span>) <span class="co"># install this package once</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">library</span>(swirl)</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">siwrl</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ressources-1" class="slide level2">
+<h2>Ressources</h2>
+<p>Resources we found helpful creating the slides:</p>
+<ul>
+<li><a href="https://bookdown.org/ndphillips/YaRrr/">YaRrrr</a></li>
+<li><a href="https://users.phhp.ufl.edu/rlp176/Courses/PHC6089/R_notes/index.html">Introduction to R by John Mushcelli and Andrew Jaffe</a></li>
+<li><a href="http://r4ds.had.co.nz/">R for Data Science</a></li>
+</ul>
+</section></section>
+<section>
+<section id="welcome-to-session-2" class="title-slide slide level1 center">
+<h1>Welcome to Session 2</h1>
+
+</section>
+<section id="recap-session-1---what-we-did" class="slide level2">
+<h2>Recap Session 1 - What we did</h2>
+<ul>
+<li>Setting up R</li>
+<li>Get to know the UI</li>
+<li>Objects, classes, operations</li>
+<li>Packages</li>
+</ul>
+</section>
+<section id="any-experienced-difficulties-anything-we-should-repeat" class="slide level2">
+<h2>Any experienced difficulties? Anything we should repeat?</h2>
+</section>
+<section id="recap-packages-in-r" class="slide level2 smaller">
+<h2>Recap: Packages in R</h2>
+<p>Beyond <code>base</code> R’s core functions, packages provide additional functionality for (almost) <a href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">all of your problems</a>.</p>
+<p>Some of the most widely-used packages are included in the <a href="https://www.tidyverse.org/packages/#core-tidyverse"><code>tidyverse</code></a> collection <code>install.packages("tidyverse")</code> and <code>library(tidyverse)</code> brings you most of the functions you will need (at this point):</p>
+<p>For example:</p>
+<ul>
+<li>manipulate data: <code>dplyr</code></li>
+<li>tidy data: <code>tidyr</code></li>
+<li>visualize data: <code>ggplot2</code></li>
+</ul>
+<p>There are many more packages <a href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">available</a></p>
+
+<aside><div>
+<p>Info on any package can be found in its CRAN documentation.</p>
+</div></aside></section>
+<section id="recap-practical-advice" class="slide level2 smaller">
+<h2>Recap: Practical Advice</h2>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pitfall</strong></p>
+</div>
+<div class="callout-content">
+<p>Failing to load a package is a common <code>error</code> source - one you can easily avoid by loading everything you need right at the start.</p>
+</div>
+</div>
+</div>
+<p>This is how the very beginning of your code could look like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/haukeroggenkamp/Documents/coursework/bootcampR"</span>) <span class="co">#set your working directory</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="co">#install.packages("ggplot2") # only needed for installing once</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="co">#install.packages("tidyverse") # only needed for installing once</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="fu">library</span>(tidyverse) <span class="co"># load package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<aside><div>
+<p>You might also directly specify a package (without loading it globally) by using the following syntax: <code>tidyverse::mutate()</code></p>
+</div></aside></section>
+<section id="overview-session-2---working-with-data" class="slide level2">
+<h2>Overview Session 2 - Working with data</h2>
+<ol type="1">
+<li>Read in and export data</li>
+<li>Explore your data</li>
+</ol>
+<p>Exercise &amp; Break</p>
+<ol start="3" type="1">
+<li>Manipulate data</li>
+<li>Analyze data</li>
+</ol>
+<p>Exercise &amp; Time for Questions</p>
+</section></section>
+<section>
+<section id="whats-next-we-need-some-data-to-work-with" class="title-slide slide level1 center">
+<h1>What’s next: We need some data to work with!</h1>
+
+</section>
+<section id="reading-in-and-storing-data" class="slide level2 smaller">
+<h2>Reading in and storing data</h2>
+<p>Data can come in various file formats, e.g., <code>.csv</code>, <code>.xlsx</code>, <code>.sav</code> etc. We can read all these files into our <code>environment</code>.</p>
+<p>For that, we always specify the location path to the local data source (and we directly assign our data to an object called <code>data</code>)</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Reading in</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"data/raw/student_experiment.csv"</span>,</span>
+<span id="cb14-2"><a href="#cb14-2"></a>                   <span class="at">sep =</span> <span class="st">";"</span>, </span>
+<span id="cb14-3"><a href="#cb14-3"></a>                   <span class="at">header =</span> <span class="cn">TRUE</span>) <span class="co"># you need to adapt this to your working directory file path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Saving</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">write.table</span>(<span class="at">x    =</span> data, </span>
+<span id="cb15-2"><a href="#cb15-2"></a>            <span class="at">file =</span> <span class="st">"data/processed/student_experiment_processed.csv"</span>) <span class="co"># writes the final dataframe as a .csv file into your specified directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Good to know</strong></p>
+</div>
+<div class="callout-content">
+<p>We recommend text files (<code>.csv</code> or <code>.txt</code>), however, there are packages for reading in other file formats (<code>haven</code>, <code>foreign</code> or <code>rio</code>).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exploring-data-iii" class="slide level2 smaller">
+<h2>Exploring data I/II</h2>
+<p>You should know how your data is structured before processing it and R has some neat functions to do that:</p>
+<ul>
+<li><code>head(data)</code> shows the first few rows of your data</li>
+<li><code>names(data)</code> shows the column or variable names of your data</li>
+<li><code>view(data)</code> shows the entire data in a new window</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">head</span>(data)</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">names</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  lfdn external_lfdn tester dispcode lastpage
+1    2             0      0       31  6061029
+2    4             0      0       31  6061029
+3   11             0      0       31  6061029
+4   13             0      0       31  6061029
+5   14             0      0       31  6061029</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "lfdn"          "external_lfdn" "tester"        "dispcode"     
+ [5] "lastpage"      "quality"       "duration"      "expectation"  
+ [9] "r_experience"  "interest_data"</code></pre>
+</div>
+</div>
+</section>
+<section id="exploring-data-iiii" class="slide level2 smaller">
+<h2>Exploring data II/II</h2>
+<p>To get a feeling for your data, you can investigate summary statistics:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>rent) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  400.0   532.5   640.0   814.8   712.5  3000.0       1 </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>rstatix<span class="sc">::</span><span class="fu">get_summary_stats</span>(data, rent, <span class="at">type=</span><span class="st">"five_number"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+  variable     n   min   max    q1 median    q3
+  &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 rent        12   400  3000  532.    640  712.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>We can calculate the mean rent of this course individually:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>rent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>How about the course’s gender distribution?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">table</span>(data<span class="sc">$</span>gender) <span class="co"># 1 = male, 2 = female</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+1 2 
+8 5 </code></pre>
+</div>
+</div>
+<p>Or the mean shoe size by gender?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>stats<span class="sc">::</span><span class="fu">aggregate</span>(shoesize <span class="sc">~</span> gender, data, <span class="at">FUN =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender shoesize
+1      1   43.125
+2      2   37.800</code></pre>
+</div>
+</div>
+</section>
+<section id="break-10min-and-exercises" class="slide level2">
+<h2>Break (10min) and Exercises</h2>
+<ul>
+<li><p>Load the survey data and assign it to a dataframe object named <code>df</code> (if not done so already)</p></li>
+<li><p>How many rows and columns does <code>df</code> contain?</p></li>
+<li><p>Calculate simple summary statistics for the <code>df</code></p></li>
+<li><p>Calculate the standard error for the variable <code>shoesize</code></p></li>
+</ul>
+</section>
+<section id="manipulate-your-data" class="slide level2 smaller">
+<h2>Manipulate your data</h2>
+<p>Some important functions from <code>dplyr</code>:</p>
+<ul>
+<li><code>select</code> Choose which columns to include.</li>
+<li><code>filter</code> Filter which rows to include.</li>
+<li><code>arrange</code> Sort the data, by size for continuous variables, by date, or alphabetically.</li>
+<li><code>group_by</code> Group the data by a categorical variable.</li>
+<li><code>n()</code> Count the number of records. Here there isn’t a variable in the brackets of the function, because the number of records applies to all variables.</li>
+<li><code>mutate</code> Create new column(s) in the data, or change existing column(s).</li>
+<li><code>rename</code> Rename column(s).</li>
+<li><code>bind_rows</code> Append one data data frame to another, combining data from columns with the same name.</li>
+</ul>
+</section>
+<section id="manipulate-select-and-filter" class="slide level2">
+<h2>Manipulate: <code>select</code> and <code class="smaller">filter</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">select</span>(gender, rent) <span class="co"># show just the specified columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender rent
+1      2   NA
+2      2 3000
+3      1  950</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">filter</span>(gender<span class="sc">==</span><span class="dv">1</span> <span class="sc">&amp;</span> shoesize <span class="sc">==</span><span class="dv">44</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(gender, shoesize) <span class="co"># show just males with a shoesize of 44</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender shoesize
+1      1       44
+2      1       44
+3      1       44</code></pre>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Recap: <code>%&gt;%</code>(pipe) operator</strong></p>
+</div>
+<div class="callout-content">
+<p><code>%&gt;%</code> makes code easier to write and read. It works similar to a + sign and is an integral part of the tidyverse syntax</p>
+</div>
+</div>
+</div>
+</section>
+<section id="manipulate-arrange-and-n" class="slide level2">
+<h2>Manipulate: <code>arrange</code> and <code class="smaller">n</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="#cb33-2"></a>     <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> rent <span class="sc">&gt;=</span> <span class="dv">900</span>) <span class="sc">%&gt;%</span> <span class="co"># only females with rent above 900CHF</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>     <span class="fu">arrange</span>(<span class="fu">desc</span>(rent)) <span class="sc">%&gt;%</span> <span class="co"># sort by descending rent </span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>        <span class="fu">select</span>(gender, rent) <span class="co"># show only the columns gender and rent</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender rent
+1      2 3000</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="co"># only female</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb35-4"><a href="#cb35-4"></a>    <span class="at">n =</span> <span class="fu">n</span>()) <span class="co"># number of instances written in new column with name n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  n
+1 5</code></pre>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><code>summarise()</code></strong></p>
+</div>
+<div class="callout-content">
+<p><code>summarise()</code> reduces multiple values down to a single summary.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="manipulate-group_by" class="slide level2">
+<h2>Manipulate: <code class="smaller">group_by</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span> <span class="co"># group by gender</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb37-4"><a href="#cb37-4"></a>    <span class="at">n =</span> <span class="fu">n</span>(), <span class="co"># counte the instances and write in column named n</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb37-6"><a href="#cb37-6"></a>    <span class="at">avg_rent =</span> <span class="fu">mean</span> (rent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="co"># calculate the mean height and write in avg_height column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  gender     n avg_height avg_rent
+   &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+1      1     8       182.     616.
+2      2     5       158.    1212 </code></pre>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Removing <code>NAs</code></strong></p>
+</div>
+<div class="callout-content">
+<p><code>na.rm</code> allows you to exclude instances of missing value. This helps to prevent <code>error</code> messages. But check why is that data missing!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="manipulate-mutate-and-rename" class="slide level2">
+<h2>Manipulate: <code>mutate</code> and <code class="smaller">rename</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">mutate</span>(gender, <span class="at">sq_height =</span> height <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="co"># adds variable that is a function of existing ones</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">select</span>(gender, sq_height) <span class="co"># ashow only the columns gender and the new variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender sq_height
+1      2     23104
+2      2     21025
+3      1     34225
+4      1     32400
+5      1     34225</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">rename</span>(</span>
+<span id="cb41-3"><a href="#cb41-3"></a>    <span class="at">cost_for_living =</span> rent, <span class="co"># renames a column (new name = old name)</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  lfdn external_lfdn tester dispcode lastpage
+1    2             0      0       31  6061029
+2    4             0      0       31  6061029
+3   11             0      0       31  6061029
+4   13             0      0       31  6061029
+5   14             0      0       31  6061029</code></pre>
+</div>
+</div>
+</section>
+<section id="put-it-all-together" class="slide level2 smaller">
+<h2>Put it all together</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>data <span class="sc">%&gt;%</span>  <span class="co"># Start with the data </span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>               <span class="fu">filter</span>(r_experience <span class="sc">&lt;=</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="co"># Oonly those with R experience below 6</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a>               <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span>    <span class="co"># Group by gender</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>               <span class="fu">summarise</span>( </span>
+<span id="cb43-5"><a href="#cb43-5"></a>                        <span class="at">age.mean =</span> <span class="fu">mean</span>(age),      <span class="co"># Define first summary...</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a>                        <span class="at">height.mean =</span> <span class="fu">median</span>(height), <span class="co"># you get the idea...</span></span>
+<span id="cb43-7"><a href="#cb43-7"></a>                        <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="co"># How many are in each group?</span></span>
+<span id="cb43-8"><a href="#cb43-8"></a>        <span class="fu">select</span>(age.mean, height.mean, n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  age.mean height.mean     n
+     &lt;dbl&gt;       &lt;int&gt; &lt;int&gt;
+1     22.9         185     7
+2     27.4         154     5</code></pre>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Help</strong></p>
+</div>
+<div class="callout-content">
+<p>It can sometimes be hard to understand what a command is doing with the data. <a href="https://tidydatatutor.com/vis.html">Tidy data tutor</a> visualizes what is happening to your data in every code step which is extremely helpful.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="break-10-min-and-exercises" class="slide level2 smaller">
+<h2>Break (10 min) and Exercises</h2>
+<ul>
+<li><p>Build a new dataframe called <code>df_demographics</code> that contains just the demographic information from our survey data</p></li>
+<li><p>Rename the <code>gender</code> column to <code>sex</code> column in this dataframe</p></li>
+<li><p>Calculate the mean age by gender in this dataframe</p></li>
+<li><p>Calculate the logarithmic rent of all male participants of the AIBS course and store it in a column named <code>log_rent</code></p></li>
+</ul>
+</section>
+<section id="advanced-join-two-dataframes" class="slide level2 smaller">
+<h2>Advanced: Join two dataframes</h2>
+<ul>
+<li><code>inner_join</code>: To keep only rows that match from the data frames, specify the argument <code>all=FALSE</code>. To keep all rows from both data frames, specify <code>all=TRUE</code>.</li>
+<li><code>left_join</code>: To include all the rows of your data frame x and only those from y that match.</li>
+</ul>
+<p>Example: Calculate year born of members of this class:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>age_table <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"data/raw/age_table.csv"</span>) <span class="co"># read in age table from directory</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>data_new <span class="ot">&lt;-</span> <span class="fu">left_join</span>(data, <span class="fu">select</span>(age_table, <span class="fu">c</span>(X2022_after, year_born)), <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"age"</span> <span class="ot">=</span> <span class="st">"X2022_after"</span>)) <span class="co"># perform join to get the birthyear</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>data_new <span class="sc">%&gt;%</span> <span class="fu">select</span>(age, year_born) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(age<span class="sc">&lt;</span><span class="dv">24</span>) <span class="co"># show the results</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  age year_born
+1  22      2000
+2  22      2000
+3  21      2001
+4  23      1999
+5  22      2000
+6  23      1999
+7  22      2000</code></pre>
+</div>
+</div>
+
+<aside><div>
+<p><a href="https://paldhous.github.io/ucb/2018/dataviz/week7.html">Here</a> is a great tutorial on applying these functions.</p>
+</div></aside></section>
+<section id="advanced-long-to-wide-dataformat" class="slide level2 smaller">
+<h2>Advanced: Long to wide dataformat</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><code>data_long</code> to <code>data_wide</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">ncol</span>(data) <span class="co"># number of columns in long format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 55</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>data_wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(<span class="at">data =</span> data, <span class="at">names_from =</span> age, <span class="at">values_from =</span> height)</span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="fu">ncol</span>(data_wide) <span class="co"># number of columns in wide format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 60</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>The arguments to pivot_longer():</p>
+<ul>
+<li>data: Data object</li>
+<li>names_from: Name of column containing the new column names</li>
+<li>values_from: Name of column containing values</li>
+</ul>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Reverse Way</strong></p>
+</div>
+<div class="callout-content">
+<p>The reverse way from wide to long format via <code>pivot_wider</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="analyze-your-data-statistical-analysis-with-r" class="slide level2 smaller">
+<h2>Analyze your data: Statistical Analysis with R</h2>
+<p>You (R) can do a lot:</p>
+<ul>
+<li><em>t-Test</em></li>
+<li><em>ANOVA</em></li>
+<li><em>Regression</em></li>
+<li>Structural Equation Models</li>
+<li>Multilevel Models</li>
+<li>Machine Learning Models</li>
+<li>Bayesian Statistics</li>
+<li>…</li>
+</ul>
+</section>
+<section id="stats-1-t-test" class="slide level2 smaller">
+<h2>Stats 1: t-Test</h2>
+<p>Recap: Mean comparisons (&gt;= 2 groups)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">t.test</span>(<span class="at">formula =</span> rent <span class="sc">~</span> gender, <span class="at">data =</span> data, <span class="at">alternative =</span> <span class="st">'two.sided'</span>) <span class="co"># base R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  rent by gender
+t = -0.99236, df = 3.0711, p-value = 0.3926
+alternative hypothesis: true difference in means between group 1 and group 2 is not equal to 0
+95 percent confidence interval:
+ -2481.5  1290.0
+sample estimates:
+mean in group 1 mean in group 2 
+         616.25         1212.00 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>rstatix<span class="sc">::</span><span class="fu">t_test</span>(<span class="at">data =</span> data, <span class="at">formula =</span> rent<span class="sc">~</span>gender, <span class="at">alternative =</span> <span class="st">"two.sided"</span>) <span class="co"># the same works with other packages, here `rstatix`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 8
+  .y.   group1 group2    n1    n2 statistic    df     p
+* &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 rent  1      2          8     5    -0.992  3.07 0.393</code></pre>
+</div>
+</div>
+<p>Notice the difference in the code?</p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Caution</strong></p>
+</div>
+<div class="callout-content">
+<p>There are similar functions <code>t.test</code> and <code>t_test</code> from <em>different</em> packages using <em>different</em> syntax</p>
+</div>
+</div>
+</div>
+</section>
+<section id="stats-2-analysis-of-variance" class="slide level2 smaller">
+<h2>Stats 2: Analysis of Variance</h2>
+<p>Recap: Mean comparisons (&gt; 2 groups)</p>
+<p>Is there a difference in XYZ?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>data<span class="sc">$</span>course <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data<span class="sc">$</span>education) <span class="co"># this ensures our factor to be of the right class</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="fu">summary</span>(<span class="fu">aov</span>(<span class="at">formula =</span> rent<span class="sc">~</span>education, <span class="at">data =</span> data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df  Sum Sq Mean Sq F value Pr(&gt;F)
+education    1  573944  573944   1.176  0.304
+Residuals   10 4882419  488242               
+1 Beobachtung als fehlend gelöscht</code></pre>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Caution</strong></p>
+</div>
+<div class="callout-content">
+<p>The underlying grouping variable needs to be <code>as.factor</code>. Always check first!</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(<span class="at">formula =</span> rent<span class="sc">~</span>education, <span class="at">data =</span> data)) <span class="co"># Same analysis possible by running a linear model and wrapping the `anova` function for omnibus test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Variance Table
+
+Response: rent
+          Df  Sum Sq Mean Sq F value Pr(&gt;F)
+education  1  573944  573944  1.1755 0.3037
+Residuals 10 4882419  488242               </code></pre>
+</div>
+</div>
+</section>
+<section id="stats-3-regression" class="slide level2 smaller">
+<h2>Stats 3: Regression</h2>
+<p>Recap: Relationship between two (or more) variables</p>
+<p>Is there a relationship between height and shoesize?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> shoesize<span class="sc">~</span>height, <span class="at">data =</span> data)) <span class="co"># runs a linear model and provides statistical summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = shoesize ~ height, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.6840 -1.2487 -0.3436  0.9486  4.0510 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  6.96106    5.93868   1.172 0.265895    
+height       0.19729    0.03421   5.767 0.000125 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.871 on 11 degrees of freedom
+Multiple R-squared:  0.7514,    Adjusted R-squared:  0.7288 
+F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
+</div>
+</div>
+</section>
+<section id="remember-live-saving-advice-how-to-get-help-when-stuck" class="slide level2 smaller">
+<h2>Remember: Live-saving advice: How to get help when stuck?</h2>
+<ul>
+<li><code>?lm()</code> will immediately provide you with Help in the panel</li>
+<li><a href="https://cran.r-project.org/">CRAN</a> documentations and Cheat Sheets are a comprehensive source of support (hard to read at the beginning)</li>
+<li>Google is your friend: Chance is high that someone else had a very similar question to yours on <a href="https://stackoverflow.com/questions/tagged/r">stackoverflow.com</a>; try different search terms and exact language</li>
+</ul>
+
+<aside><div>
+<p>R studio provides a long list of <a href="https://www.rstudio.com/resources/cheatsheets/">cheat sheets</a></p>
+</div></aside></section>
+<section id="jump-in-time-for-exercising" class="slide level2 smaller">
+<h2>Jump in: Time for exercising</h2>
+<h3 id="basic-exercises">Basic Exercises</h3>
+<ul>
+<li><p>Regress <code>rent</code> on <code>height</code> and <code>shoesize</code></p></li>
+<li><p>Calculate the mean difference between <code>r_experience</code> by <code>class</code> and perform a t-test</p></li>
+<li><p>Do <code>r_experience</code> and <code>interest_data</code> correlate?</p></li>
+</ul>
+<h3 class="smaller" id="advanced-exercises">Advanced exercises:</h3>
+<ul>
+<li>Add a column containing the shoe size converted to the US system and correlate US with EU shoesize</li>
+<li>Hint: load the <code>shoesizes</code> dataset from Canvas and look for potential information that might match with our data</li>
+</ul>
+<!-- -->
+</section>
+<section id="prepare-your-questions-for-tomorrows-qa" class="slide level2">
+<h2>Prepare your questions for tomorrow’s Q&amp;A</h2>
+<ul>
+<li><p>Specific to your projects?</p></li>
+<li><p>Put them on Canvas or bring them to the lecture</p></li>
+</ul>
+</section></section>
+<section>
+<section id="welcome-to-session-3" class="title-slide slide level1 center">
+<h1>Welcome to Session 3</h1>
+
+</section>
+<section id="recap-session-2" class="slide level2">
+<h2>Recap Session 2</h2>
+<ul>
+<li>Read in and export data</li>
+<li>Explore your data</li>
+<li>Manipulate data</li>
+<li>Analyze data</li>
+</ul>
+</section>
+<section id="any-experienced-difficulties-anything-we-should-repeat-1" class="slide level2">
+<h2>Any experienced difficulties? Anything we should repeat?</h2>
+</section>
+<section id="recap-import-and-export-data" class="slide level2">
+<h2>Recap: import and export data</h2>
+<p>Reading in</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/raw/student_experiment.csv"</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> T) <span class="co"># you need to adapt this to your working directory file path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Saving</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="fu">write.table</span>(data, <span class="st">"data/processed/student_experiment_processed.csv"</span>) <span class="co"># writes the final dataframe as a .csv file into your specified directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="recap-exploring-data" class="slide level2">
+<h2>Recap: Exploring data</h2>
+<ul>
+<li><code>head(data)</code> shows the first few rows of your data</li>
+<li><code>names(data)</code> shows the column or variable names of your data</li>
+<li><code>view(data)</code> shows the entire data in a new window</li>
+</ul>
+</section>
+<section id="overview-session-3" class="slide level2">
+<h2>Overview Session 3</h2>
+<ol type="1">
+<li>Visualization</li>
+<li>Analysis Template: putting everything together</li>
+<li>R6 intro (?)</li>
+<li>Questions</li>
+</ol>
+</section>
+<section id="why-visualization" class="slide level2">
+<h2>Why visualization?</h2>
+<p>Data visualization is the practice of representing data in a graphical form (e.g.&nbsp;plots). This is a powerful way to visualize information in a way that is understandable to the majority of the audience. For this reason it is crucial to select the type of visualization that best fits our data and our goal!</p>
+</section>
+<section id="ggplot-bulding-blocks" class="slide level2 smaller">
+<h2>Ggplot bulding blocks</h2>
+<ul>
+<li><code>ggplot()</code> initializes the coordinate system of our visual representation. It takes as input the dataset of interest.</li>
+<li><code>geom_*()</code> specifies the type of visualization. It needs a mapping argument which maps the variables from the dataset to the objects on the plot.</li>
+<li><code>aes()</code> is assigned to the mapping argument. It takes as argument the values corresponding to the x and y axis, as well as other plot-specific characteristics (e.g., color, size, fill,…)</li>
+<li>Additional functions can be added to to specify labeling and thematic characteristics (<code>ggtitle()</code>,<code>xlab()</code>,<code>ylab()</code>,<code>theme()</code>).</li>
+</ul>
+<p>Remember: It is always possible to get help regarding these function by running <code>?functionName</code></p>
+</section>
+<section id="type-of-data-visualization-iiii" class="slide level2 smaller">
+<h2>Type of data visualization I/III</h2>
+<h4 id="univariate-visualizations">Univariate visualizations</h4>
+<p>Univariate graphical representation visualize the distribution of data from a single continuous or discrete variables.</p>
+<ul>
+<li>Bar plot: representation of categorical categorical data.</li>
+<li>Histograms, distribution plot and box plot: representation of the distribution of numerical data.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-45-1.png" width="960"></p>
+<p></p><figcaption>bar plot (left) histogram with kernel distribution (right)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>cut))</span>
+<span id="cb63-2"><a href="#cb63-2"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> depth)) <span class="sc">+</span> </span>
+<span id="cb63-3"><a href="#cb63-3"></a>        <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">y =</span> ..density..),</span>
+<span id="cb63-4"><a href="#cb63-4"></a>                 <span class="at">colour =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb63-5"><a href="#cb63-5"></a>        <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="type-of-data-visualization-iiiii" class="slide level2 smaller">
+<h2>Type of data visualization II/III</h2>
+<h4 id="bivariate-visualizations">Bivariate visualizations</h4>
+<p>Bivariate visual analysis shows relationship between two variables. It is important to select the correct visualization type according to the variables analysed:</p>
+<ul>
+<li>Continuous v Continuous</li>
+<li>Discrete v Discrete</li>
+<li>Discrete v Continuous</li>
+</ul>
+</section>
+<section id="type-of-data-visualization-iiiii-1" class="slide level2">
+<h2>Type of data visualization II/III</h2>
+<h4 id="bivariate-visualizations-continuous-v-continuous">Bivariate visualizations (Continuous v Continuous)</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(</span>
+<span id="cb64-3"><a href="#cb64-3"></a>           <span class="at">x =</span> carat, </span>
+<span id="cb64-4"><a href="#cb64-4"></a>           <span class="at">y =</span> price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-47-1.png" width="960"></p>
+<p></p><figcaption>scatter plot</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="fu">ggplot</span>(diamonds,<span class="fu">aes</span>(<span class="at">x =</span> carat, </span>
+<span id="cb65-2"><a href="#cb65-2"></a>           <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb65-3"><a href="#cb65-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb65-4"><a href="#cb65-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-48-1.png" width="960"></p>
+<p></p><figcaption>scatter plot and line of best fit</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="type-of-data-visualization-iiiii-2" class="slide level2">
+<h2>Type of data visualization II/III</h2>
+<h4 id="bivariate-visualizations-discrete-v-discrete">Bivariate visualizations (Discrete v Discrete)</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> </span>
+<span id="cb66-2"><a href="#cb66-2"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> color, </span>
+<span id="cb66-3"><a href="#cb66-3"></a>           <span class="at">fill =</span> cut), <span class="at">position =</span> <span class="st">"stack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-49-1.png" width="960"></p>
+<p></p><figcaption>stacked bar plot</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> </span>
+<span id="cb67-2"><a href="#cb67-2"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> color, </span>
+<span id="cb67-3"><a href="#cb67-3"></a>           <span class="at">fill =</span> cut), <span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-50-1.png" width="960"></p>
+<p></p><figcaption>grouped bar plot</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="type-of-data-visualization-iiiii-3" class="slide level2">
+<h2>Type of data visualization II/III</h2>
+<h4 id="bivariate-visualizations-discrete-v-continous">Bivariate visualizations (Discrete v Continous)</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">ggplot</span>(diamonds, </span>
+<span id="cb68-2"><a href="#cb68-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> color, </span>
+<span id="cb68-3"><a href="#cb68-3"></a>           <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb68-4"><a href="#cb68-4"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb68-5"><a href="#cb68-5"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Salary distribution by rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-51-1.png" width="960"></p>
+<p></p><figcaption>Box plots</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">ggplot</span>(diamonds, </span>
+<span id="cb69-2"><a href="#cb69-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> price, </span>
+<span id="cb69-3"><a href="#cb69-3"></a>           <span class="at">fill =</span> color)) <span class="sc">+</span></span>
+<span id="cb69-4"><a href="#cb69-4"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb69-5"><a href="#cb69-5"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Salary distribution by rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-52-1.png" width="960"></p>
+<p></p><figcaption>Grouped kernel distribution plots</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="type-of-data-visualization-iiiiii" class="slide level2 smaller">
+<h2>Type of data visualization III/III</h2>
+<h4 id="multivariate-visualizations">Multivariate visualizations</h4>
+<p>Multivariate presentation show the relationship of 3 or more variables. There are two main approaches <em>grouping</em> and <em>faceting</em>.</p>
+<ul>
+<li>Grouping represents the data on a single plot when the x and y axis represent two variables and the third is displayed through visual elements such as colors, dot shape, size, etc.</li>
+<li>Faceting simply include different plot in one single visualization.</li>
+</ul>
+</section>
+<section id="type-of-data-visualization-iiiiii-1" class="slide level2">
+<h2>Type of data visualization III/III</h2>
+<h4 id="multivariate-visualizations-grouping">Multivariate visualizations (Grouping)</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, </span>
+<span id="cb70-3"><a href="#cb70-3"></a>           <span class="at">y =</span> price, <span class="at">color=</span>color, <span class="at">shape=</span>cut))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-53-1.png" width="960"></p>
+<p></p><figcaption>multivarite scatter plot</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, </span>
+<span id="cb71-3"><a href="#cb71-3"></a>           <span class="at">y =</span> price, <span class="at">color=</span>color, <span class="at">size=</span>depth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-54-1.png" width="960"></p>
+<p></p><figcaption>multivarite scatter plot</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="type-of-data-visualization-iiiiii-2" class="slide level2">
+<h2>Type of data visualization III/III</h2>
+<h4 id="multivariate-visualizations-faceting">Multivariate visualizations (Faceting)</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-55-1.png" width="960"></p>
+<p></p><figcaption>price ($1000) histogram by color and cut</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="co"># plot salary histograms by rank and sex</span></span>
+<span id="cb72-2"><a href="#cb72-2"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price<span class="sc">/</span><span class="dv">1000</span>)) <span class="sc">+</span></span>
+<span id="cb72-3"><a href="#cb72-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>,</span>
+<span id="cb72-4"><a href="#cb72-4"></a>                 <span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb72-5"><a href="#cb72-5"></a>  <span class="fu">facet_grid</span>(cut <span class="sc">~</span> color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>https://rkabacoff.github.io/datavis/</p>
+</section>
+<section id="break" class="slide level2">
+<h2>Break</h2>
+</section>
+<section id="analysis-template-putting-everything-together" class="slide level2">
+<h2>Analysis Template: putting everything together</h2>
 
 <img src="https://github.com/IBT-HSG/bootcampR/blob/main/img/logo.png?raw=true" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://www.ibt.unisg.ch/">Institute of Behavioral Science and Technology</a></p>
 </div>
-</section>
+</section></section>
+
     </div>
   </div>
 
