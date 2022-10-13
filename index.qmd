@@ -9,6 +9,17 @@ format:
     preview-links: true
 ---
 
+## Before we start
+
+If you haven't done so already, please answer the survey (left) and, more urgently, install the required software (right).
+
+::: {layout-ncol=2}
+![QR to Survey (until tomorrow noon)](img/QR_survey.png)
+
+![QR to Setup (now)](img/QR_setup.png)
+:::
+
+
 # Outline
 
 ```{r packages}
@@ -20,9 +31,35 @@ pacman::p_load(patchwork, tidyverse, )
 
 ## Session 1
 
+In this session we will
+
+- make sure [R & RStudio](https://learnr-examples.shinyapps.io/ex-setup-r/) are up and running on all of your machines,
+- show why we like R,
+- introduce you to RStudio's User Interface,
+- demonstrate some basic concepts and data structures.
+
 ## Session 2
 
+1.  Read in and export data
+2.  Explore your data
+
+Exercise & Break
+
+3.  Manipulate data
+4.  Analyze data
+
+
+
 ## Session 3
+
+1.  Visualize data
+
+Exercise & Break
+
+2.  Analysis Template: putting everything together
+3.  R6 intro (?)
+
+Exercise & Time for Questions
 
 # Welcome to Session 1
 

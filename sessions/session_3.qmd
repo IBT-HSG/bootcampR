@@ -276,7 +276,17 @@ ggplot(diamonds, aes(x = price/1000)) +
 
 https://rkabacoff.github.io/datavis/
 
+## Resources
+
+- Easy to read [book chapter](http://qpolr.com/dataviz.html)
+- [A full book](https://ggplot2-book.org/index.html)
+- [List of geoms](https://ggplot2.tidyverse.org/reference/#geoms)
+- As always: _Stackoverflow_
 
 ## Break
 
+![Please download the template](img/QR_template.png)
+
 ## Analysis Template: putting everything together
+
+

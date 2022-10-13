@@ -392,6 +392,30 @@
   <p class="author">Jonas, Pietro &amp; Hauke</p>
 </section>
 
+<section id="before-we-start" class="slide level2">
+<h2>Before we start</h2>
+<p>If you haven’t done so already, please answer the survey (left) and, more urgently, install the required software (right).</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/QR_survey.png"></p>
+<p></p><figcaption>QR to Survey (until tomorrow noon)</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/QR_setup.png"></p>
+<p></p><figcaption>QR to Setup (now)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section>
 <section id="outline" class="title-slide slide level1 center">
 <h1>Outline</h1>
@@ -401,20 +425,6 @@
 </section>
 <section id="session-1" class="slide level2">
 <h2>Session 1</h2>
-</section>
-<section id="session-2" class="slide level2">
-<h2>Session 2</h2>
-</section>
-<section id="session-3" class="slide level2">
-<h2>Session 3</h2>
-</section></section>
-<section>
-<section id="welcome-to-session-1" class="title-slide slide level1 center">
-<h1>Welcome to Session 1</h1>
-
-</section>
-<section id="outline-1" class="slide level2">
-<h2>Outline</h2>
 <p>In this session we will</p>
 <ul>
 <li>make sure <a href="https://learnr-examples.shinyapps.io/ex-setup-r/">R &amp; RStudio</a> are up and running on all of your machines,</li>
@@ -423,28 +433,34 @@
 <li>demonstrate some basic concepts and data structures.</li>
 </ul>
 </section>
-<section id="getting-started" class="slide level2">
-<h2>Getting started</h2>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/QR_survey.png"></p>
-<p></p><figcaption>QR to Survey</figcaption><p></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/QR_setup.png"></p>
-<p></p><figcaption>QR to Setup</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
+<section id="session-2" class="slide level2">
+<h2>Session 2</h2>
+<ol type="1">
+<li>Read in and export data</li>
+<li>Explore your data</li>
+</ol>
+<p>Exercise &amp; Break</p>
+<ol start="3" type="1">
+<li>Manipulate data</li>
+<li>Analyze data</li>
+</ol>
+</section>
+<section id="session-3" class="slide level2">
+<h2>Session 3</h2>
+<ol type="1">
+<li>Visualize data</li>
+</ol>
+<p>Exercise &amp; Break</p>
+<ol start="2" type="1">
+<li>Analysis Template: putting everything together</li>
+<li>R6 intro (?)</li>
+</ol>
+<p>Exercise &amp; Time for Questions</p>
+</section></section>
+<section>
+<section id="welcome-to-session-1" class="title-slide slide level1 center">
+<h1>Welcome to Session 1</h1>
+
 </section>
 <section id="why-we-like-r" class="slide level2 smaller">
 <h2>Why we like R</h2>
@@ -489,7 +505,7 @@
 <p>See this <a href="https://github.com/Howquez/r-basics/blob/main/material/rstudio-ide.pdf">cheat sheet</a></p>
 </div>
 </section>
-<section id="section" class="slide level2" data-background-image="https://raw.githubusercontent.com/Howquez/r-basics/main/img/GUI.png">
+<section id="section" class="slide level2" data-background-image="https://github.com/IBT-HSG/bootcampR/blob/main/img/GUI.png?raw=true">
 <h2></h2>
 </section>
 <section id="computational-empathy" class="slide level2">
@@ -929,7 +945,7 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 
 </div>
 
-<img data-src="img/workspace.png" class="r-stretch quarto-figure-center"><p class="caption">Don’t!</p></section>
+<img data-src="https://github.com/IBT-HSG/bootcampR/blob/main/img/Workspace.png?raw=true" class="r-stretch quarto-figure-center"><p class="caption">Don’t!</p></section>
 <section id="bonus-scripts-markdown-project" class="slide level2 smaller">
 <h2>Bonus: Scripts, Markdown &amp; Project</h2>
 <ul>
@@ -1853,9 +1869,19 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 </div>
 <p>https://rkabacoff.github.io/datavis/</p>
 </section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<ul>
+<li>Easy to read <a href="http://qpolr.com/dataviz.html">book chapter</a></li>
+<li><a href="https://ggplot2-book.org/index.html">A full book</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/#geoms">List of geoms</a></li>
+<li>As always: <em>Stackoverflow</em></li>
+</ul>
+</section>
 <section id="break" class="slide level2">
 <h2>Break</h2>
-</section>
+
+<img data-src="img/QR_template.png" class="r-stretch quarto-figure-center"><p class="caption">Please download the template</p></section>
 <section id="analysis-template-putting-everything-together" class="slide level2">
 <h2>Analysis Template: putting everything together</h2>
 

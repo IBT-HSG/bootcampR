@@ -1,21 +1,4 @@
 
-## Outline
-
-In this session we will
-
-- make sure [R & RStudio](https://learnr-examples.shinyapps.io/ex-setup-r/) are up and running on all of your machines,
-- show why we like R,
-- introduce you to RStudio's User Interface,
-- demonstrate some basic concepts and data structures.
-
-## Getting started
-
-::: {layout-ncol=2}
-![QR to Survey](img/QR_survey.png)
-
-![QR to Setup](img/QR_setup.png)
-:::
-
 ## Why we like R {.smaller}
 
 **Scripts vs. WYSIWYG (Excel or SPSS)**
@@ -65,7 +48,7 @@ Opening RStudio, you will see four window panes:
 See this [cheat sheet](https://github.com/Howquez/r-basics/blob/main/material/rstudio-ide.pdf)
 :::
 
-## {background-image="https://raw.githubusercontent.com/Howquez/r-basics/main/img/GUI.png"}
+## {background-image="https://github.com/IBT-HSG/bootcampR/blob/main/img/GUI.png?raw=true"}
 
 ## Computational Empathy
 
@@ -403,7 +386,7 @@ rm(list = ls())
 ```
 
 
-![Don't!](img/workspace.png)
+![Don't!](https://github.com/IBT-HSG/bootcampR/blob/main/img/Workspace.png?raw=true)
 
 ## Bonus: Scripts, Markdown & Project {.smaller}
 
