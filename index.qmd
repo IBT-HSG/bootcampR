@@ -4,7 +4,7 @@ author: "Jonas, Pietro & Hauke"
 format: 
   revealjs: 
     theme: [simple, custom.scss]
-    logo: img/logo.png
+    logo: https://github.com/IBT-HSG/bootcampR/blob/main/img/logo.png?raw=true
     footer: "[Institute of Behavioral Science and Technology](https://www.ibt.unisg.ch/)"
     preview-links: true
 ---
