@@ -11,13 +11,10 @@ format:
 
 ## Before we start
 
-If you haven't done so already, please answer the survey (left) and, more urgently, install the required software (right).
+If you haven't done so already, please install R as well as RStudio now:
 
-::: {layout-ncol=2}
-![QR to Survey (until tomorrow noon)](img/QR_survey.png)
+![](img/QR_setup.png)
 
-![QR to Setup (now)](img/QR_setup.png)
-:::
 
 
 # Outline
@@ -26,7 +23,7 @@ If you haven't done so already, please answer the survey (left) and, more urgent
 # install this package once, it'll then be used to install and load all remaining packages
 # install.packages("pacman")
 
-pacman::p_load(patchwork, tidyverse, )
+pacman::p_load(patchwork, tidyverse, tidydatatutor)
 ```
 
 ## Session 1

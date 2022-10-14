@@ -280,6 +280,7 @@ data %>%  # Start with the data
 ```
 
 ::: callout-note
+
 ## Help
 
 It can sometimes be hard to understand what a command is doing with the data. [Tidy data tutor](https://tidydatatutor.com/vis.html) visualizes what is happening to your data in every code step which is extremely helpful.
