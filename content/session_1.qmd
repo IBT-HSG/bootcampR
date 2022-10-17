@@ -45,7 +45,7 @@ Opening RStudio, you will see four window panes:
 See this [cheat sheet](https://github.com/Howquez/r-basics/blob/main/material/rstudio-ide.pdf)
 :::
 
-## {background-image="https://github.com/IBT-HSG/bootcampR/blob/main/img/GUI.png?raw"}
+##  {background-image="https://github.com/IBT-HSG/bootcampR/blob/main/img/GUI.png?raw"}
 
 ## Use comments {.scrollable}
 
@@ -125,11 +125,9 @@ In the most simple form, R is an advanced calculator. Operators are symbols you 
 
 ## Assign Values to Objects {.scrollable}
 
-
 -   R can keep several objects in memory at the same time
 -   To distinguish them, objects have names.
 -   Objects are assigned with `<-` or `=` (we recommend the former).
-
 
 ::: callout-important
 ## Don't
@@ -167,17 +165,17 @@ result * 2
 ::: callout-note
 ## Why `<-`
 
-There is a general preference among the R community for using <- for assignment. This has at least two reasons:
+There is a general preference among the R community for using \<- for assignment. This has at least two reasons:
 
-1. Compatibility with old versions.
-2. Ambiguity of `=` because it is used in other contexts (functions) as well.
+1.  Compatibility with old versions.
+2.  Ambiguity of `=` because it is used in other contexts (functions) as well.
 :::
 
 ::: callout-note
 ## Shortcuts
 
-- Mac: press `option` & `-`
-- Windows: press `Alt` & `-`
+-   Mac: press `option` & `-`
+-   Windows: press `Alt` & `-`
 :::
 
 ::: footer
@@ -208,7 +206,6 @@ Alternatively, you can take a look into your `Environment`. Do you remember wher
 -   Use an underscore `_` to separate words within a name.
 -   Strive for names that are concise and meaningful (this is not easy!).
 :::
-
 
 ```{r}
 #| echo: true
@@ -242,7 +239,6 @@ a == A
 # [1] FALSE
 ```
 
-
 ::: callout-warning
 Importantly, be careful to not reassign an object unintentionally.
 :::
@@ -265,11 +261,11 @@ a
 ```
 
 ::: callout-warning
-Where possible, avoid using names 
+Where possible, avoid using names
 
-- of special characters, 
-- existing functions and 
-- existing variables. 
+-   of special characters,
+-   existing functions and
+-   existing variables.
 
 Doing so will cause confusion for the readers of your code.
 :::
@@ -287,7 +283,6 @@ mean <- function(x) sum(x)
 ::: callout-note
 Also, try to avoid special symbols such as `+`, for example. If you really need them, you can escape them using the back tick \`
 :::
-
 
 ## Data Types
 
@@ -320,13 +315,11 @@ as.logical(1)
 # does not work: as.numeric("three")
 ```
 
-
 ```{=html}
 <!--
 You can create obejcts such as vectors^[We'll cover this today.], data.frames^[On tomorrow's menu.], lists, etc. to store these data types in multiple dimensions.
 -->
 ```
-
 ## Vectors
 
 We can **c**ombine objects `c()` command to create a vector. The documentation says:
@@ -341,18 +334,27 @@ cntry <- c("CH", "FR", "NL", "DK")
 test  <- c(1, 3, 5, "seven")
 ```
 
-
 ## Break
 
 please answer the survey if you haven't done so already
 
 ![](img/QR_survey.png)
 
+## 
+
+```{r}
+#| echo: true
+#| eval: false
+
+x <-  3
+x < - 3
+```
+
 
 ## Boolean Algebra {.smaller}
 
 | Operation | Description           | Output                                                       |
-|-----------------|-----------------|---------------------------------------|
+|------------------|------------------|-------------------------------------|
 | x \< y    | Less than             | TRUE if x is smaller than y. FALSE otherwhise                |
 | x \<= y   | Less or equal than    | TRUE if x is smaller or equal than y. FALSE otherwhise       |
 | x \> y    | Greater than          | TRUE if x is greater than y. FALSE otherwhise                |
@@ -390,9 +392,31 @@ TRUE & FALSE
 You can also abbreviate `TRUE` and `FALSE` with `T` and `F`.
 :::
 
-## Subsetting
+## Selecting
 
-`[]` is your friend.
+Let's combine what we learned about vectors and boolean algebra.
+
+::: callout-note
+## Exercise
+
+Create a vector called `countries` that contains "CH", "FR", "NL" & "DK".
+:::
+
+## Selecting
+
+::: callout-tip
+Show the vector's first entry using `countries[1]`.
+:::
+
+::: callout-tip
+Show whether the vector contains `"EN"` with `"EN" %in% countries`.
+:::
+
+::: callout-tip
+Show where the vector contains `"DK"` with `match("DK", countries)`.
+:::
+
+
 
 ## Functions
 
@@ -411,7 +435,6 @@ Assume you want to learn how to use the `mean()` function.
 -   `?mean` or `help(mean)`
 -   Use [stackoverflow](https://stackoverflow.com/questions/16801340/mean-in-r-by-using-mean)
 
-
 ## Packages
 
 -   Packages are the fundamental units of reproducible R code. They include reusable R functions, the documentation that describes how to use them, and sample data.
@@ -421,6 +444,15 @@ Assume you want to learn how to use the `mean()` function.
 -   The majority of packages is quite niche-specific.
 
 -   To get started, we'll show you how to install [Tidyverse](https://www.tidyverse.org/), an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+
+## Using packages
+
+![An R package is like a lightbulb. First you need to order it with install.packages(). Then, every time you want to use it, you need to turn it on with library()](https://bookdown.org/ndphillips/YaRrr/images/packagebulb.png)
+
+::: footer
+[Source](https://bookdown.org/ndphillips/YaRrr/packages.html)
+:::
+
 
 ##  {background-image="https://hbctraining.github.io/Intro-to-R/img/tidyverse_website.png" background-size="contain" background-repeat="no-repeat"}
 
@@ -444,20 +476,18 @@ library(package_name)
 ::: callout-tip
 ## Your turn
 
-1. Install `tidyverse`, which contains the lubridate package with a function called `year()`
-2. get the documentation for the following function: `Sys.Date()`
-3. execute `Sys.Date() %>% year()`
-4. Load `tidyverse`
-5. execute `Sys.Date() %>% year()`
+1.  Install `tidyverse`, which contains the lubridate package with a function called `year()`
+2.  get the documentation for the following function: `Sys.Date()`
+3.  execute `Sys.Date() %>% year()`
+4.  Load `tidyverse`
+5.  execute `Sys.Date() %>% year()`
 :::
 
 ## Packages
 
 Remember that the bottom right pannel has a `Packages` tab? Let's inspect it.
 
-
 ## The %\>% Operator {.scrollable}
-
 
 Let's apply some functions. `Can you guess the outcome?`
 
@@ -477,7 +507,7 @@ We can do the same using `%>%`:
 sqrt(82) %>% round(digit = 2) %>% paste0(" is your result!")
 ```
 
-:::{.callout-note collapse="true"}
+::: {.callout-note collapse="true"}
 ## Proof
 
 To prove that there is no difference between the two outcomes, we compare them:
@@ -490,14 +520,13 @@ paste0(round(sqrt(82), digit = 2), " is your result!") == sqrt(82) %>% round(dig
 ```
 :::
 
-
 ::: callout-tip
 ## Your turn
 
-- create a vector called `vec` containing `1`, `2`, `3`, `99`
-- calculate the `mean()` using both methods
-- round the results (one digit) and assign it to objects called `res1` & `res1`
-- show that both are equal
+-   create a vector called `vec` containing `1`, `2`, `3`, `99`
+-   calculate the `mean()` using both methods
+-   round the results (one digit) and assign it to objects called `res1` & `res1`
+-   show that both are equal
 :::
 
 ```{r}
@@ -509,7 +538,6 @@ res1 <- mean(vec) %>% round(digits = 1)
 res2 <- round(mean(vec), digits = 1)
 res1 == res2
 ```
-
 
 ## Exercise
 
@@ -537,8 +565,7 @@ rm(a)
 rm(list = ls())
 ```
 
-
----
+------------------------------------------------------------------------
 
 You should actually apply this.
 
@@ -551,26 +578,42 @@ This makes your environment easier to read and saves some memory.
 ::: callout-tip
 ## Start with a fresh session
 
-This forces you to 
+This forces you to
 
-1. document all used objects in your script and 
-2. load all packages you are using.
+1.  document all used objects in your script and
+2.  load all packages you are using.
 
 It, thus, makes your code more reproducible and less likely to break.
 :::
 
----
+------------------------------------------------------------------------
 
 ![Don't!](https://github.com/IBT-HSG/bootcampR/blob/main/img/Workspace.png?raw=true)
+
+## Exercises {.smaller .scrollable}
+
+1. create a new variable called `my_num` that contains 6 numbers
+2. multiply `my_num` by 4
+3. create a second variable called `my_char` that contains 5 character strings
+4. combine the two variables `my_num` and `my_char` into a variable called `both` (hint: you can use the `c()` function)
+5. what is the length of `both` (hint: try the `length()` function)
+6. what class is `both`?
+7. divide `both` by 3, what happens?
+8. create a vector with elements 1 2 3 4 5 6 and call it `x`
+9. create another vector with elements 10 20 30 40 50 and call it `y`
+10. what happens if you try to add `x` and `y` together? why?
+11. append the value 60 onto the vector `y` (hint: you can use the `c()` function)
+12. add `x` and `y` together
+13. multiply `x` and `y` together. pay attention to how R performs operations on vectors of the same length.
 
 ## Bonus: Scripts, Markdown & Project {.smaller}
 
 -   Scripts are a great way to document *how* you analyzed your data.
 -   Like a recipe, scripts make it easy (for you and others) to reproduce your process *exactly*.
 -   You can also use RMarkdown, which allows you to blend code chunks with text.[^session_1-2]
--   To make your code even more organized and reproducible, use R Projects (We'll show an example).
+-   To make your code even more organized and reproducible, use [R Projects](https://www.r-bloggers.com/2020/01/rstudio-projects-and-working-directories-a-beginners-guide/).
 
-[^session_1-2]: Which is great for reports and quantitative master theses, for instance.
+[^session_1-2]: Which is great for these slides, reports and quantitative master theses, for instance.
 
 ## Ressources
 
