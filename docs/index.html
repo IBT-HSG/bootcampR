@@ -450,7 +450,7 @@
 <p><strong>Open Source</strong></p>
 <p>R is 100% free of charge and as a result, has a huge support community. it means that a huge community of R programmers will constantly develop an distribute new R functionality. It also means that you find a lot of help online as others ran into the same problems as you do.</p>
 <p><strong>Versatility</strong></p>
-<p>Yes, R is not Python. You can still use it to do a lot of stuff. If you can imagine an analytical task, you can almost certainly implement (and automate) it in R.</p>
+<p>Yes, R is not Python. You can still use it to do a lot of stuff. If you can imagine an analytic task, you can almost certainly implement (and automate) it in R.</p>
 <p><strong>RStudio</strong></p>
 <p>RStudio helps you write R code. You can easily and seamlessly organize and combine R code, analyses, plots, and written text into elegant documents all in one place.</p>
 </section>
@@ -470,7 +470,7 @@
 <li>Syntax highlighting,</li>
 <li>Code completion,</li>
 <li>Smart indentation,</li>
-<li>Workspaces (more on that later), etc.</li>
+<li>Work spaces (more on that later), etc.</li>
 </ul>
 </section>
 <section id="rstudio-gui" class="slide level2 smaller">
@@ -482,6 +482,19 @@
 <li>upper right: The <code>Environment Pane</code> displays the objects (e.g.&nbsp;data, variables, custom functions) you can access in your current memory.</li>
 <li>bottom right: This pane shows you many different, yet important, tabs. You can browse your directory, view plots, get help and see installed packages.</li>
 </ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Exercise</strong></p>
+</div>
+<div class="callout-content">
+<p>Create a script and save it.</p>
+</div>
+</div>
+</div>
 <div class="footer">
 <p>See this <a href="https://github.com/Howquez/r-basics/blob/main/material/rstudio-ide.pdf">cheat sheet</a></p>
 </div>
@@ -602,6 +615,19 @@
 <span id="cb4-5"><a href="#cb4-5"></a>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span>) <span class="sc">/</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">45</span></span>
 <span id="cb4-6"><a href="#cb4-6"></a><span class="dv">13</span> <span class="sc">%/%</span> <span class="dv">3</span></span>
 <span id="cb4-7"><a href="#cb4-7"></a><span class="dv">13</span> <span class="sc">%%</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Exercise</strong></p>
+</div>
+<div class="callout-content">
+<p>What does <em>Integer Division</em> (line 6) and <em>Remainder</em> (line 7) actually mean? Run these lines and try to find out while tweaking the numbers a little.</p>
+</div>
+</div>
 </div>
 </section>
 <section id="assign-values-to-objects" class="slide level2 scrollable">
@@ -879,9 +905,10 @@
 You can create obejcts such as vectors^[We'll cover this today.], data.frames^[On tomorrow's menu.], lists, etc. to store these data types in multiple dimensions.
 -->
 </section>
-<section id="vectors" class="slide level2">
+<section id="vectors" class="slide level2 scrollable">
 <h2>Vectors</h2>
-<p>We can <strong>c</strong>ombine objects <code>c()</code> command to create a vector. The documentation says:</p>
+<p>We can <strong>c</strong>ombine objects with the <code>c()</code> command to create a vector.</p>
+<p>The documentation says:</p>
 <blockquote>
 <p>The default method combines its arguments to form a vector. All arguments are coerced to a common type which is the type of the returned value […].</p>
 </blockquote>
@@ -889,6 +916,19 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb21-2"><a href="#cb21-2"></a>cntry <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"CH"</span>, <span class="st">"FR"</span>, <span class="st">"NL"</span>, <span class="st">"DK"</span>)</span>
 <span id="cb21-3"><a href="#cb21-3"></a>test  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="st">"seven"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Exercise</strong></p>
+</div>
+<div class="callout-content">
+<p>What does <em>All arguments are coerced to a common type</em> actually mean? Hint: use <code>class()</code> for <code>a</code> &amp; <code>test</code>.</p>
+</div>
+</div>
 </div>
 </section>
 <section id="break" class="slide level2">
@@ -903,76 +943,7 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 <span id="cb22-2"><a href="#cb22-2"></a>x <span class="sc">&lt;</span> <span class="sc">-</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="boolean-algebra" class="slide level2 smaller">
-<h2>Boolean Algebra</h2>
-<table>
-<colgroup>
-<col style="width: 24%">
-<col style="width: 24%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Operation</th>
-<th>Description</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>x &lt; y</td>
-<td>Less than</td>
-<td>TRUE if x is smaller than y. FALSE otherwhise</td>
-</tr>
-<tr class="even">
-<td>x &lt;= y</td>
-<td>Less or equal than</td>
-<td>TRUE if x is smaller or equal than y. FALSE otherwhise</td>
-</tr>
-<tr class="odd">
-<td>x &gt; y</td>
-<td>Greater than</td>
-<td>TRUE if x is greater than y. FALSE otherwhise</td>
-</tr>
-<tr class="even">
-<td>x &gt;= y</td>
-<td>Greater or equal than</td>
-<td>TRUE if x is greater or equal than y. FALSE otherwhise</td>
-</tr>
-<tr class="odd">
-<td>x == y</td>
-<td>Exactly equal to</td>
-<td>TRUE if and only if x is equal to y. FALSE otherwhise</td>
-</tr>
-<tr class="even">
-<td>x != y</td>
-<td>Not equal to</td>
-<td>TRUE if and only if x is not equal to y. FALSE otherwhise</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>!x</td>
-<td>Negation</td>
-<td>TRUE if x is equal to FALSE or 0. FALSE otherwhise</td>
-</tr>
-<tr class="odd">
-<td>x | y</td>
-<td>OR</td>
-<td>TRUE if x or y or both are TRUE . FALSE otherwhise</td>
-</tr>
-<tr class="even">
-<td>x &amp; y</td>
-<td>AND</td>
-<td>TRUE if and only if x and y are both TRUE . FALSE otherwhise</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="boolean-algebra-1" class="slide level2">
+<section id="boolean-algebra" class="slide level2">
 <h2>Boolean Algebra</h2>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1011,9 +982,78 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 </div>
 </div>
 </section>
+<section id="boolean-algebra-1" class="slide level2 smaller">
+<h2>Boolean Algebra</h2>
+<table>
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Description</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>x &lt; y</td>
+<td>Less than</td>
+<td>TRUE if x is smaller than y. FALSE otherwise</td>
+</tr>
+<tr class="even">
+<td>x &lt;= y</td>
+<td>Less or equal than</td>
+<td>TRUE if x is smaller or equal than y. FALSE otherwise</td>
+</tr>
+<tr class="odd">
+<td>x &gt; y</td>
+<td>Greater than</td>
+<td>TRUE if x is greater than y. FALSE otherwise</td>
+</tr>
+<tr class="even">
+<td>x &gt;= y</td>
+<td>Greater or equal than</td>
+<td>TRUE if x is greater or equal than y. FALSE otherwise</td>
+</tr>
+<tr class="odd">
+<td>x == y</td>
+<td>Exactly equal to</td>
+<td>TRUE if and only if x is equal to y. FALSE otherwise</td>
+</tr>
+<tr class="even">
+<td>x != y</td>
+<td>Not equal to</td>
+<td>TRUE if and only if x is not equal to y. FALSE otherwise</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>!x</td>
+<td>Negation</td>
+<td>TRUE if x is equal to FALSE or 0. FALSE otherwise</td>
+</tr>
+<tr class="odd">
+<td>x | y</td>
+<td>OR</td>
+<td>TRUE if x or y or both are TRUE . FALSE otherwise</td>
+</tr>
+<tr class="even">
+<td>x &amp; y</td>
+<td>AND</td>
+<td>TRUE if and only if x and y are both TRUE . FALSE otherwise</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="selecting" class="slide level2">
 <h2>Selecting</h2>
-<p>Let’s combine what we learned about vectors and boolean algebra.</p>
+<p>Let’s combine what we learned about vectors and Boolean algebra.</p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1113,7 +1153,7 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 <p><a href="https://hbctraining.github.io/Intro-to-R/lessons/08_intro_tidyverse.html">Source</a></p>
 </div>
 </section>
-<section id="exercise-1" class="slide level2">
+<section id="exercise-4" class="slide level2">
 <h2>Exercise</h2>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1134,10 +1174,24 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 </div>
 </div>
 </div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><code>install.packages("package_name")</code></p>
+<p><code>library(package_name)</code></p>
+</div>
+</div>
+</div>
 </section>
-<section id="packages-1" class="slide level2">
-<h2>Packages</h2>
-<p>Remember that the bottom right pannel has a <code>Packages</code> tab? Let’s inspect it.</p>
+<section id="find-installed-packages" class="slide level2">
+<h2>Find installed Packages</h2>
+<p>Remember that the bottom right panel has a <code>Packages</code> tab? Let’s inspect it.</p>
 </section>
 <section id="the-operator" class="slide level2 scrollable">
 <h2>The %&gt;% Operator</h2>
@@ -1196,7 +1250,7 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 </div>
 </div>
 </section>
-<section id="exercise-2" class="slide level2">
+<section id="exercise-5" class="slide level2">
 <h2>Exercise</h2>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1219,7 +1273,7 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 <section id="environment" class="slide level2">
 <h2>Environment</h2>
 <ul>
-<li>We can see all objects currently in our workspace by typing <code>ls()</code>.</li>
+<li>We can see all objects currently in our work space by typing <code>ls()</code>.</li>
 <li>You can remove objects using <code>rm()</code></li>
 </ul>
 <div class="cell">
