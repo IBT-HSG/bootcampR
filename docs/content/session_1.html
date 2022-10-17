@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.132">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>session_1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="session_1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="session_1_files/libs/quarto-html/quarto.js"></script>
+<script src="session_1_files/libs/quarto-html/popper.min.js"></script>
+<script src="session_1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="session_1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="session_1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="session_1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="session_1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="session_1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="session_1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="why-we-like-r" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="why-we-like-r">Why we like R</h2>
+<p><strong>Scripts vs.&nbsp;WYSIWYG (Excel or SPSS)</strong></p>
+<p>Analyses conducted in R are transparent, easily shareable, and reproducible. This helps not only others to run and understand your code but also your future selves.</p>
+<p><strong>Open Source</strong></p>
+<p>R is 100% free of charge and as a result, has a huge support community. it means that a huge community of R programmers will constantly develop an distribute new R functionality. It also means that you find a lot of help online as others ran into the same problems as you do.</p>
+<p><strong>Versatility</strong></p>
+<p>Yes, R is not Python. You can still use it to do a lot of stuff. If you can imagine an analytical task, you can almost certainly implement (and automate) it in R.</p>
+<p><strong>RStudio</strong></p>
+<p>RStudio helps you write R code. You can easily and seamlessly organize and combine R code, analyses, plots, and written text into elegant documents all in one place.</p>
+</section>
+<section id="examples-use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="examples-use-cases">Examples &amp; Use Cases</h2>
+<ul>
+<li><a href="https://beta.rstudioconnect.com/jjallaire/htmlwidgets-highcharter/htmlwidgets-highcharter.html#sales-by-category">Dashboards</a></li>
+<li><a href="https://howquez.github.io/Are-there-hidden-Benefits-of-Monitoring/Predictions.html#the-self-interested-agents-expected-utility">Master Thesis</a> <a href="https://github.com/Howquez/coopUncertainty/blob/main/analysis/quarto/paper.pdf">&amp; Research Paper</a></li>
+<li><a href="http://rstudio-pubs-static.s3.amazonaws.com/334864_28050f7860dd4927a596872f0cd52401.html">Fraud Detection</a></li>
+<li><a href="https://github.com/Howquez/r-basics/blob/main/session_1.qmd">These Slides</a></li>
+</ul>
+</section>
+<section id="r-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="r-rstudio">R &amp; RStudio</h2>
+<p>RStudio is an integrated development environment (IDE) for R. It helps the user effectively use R by making things easier with features such as:</p>
+<ul>
+<li>Syntax highlighting,</li>
+<li>Code completion,</li>
+<li>Smart indentation,</li>
+<li>Workspaces (more on that later), etc.</li>
+</ul>
+</section>
+<section id="rstudio-gui" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="rstudio-gui">RStudio GUI</h2>
+<p>Opening RStudio, you will see four window panes:</p>
+<ul>
+<li>bottom left: The <code>Console</code> executes code. You can use it to test code that is not saved.</li>
+<li>upper left: The <code>Source</code> opens your scripts, markdown documents or notebooks. It is the one you’ll use the most as it allows you to write and save both comments and code. You have to actively run the code, though.</li>
+<li>upper right: The <code>Environment Pane</code> displays the objects (e.g.&nbsp;data, variables, custom functions) you can access in your current memory.</li>
+<li>bottom right: This pane shows you many different, yet important, tabs. You can browse your directory, view plots, get help and see installed packages.</li>
+</ul>
+<div class="footer">
+<p>See this <a href="https://github.com/Howquez/r-basics/blob/main/material/rstudio-ide.pdf">cheat sheet</a></p>
+</div>
+</section>
+<section id="section" class="level2" data-background-image="https://github.com/IBT-HSG/bootcampR/blob/main/img/GUI.png?raw">
+<h2 data-background-image="https://github.com/IBT-HSG/bootcampR/blob/main/img/GUI.png?raw" class="anchored" data-anchor-id="section"></h2>
+</section>
+<section id="use-comments" class="level2">
+<h2 class="anchored" data-anchor-id="use-comments">Use comments</h2>
+<ul>
+<li>You can make comments using hashtags <code>#</code>.</li>
+<li>Text behind <code>#</code> will not be evaluated.</li>
+<li>You can use this to annotate your code or</li>
+<li>to <em>comment out</em> code blocks you don’t need currently.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Dear programmer:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># When I wrote this code, only god and I knew how it worked.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Now, only god knows it!</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Therefore, if you are trying to optimize this routine</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># and it fails (most surely), please increase this counter</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># as a warning for the next person</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># total_hours_wasted_here = 254</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer">
+<p>source: <a href="https://www.reddit.com/r/ProgrammerHumor/comments/8pdebc/only_god_and_i_knew/">reddit</a></p>
+</div>
+</section>
+<section id="vamos" class="level1">
+<h1>Vamos!</h1>
+<section id="operators" class="level2">
+<h2 class="anchored" data-anchor-id="operators">Operators</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>In the most simple form, R is an advanced calculator. Operators are symbols you know from any other program (Excel, etc.), such as <code>+</code> or <code>-</code>.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">x + y</td>
+<td style="text-align: left;">Addition</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">x - y</td>
+<td style="text-align: left;">Subtraction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x * y</td>
+<td style="text-align: left;">Multiplication</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">x / y</td>
+<td style="text-align: left;">Division</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x ^ y</td>
+<td style="text-align: left;">Exponentiation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">x %/% y</td>
+<td style="text-align: left;">Integer Division</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x %% y</td>
+<td style="text-align: left;">Remainder</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="algebra" class="level2">
+<h2 class="anchored" data-anchor-id="algebra">Algebra</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">4</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span>) <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span>) <span class="sc">/</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">45</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dv">13</span> <span class="sc">%/%</span> <span class="dv">3</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dv">13</span> <span class="sc">%%</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="assign-values-to-objects" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="assign-values-to-objects">Assign Values to Objects</h2>
+<p>Assume you have conducted a more complicated calculation than <code>13 %% 5</code> as a intermediate part of your analysis. In that case, you want to store the result instead of performing the calculation over and over again.</p>
+<ul>
+<li>R can keep several objects in memory at the same time</li>
+<li>To distinguish them, objects have names.</li>
+<li>Objects are assigned with <code>&lt;-</code> or <code>=</code> (we recommend the former).</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># don't</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dv">13</span> <span class="sc">%%</span> <span class="dv">5</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 3</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">13</span> <span class="sc">%%</span> <span class="dv">5</span>) <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 6</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># do</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">13</span> <span class="sc">%%</span> <span class="dv">5</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>a <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="assign-values-to-objects-1" class="level2">
+<h2 class="anchored" data-anchor-id="assign-values-to-objects-1">Assign Values to Objects</h2>
+<p>To inspect the objects you have just created you can <em>call</em> them.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Alternatively, you can take a look into your <code>Environment</code>. Do you remember where to find it?</p>
+</section>
+<section id="naming-conventions" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="naming-conventions">Naming Conventions</h2>
+<ul>
+<li>Variable and function names should be lowercase.</li>
+<li>Use an underscore <code>_</code> to separate words within a name.</li>
+<li>Strive for names that are concise and meaningful (this is not easy!).</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>day_one</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>day_1</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>first_day_of_the_month</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>dayone</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Case Sensitivity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Uppercase and lowercase letters are treated as distinct.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">42</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> A</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is not only important, but also helpful in some cases. However, try not to name two different objects with the same name and varying cases. This will confuse you later on.</p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Importantly, be careful to not reassign an object unintentionally.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="dv">42</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>a</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 3.73767</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># imagine to do some stuff in between...</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ...forgot about your object...</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ...and that you want to create another object called "a".</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">40</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>a</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 42</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Where possible, avoid using names of special characters, existing functions and variables. Doing so will cause confusion for the readers of your code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>T <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Also, try to avoid special symbols such as <code>+</code>, for example. If you really need them, you can escape them using the back tick `</p>
+</div>
+</div>
+</section>
+<section id="boolean-algebra" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="boolean-algebra">Boolean Algebra</h2>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Description</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>x &lt; y</td>
+<td>Less than</td>
+<td>TRUE if x is smaller than y. FALSE otherwhise</td>
+</tr>
+<tr class="even">
+<td>x &lt;= y</td>
+<td>Less or equal than</td>
+<td>TRUE if x is smaller or equal than y. FALSE otherwhise</td>
+</tr>
+<tr class="odd">
+<td>x &gt; y</td>
+<td>Greater than</td>
+<td>TRUE if x is greater than y. FALSE otherwhise</td>
+</tr>
+<tr class="even">
+<td>x &gt;= y</td>
+<td>Greater or equal than</td>
+<td>TRUE if x is greater or equal than y. FALSE otherwhise</td>
+</tr>
+<tr class="odd">
+<td>x == y</td>
+<td>Exactly equal to</td>
+<td>TRUE if and only if x is equal to y. FALSE otherwhise</td>
+</tr>
+<tr class="even">
+<td>x != y</td>
+<td>Not equal to</td>
+<td>TRUE if and only if x is not equal to y. FALSE otherwhise</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>!x</td>
+<td>Negation</td>
+<td>TRUE if x is equal to FALSE or 0. FALSE otherwhise</td>
+</tr>
+<tr class="odd">
+<td>x | y</td>
+<td>OR</td>
+<td>TRUE if x or y or both are TRUE . FALSE otherwhise</td>
+</tr>
+<tr class="even">
+<td>x &amp; y</td>
+<td>AND</td>
+<td>TRUE if and only if x and y are both TRUE . FALSE otherwhise</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="boolean-algebra-1" class="level2">
+<h2 class="anchored" data-anchor-id="boolean-algebra-1">Boolean Algebra</h2>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A Boolean expression is a logical statement that is either <code>TRUE</code> or <code>FALSE.</code></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">&lt;</span> <span class="dv">4</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">&gt;=</span> <span class="dv">4</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">==</span> <span class="dv">4</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">!=</span> <span class="dv">4</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">TRUE</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="break" class="level2">
+<h2 class="anchored" data-anchor-id="break">Break</h2>
+<p>please answer the survey <img src="img/QR_survey.png" class="img-fluid"></p>
+</section>
+<section id="data-types" class="level2">
+<h2 class="anchored" data-anchor-id="data-types">Data Types</h2>
+<p>There are many different data types. We will focus on the most basic ones:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Data Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Numeric</td>
+<td><code>42</code></td>
+</tr>
+<tr class="even">
+<td>Character</td>
+<td><code>"forty two"</code></td>
+</tr>
+<tr class="odd">
+<td>Logical</td>
+<td><code>TRUE</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>class()</code> to identify data types. <code>class(42)</code> will return <code>numeric</code>, for instance. What’s the output of <code>class(NA)</code>?</p>
+</div>
+</div>
+<!--
+You can create obejcts such as vectors^[We'll cover this today.], data.frames^[On tomorrow's menu.], lists, etc. to store these data types in multiple dimensions.
+-->
+</section>
+<section id="vectors" class="level2">
+<h2 class="anchored" data-anchor-id="vectors">Vectors</h2>
+<p>We can <strong>c</strong>ombine objects <code>c()</code> command to create a vector. The documentation says:</p>
+<blockquote class="blockquote">
+<p>The default method combines its arguments to form a vector. All arguments are coerced to a common type which is the type of the returned value […].</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cntry <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"CH"</span>, <span class="st">"FR"</span>, <span class="st">"NL"</span>, <span class="st">"DK"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>test  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="st">"seven"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="subsetting" class="level1">
+<h1>Subsetting</h1>
+<p><code>[]</code> is your friend.</p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<p>So far, you have seen at least two built-in functions: <code>class()</code> &amp; <code>c()</code>. Another useful function is <code>mean()</code>.</p>
+<p>You can recognize a function either via <code>class()</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> or by the parentheses.</p>
+<p>To call a function, you have to provide some argument(s). The <code>mean()</code> function needs some sort of vector, for instance.</p>
+</section>
+<section id="how-to-get-help" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="how-to-get-help">How to get Help?</h2>
+<p>Assume you want to learn how to use the <code>mean()</code> function.</p>
+<ul>
+<li><code>?mean</code> or <code>help(mean)</code></li>
+<li>Use <a href="https://stackoverflow.com/questions/16801340/mean-in-r-by-using-mean">stackoverflow</a></li>
+</ul>
+</section>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<ul>
+<li><p>Packages are the fundamental units of reproducible R code. They include reusable R functions, the documentation that describes how to use them, and sample data.</p></li>
+<li><p>The comprehensive R Archive Network currently features <a href="https://cran.r-project.org/index.html">18.694 packages</a>.</p></li>
+<li><p>The majority of packages is quite niche-specific.</p></li>
+<li><p>To get started, we’ll show you how to install <a href="https://www.tidyverse.org/">Tidyverse</a>, an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.</p></li>
+</ul>
+</section>
+<section id="section-1" class="level2" data-background-image="https://hbctraining.github.io/Intro-to-R/img/tidyverse_website.png" data-background-size="contain" data-background-repeat="no-repeat">
+<h2 data-background-image="https://hbctraining.github.io/Intro-to-R/img/tidyverse_website.png" data-background-size="contain" data-background-repeat="no-repeat" class="anchored" data-anchor-id="section-1"></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># run this only once</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"package_name"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># run this at the beginning of each session (if needed)</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(package_name)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># your turn: install &amp; load tidyverse</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer">
+<p><a href="https://hbctraining.github.io/Intro-to-R/lessons/08_intro_tidyverse.html">Source</a></p>
+</div>
+</section>
+<section id="the-operator" class="level2">
+<h2 class="anchored" data-anchor-id="the-operator">The %&gt;% Operator</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="base-r" class="level3">
+<h3 class="anchored" data-anchor-id="base-r">Base R</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="fu">mean</span>(a, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] "3"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-pipe" class="level3">
+<h3 class="anchored" data-anchor-id="the-pipe">The %&gt;% Pipe</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">%&gt;%</span> <span class="fu">mean</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">as.character</span>()</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] "3"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>::: :::</p>
+</section>
+</section>
+<section id="exercise" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercise">Exercise</h2>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Generate three objects
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>my_pi</code> should contain the number pi (try out the command <code>pi</code>)</li>
+<li>a vector, called <code>a</code>, should contain the numbers <code>1</code> to <code>3</code></li>
+<li><code>b</code> should the multiplication of <code>1*pi</code>, <code>2*pi</code> <code>3*pi</code></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="workspace-environment" class="level2">
+<h2 class="anchored" data-anchor-id="workspace-environment">Workspace &amp; Environment</h2>
+<ul>
+<li>We can see all objects currently in our workspace by typing <code>ls()</code>.</li>
+<li>You can remove objects using <code>rm()</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(a)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># What do you think is going to happen here?</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/IBT-HSG/bootcampR/blob/main/img/Workspace.png?raw=true" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Don’t!</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="bonus-scripts-markdown-project" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="bonus-scripts-markdown-project">Bonus: Scripts, Markdown &amp; Project</h2>
+<ul>
+<li>Scripts are a great way to document <em>how</em> you analyzed your data.</li>
+<li>Like a recipe, scripts make it easy (for you and others) to reproduce your process <em>exactly</em>.</li>
+<li>You can also use RMarkdown, which allows you to blend code chunks with text.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+<li>To make your code even more organized and reproducible, use R Projects (We’ll show an example).</li>
+</ul>
+</section>
+<section id="ressources" class="level2">
+<h2 class="anchored" data-anchor-id="ressources">Ressources</h2>
+<p>swirl is a great start as it teaches you R interactively, at your own pace, and right in the R console! Run the following code to get started.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"swirl"</span>) <span class="co"># install this package once</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(swirl)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">siwrl</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ressources-1" class="level2">
+<h2 class="anchored" data-anchor-id="ressources-1">Ressources</h2>
+<p>Resources we found helpful creating the slides:</p>
+<ul>
+<li><a href="https://bookdown.org/ndphillips/YaRrr/">YaRrrr</a></li>
+<li><a href="https://users.phhp.ufl.edu/rlp176/Courses/PHC6089/R_notes/index.html">Introduction to R by John Mushcelli and Andrew Jaffe</a></li>
+<li><a href="http://r4ds.had.co.nz/">R for Data Science</a></li>
+</ul>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><code>class(class)</code> returns <code>"function"</code>, for instance.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Which is great for reports and quantitative master theses, for instance.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

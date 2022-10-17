@@ -15,8 +15,6 @@ If you haven't done so already, please install R as well as RStudio now:
 
 ![](img/QR_setup.png)
 
-
-
 # Outline
 
 ```{r packages}
@@ -30,10 +28,10 @@ pacman::p_load(patchwork, tidyverse, tidydatatutor)
 
 In this session we will
 
-- make sure [R & RStudio](https://learnr-examples.shinyapps.io/ex-setup-r/) are up and running on all of your machines,
-- show why we like R,
-- introduce you to RStudio's User Interface,
-- demonstrate some basic concepts and data structures.
+-   make sure [R & RStudio](https://learnr-examples.shinyapps.io/ex-setup-r/) are up and running on all of your machines,
+-   show why we like R,
+-   introduce you to RStudio's User Interface,
+-   demonstrate some basic concepts and data structures.
 
 ## Session 2
 
@@ -44,8 +42,6 @@ Exercise & Break
 
 3.  Manipulate data
 4.  Analyze data
-
-
 
 ## Session 3
 
@@ -60,12 +56,12 @@ Exercise & Time for Questions
 
 # Welcome to Session 1
 
-{{< include sessions/session_1.qmd >}}
+{{< include content/session_1.qmd >}}
 
 # Welcome to Session 2
 
-{{< include sessions/session_2.qmd >}}
+{{< include content/session_2.qmd >}}
 
 # Welcome to Session 3
 
-{{< include sessions/session_3.qmd >}}
+{{< include content/session_3.qmd >}}
