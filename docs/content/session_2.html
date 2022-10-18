@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.132">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>session_2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="session_2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="session_2_files/libs/quarto-html/quarto.js"></script>
+<script src="session_2_files/libs/quarto-html/popper.min.js"></script>
+<script src="session_2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="session_2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="session_2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="session_2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="session_2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="session_2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="session_2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="recap-session-1---what-we-did" class="level2">
+<h2 class="anchored" data-anchor-id="recap-session-1---what-we-did">Recap Session 1 - What we did</h2>
+<ul>
+<li>Setting up R</li>
+<li>Get to know the UI</li>
+<li>Objects, classes, operations</li>
+<li>Packages</li>
+</ul>
+</section>
+<section id="any-experienced-difficulties-anything-we-should-repeat" class="level2">
+<h2 class="anchored" data-anchor-id="any-experienced-difficulties-anything-we-should-repeat">Any experienced difficulties? Anything we should repeat?</h2>
+</section>
+<section id="recap-packages-in-r" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="recap-packages-in-r">Recap: Packages in R</h2>
+<p>Beyond <code>base</code> R’s core functions, packages provide additional functionality for (almost) <a href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">all of your problems</a>.</p>
+<p>Some of the most widely-used packages are included in the <a href="https://www.tidyverse.org/packages/#core-tidyverse"><code>tidyverse</code></a> collection <code>install.packages("tidyverse")</code> and <code>library(tidyverse)</code> brings you most of the functions you will need (at this point):</p>
+<p>For example:</p>
+<ul>
+<li>manipulate data: <code>dplyr</code></li>
+<li>tidy data: <code>tidyr</code></li>
+<li>visualize data: <code>ggplot2</code></li>
+</ul>
+<p>There are many more packages <a href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">available</a></p>
+<div class="aside">
+<p>Info on any package can be found in its CRAN documentation.</p>
+</div>
+</section>
+<section id="recap-practical-advice" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="recap-practical-advice">Recap: Practical Advice</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Failing to load a package is a common <code>error</code> source - one you can easily avoid by loading everything you need right at the start.</p>
+</div>
+</div>
+<p>This is how the very beginning of your code could look like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/haukeroggenkamp/Documents/coursework/bootcampR"</span>) <span class="co">#set your working directory</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ggplot2") # only needed for installing once</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("tidyverse") # only needed for installing once</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># load package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># load package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+✔ tibble  3.1.8     ✔ dplyr   1.0.9
+✔ tidyr   1.2.0     ✔ stringr 1.4.0
+✔ readr   2.1.2     ✔ forcats 0.5.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+</div>
+<div class="aside">
+<p>You might also directly specify a package (without loading it globally) by using the following syntax: <code>tidyverse::mutate()</code></p>
+</div>
+</section>
+<section id="overview-session-2---working-with-data" class="level2">
+<h2 class="anchored" data-anchor-id="overview-session-2---working-with-data">Overview Session 2 - Working with data</h2>
+<ol type="1">
+<li>Read in and export data</li>
+<li>Explore your data</li>
+</ol>
+<p>Exercise &amp; Break</p>
+<ol start="3" type="1">
+<li>Manipulate data</li>
+<li>Analyze data</li>
+</ol>
+<p>Exercise &amp; Time for Questions</p>
+</section>
+<section id="whats-next-we-need-some-data-to-work-with" class="level1">
+<h1>What’s next: We need some data to work with!</h1>
+<section id="reading-in-and-storing-data" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="reading-in-and-storing-data">Reading in and storing data</h2>
+<p>Data can come in various file formats, e.g., <code>.csv</code>, <code>.xlsx</code>, <code>.sav</code> etc. We can read all these files into our <code>environment</code>.</p>
+<p>For that, we always specify the location path to the local data source (and we directly assign our data to an object called <code>data</code>)</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Reading in</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../data/raw/student_experiment.csv"</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">sep =</span> <span class="st">";"</span>, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">header =</span> <span class="cn">TRUE</span>) <span class="co"># you need to adapt this to your working directory file path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Saving</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(<span class="at">x    =</span> data, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">file =</span> <span class="st">"../data/processed/student_experiment_processed.csv"</span>) <span class="co"># writes the final dataframe as a .csv file into your specified directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Good to know
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We recommend text files (<code>.csv</code> or <code>.txt</code>), however, there are packages for reading in other file formats (<code>haven</code>, <code>foreign</code> or <code>rio</code>).</p>
+</div>
+</div>
+</section>
+<section id="exploring-data-iii" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exploring-data-iii">Exploring data I/II</h2>
+<p>You should know how your data is structured before processing it and R has some neat functions to do that:</p>
+<ul>
+<li><code>head(data)</code> shows the first few rows of your data</li>
+<li><code>names(data)</code> shows the column or variable names of your data</li>
+<li><code>view(data)</code> shows the entire data in a new window</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  lfdn external_lfdn tester dispcode lastpage
+1    2             0      0       31  6061029
+2    4             0      0       31  6061029
+3   11             0      0       31  6061029
+4   13             0      0       31  6061029
+5   14             0      0       31  6061029</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "lfdn"          "external_lfdn" "tester"        "dispcode"     
+ [5] "lastpage"      "quality"       "duration"      "expectation"  
+ [9] "r_experience"  "interest_data"</code></pre>
+</div>
+</div>
+</section>
+<section id="exploring-data-iiii" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exploring-data-iiii">Exploring data II/II</h2>
+<p>To get a feeling for your data, you can investigate summary statistics:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>rent) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  400.0   532.5   640.0   814.8   712.5  3000.0       1 </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>rstatix<span class="sc">::</span><span class="fu">get_summary_stats</span>(data, rent, <span class="at">type=</span><span class="st">"five_number"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+  variable     n   min   max    q1 median    q3
+  &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 rent        12   400  3000  532.    640  712.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>We can calculate the mean rent of this course individually:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>rent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>How about the course’s gender distribution?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>gender) <span class="co"># 1 = male, 2 = female</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+1 2 
+8 5 </code></pre>
+</div>
+</div>
+<p>Or the mean shoe size by gender?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">aggregate</span>(shoesize <span class="sc">~</span> gender, data, <span class="at">FUN =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender shoesize
+1      1   43.125
+2      2   37.800</code></pre>
+</div>
+</div>
+</section>
+<section id="break-10min-and-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="break-10min-and-exercises">Break (10min) and Exercises</h2>
+<ul>
+<li><p>Load the survey data and assign it to a dataframe object named <code>df</code> (if not done so already)</p></li>
+<li><p>How many rows and columns does <code>df</code> contain?</p></li>
+<li><p>Calculate simple summary statistics for the <code>df</code></p></li>
+<li><p>Calculate the standard error for the variable <code>shoesize</code></p></li>
+</ul>
+</section>
+<section id="manipulate-your-data" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="manipulate-your-data">Manipulate your data</h2>
+<p>Some important functions from <code>dplyr</code>:</p>
+<ul>
+<li><code>select</code> Choose which columns to include.</li>
+<li><code>filter</code> Filter which rows to include.</li>
+<li><code>arrange</code> Sort the data, by size for continuous variables, by date, or alphabetically.</li>
+<li><code>group_by</code> Group the data by a categorical variable.</li>
+<li><code>n()</code> Count the number of records. Here there isn’t a variable in the brackets of the function, because the number of records applies to all variables.</li>
+<li><code>mutate</code> Create new column(s) in the data, or change existing column(s).</li>
+<li><code>rename</code> Rename column(s).</li>
+<li><code>bind_rows</code> Append one data data frame to another, combining data from columns with the same name.</li>
+</ul>
+</section>
+<section id="manipulate-select-and-filter" class="level2">
+<h2 class="anchored" data-anchor-id="manipulate-select-and-filter">Manipulate: <code>select</code> and <code class="smaller">filter</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, rent) <span class="co"># show just the specified columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, rent) <span class="co"># show just the columns gender and rent</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>t[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender rent
+1      2   NA
+2      2 3000
+3      1  950</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender<span class="sc">==</span><span class="dv">1</span> <span class="sc">&amp;</span> shoesize <span class="sc">==</span><span class="dv">44</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(gender, shoesize) <span class="co"># show just males with a shoesize of 44</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender shoesize
+1      1       44
+2      1       44
+3      1       44</code></pre>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Recap: <code>%&gt;%</code>(pipe) operator
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>%&gt;%</code> makes code easier to write and read. It works similar to a + sign and is an integral part of the tidyverse syntax</p>
+</div>
+</div>
+</section>
+<section id="manipulate-arrange-and-n" class="level2">
+<h2 class="anchored" data-anchor-id="manipulate-arrange-and-n">Manipulate: <code>arrange</code> and <code class="smaller">n</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> rent <span class="sc">&gt;=</span> <span class="dv">900</span>) <span class="sc">%&gt;%</span> <span class="co"># only females with rent above 900CHF</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>     <span class="fu">arrange</span>(<span class="fu">desc</span>(rent)) <span class="sc">%&gt;%</span> <span class="co"># sort by descending rent </span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">select</span>(gender, rent) <span class="co"># show only the columns gender and rent</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender rent
+1      2 3000</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="co"># only female</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()) <span class="co"># number of instances written in new column with name n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  n
+1 5</code></pre>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<code>summarise()</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>summarise()</code> reduces multiple values down to a single summary.</p>
+</div>
+</div>
+</section>
+<section id="manipulate-group_by" class="level2">
+<h2 class="anchored" data-anchor-id="manipulate-group_by">Manipulate: <code class="smaller">group_by</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span> <span class="co"># group by gender</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(), <span class="co"># counte the instances and write in column named n</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_rent =</span> <span class="fu">mean</span> (rent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="co"># calculate the mean height and write in avg_height column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  gender     n avg_height avg_rent
+   &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+1      1     8       182.     616.
+2      2     5       158.    1212 </code></pre>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Removing <code>NAs</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>na.rm</code> allows you to exclude instances of missing value. This helps to prevent <code>error</code> messages. But check why is that data missing!</p>
+</div>
+</div>
+</section>
+<section id="manipulate-mutate-and-rename" class="level2">
+<h2 class="anchored" data-anchor-id="manipulate-mutate-and-rename">Manipulate: <code>mutate</code> and <code class="smaller">rename</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(gender, <span class="at">sq_height =</span> height <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="co"># adds variable that is a function of existing ones</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, sq_height) <span class="co"># ashow only the columns gender and the new variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(gender, <span class="at">sq_height =</span> height <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="co"># adds variable that is a function of existing ones</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, sq_height)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>t[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  gender sq_height
+1      2     23104
+2      2     21025
+3      1     34225
+4      1     32400
+5      1     34225</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cost_for_living =</span> rent, <span class="co"># renames a column (new name = old name)</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cost_for_living =</span> rent,</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>t[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  lfdn external_lfdn tester dispcode lastpage
+1    2             0      0       31  6061029
+2    4             0      0       31  6061029
+3   11             0      0       31  6061029
+4   13             0      0       31  6061029
+5   14             0      0       31  6061029</code></pre>
+</div>
+</div>
+</section>
+<section id="put-it-all-together" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="put-it-all-together">Put it all together</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span>  <span class="co"># Start with the data </span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>               <span class="fu">filter</span>(r_experience <span class="sc">&lt;=</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="co"># Oonly those with R experience below 6</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span>    <span class="co"># Group by gender</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>               <span class="fu">summarise</span>( </span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">age.mean =</span> <span class="fu">mean</span>(age),      <span class="co"># Define first summary...</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">height.mean =</span> <span class="fu">median</span>(height), <span class="co"># you get the idea...</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>                        <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="co"># How many are in each group?</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">select</span>(age.mean, height.mean, n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  age.mean height.mean     n
+     &lt;dbl&gt;       &lt;int&gt; &lt;int&gt;
+1     22.9         185     7
+2     27.4         154     5</code></pre>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Help
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It can sometimes be hard to understand what a command is doing with the data. <a href="https://tidydatatutor.com/vis.html">Tidy data tutor</a> visualizes what is happening to your data in every code step which is extremely helpful.</p>
+</div>
+</div>
+</section>
+<section id="break-10-min-and-exercises" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="break-10-min-and-exercises">Break (10 min) and Exercises</h2>
+<ul>
+<li><p>Build a new dataframe called <code>df_demographics</code> that contains just the demographic information from our survey data</p></li>
+<li><p>Rename the <code>gender</code> column to <code>sex</code> column in this dataframe</p></li>
+<li><p>Calculate the mean age by gender in this dataframe</p></li>
+<li><p>Calculate the logarithmic rent of all male participants of the AIBS course and store it in a column named <code>log_rent</code></p></li>
+</ul>
+</section>
+<section id="advanced-join-two-dataframes" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="advanced-join-two-dataframes">Advanced: Join two dataframes</h2>
+<ul>
+<li><code>inner_join</code>: To keep only rows that match from the data frames, specify the argument <code>all=FALSE</code>. To keep all rows from both data frames, specify <code>all=TRUE</code>.</li>
+<li><code>left_join</code>: To include all the rows of your data frame x and only those from y that match.</li>
+</ul>
+<p>Example: Calculate year born of members of this class:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>age_table <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"../data/raw/age_table.csv"</span>) <span class="co"># read in age table from directory</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>data_new <span class="ot">&lt;-</span> <span class="fu">left_join</span>(data, <span class="fu">select</span>(age_table, <span class="fu">c</span>(X2022_after, year_born)), <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"age"</span> <span class="ot">=</span> <span class="st">"X2022_after"</span>)) <span class="co"># perform join to get the birthyear</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>data_new <span class="sc">%&gt;%</span> <span class="fu">select</span>(age, year_born) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(age<span class="sc">&lt;</span><span class="dv">24</span>) <span class="co"># show the results</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  age year_born
+1  22      2000
+2  22      2000
+3  21      2001
+4  23      1999
+5  22      2000
+6  23      1999
+7  22      2000</code></pre>
+</div>
+</div>
+<div class="aside">
+<p><a href="https://paldhous.github.io/ucb/2018/dataviz/week7.html">Here</a> is a great tutorial on applying these functions.</p>
+</div>
+</section>
+<section id="advanced-long-to-wide-dataformat" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="advanced-long-to-wide-dataformat">Advanced: Long to wide dataformat</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><code>data_long</code> to <code>data_wide</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(data) <span class="co"># number of columns in long format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 55</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data_wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(<span class="at">data =</span> data, <span class="at">names_from =</span> age, <span class="at">values_from =</span> height)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(data_wide) <span class="co"># number of columns in wide format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 60</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>The arguments to pivot_longer():</p>
+<ul>
+<li>data: Data object</li>
+<li>names_from: Name of column containing the new column names</li>
+<li>values_from: Name of column containing values</li>
+</ul>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Reverse Way
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The reverse way from wide to long format via <code>pivot_wider</code></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="analyze-your-data-statistical-analysis-with-r" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="analyze-your-data-statistical-analysis-with-r">Analyze your data: Statistical Analysis with R</h2>
+<p>You (R) can do a lot:</p>
+<ul>
+<li><em>t-Test</em></li>
+<li><em>ANOVA</em></li>
+<li><em>Regression</em></li>
+<li>Structural Equation Models</li>
+<li>Multilevel Models</li>
+<li>Machine Learning Models</li>
+<li>Bayesian Statistics</li>
+<li>…</li>
+</ul>
+</section>
+<section id="stats-1-t-test" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="stats-1-t-test">Stats 1: t-Test</h2>
+<p>Recap: Mean comparisons (&gt;= 2 groups)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">formula =</span> rent <span class="sc">~</span> gender, <span class="at">data =</span> data, <span class="at">alternative =</span> <span class="st">'two.sided'</span>) <span class="co"># base R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  rent by gender
+t = -0.99236, df = 3.0711, p-value = 0.3926
+alternative hypothesis: true difference in means between group 1 and group 2 is not equal to 0
+95 percent confidence interval:
+ -2481.5  1290.0
+sample estimates:
+mean in group 1 mean in group 2 
+         616.25         1212.00 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>rstatix<span class="sc">::</span><span class="fu">t_test</span>(<span class="at">data =</span> data, <span class="at">formula =</span> rent<span class="sc">~</span>gender, <span class="at">alternative =</span> <span class="st">"two.sided"</span>) <span class="co"># the same works with other packages, here `rstatix`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 8
+  .y.   group1 group2    n1    n2 statistic    df     p
+* &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 rent  1      2          8     5    -0.992  3.07 0.393</code></pre>
+</div>
+</div>
+<p>Notice the difference in the code?</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are similar functions <code>t.test</code> and <code>t_test</code> from <em>different</em> packages using <em>different</em> syntax</p>
+</div>
+</div>
+</section>
+<section id="stats-2-analysis-of-variance" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="stats-2-analysis-of-variance">Stats 2: Analysis of Variance</h2>
+<p>Recap: Mean comparisons (&gt; 2 groups)</p>
+<p>Is there a difference in XYZ?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>course <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data<span class="sc">$</span>education) <span class="co"># this ensures our factor to be of the right class</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(<span class="at">formula =</span> rent<span class="sc">~</span>education, <span class="at">data =</span> data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df  Sum Sq Mean Sq F value Pr(&gt;F)
+education    1  573944  573944   1.176  0.304
+Residuals   10 4882419  488242               
+1 Beobachtung als fehlend gelöscht</code></pre>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The underlying grouping variable needs to be <code>as.factor</code>. Always check first!</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(<span class="at">formula =</span> rent<span class="sc">~</span>education, <span class="at">data =</span> data)) <span class="co"># Same analysis possible by running a linear model and wrapping the `anova` function for omnibus test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Variance Table
+
+Response: rent
+          Df  Sum Sq Mean Sq F value Pr(&gt;F)
+education  1  573944  573944  1.1755 0.3037
+Residuals 10 4882419  488242               </code></pre>
+</div>
+</div>
+</section>
+<section id="stats-3-regression" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="stats-3-regression">Stats 3: Regression</h2>
+<p>Recap: Relationship between two (or more) variables</p>
+<p>Is there a relationship between height and shoesize?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> shoesize<span class="sc">~</span>height, <span class="at">data =</span> data)) <span class="co"># runs a linear model and provides statistical summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = shoesize ~ height, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.6840 -1.2487 -0.3436  0.9486  4.0510 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  6.96106    5.93868   1.172 0.265895    
+height       0.19729    0.03421   5.767 0.000125 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.871 on 11 degrees of freedom
+Multiple R-squared:  0.7514,    Adjusted R-squared:  0.7288 
+F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
+</div>
+</div>
+</section>
+<section id="remember-live-saving-advice-how-to-get-help-when-stuck" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="remember-live-saving-advice-how-to-get-help-when-stuck">Remember: Live-saving advice: How to get help when stuck?</h2>
+<ul>
+<li><code>?lm()</code> will immediately provide you with Help in the panel</li>
+<li><a href="https://cran.r-project.org/">CRAN</a> documentations and Cheat Sheets are a comprehensive source of support (hard to read at the beginning)</li>
+<li>Google is your friend: Chance is high that someone else had a very similar question to yours on <a href="https://stackoverflow.com/questions/tagged/r">stackoverflow.com</a>; try different search terms and exact language</li>
+</ul>
+<div class="aside">
+<p>R studio provides a long list of <a href="https://www.rstudio.com/resources/cheatsheets/">cheat sheets</a></p>
+</div>
+</section>
+<section id="jump-in-time-for-exercising" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="jump-in-time-for-exercising">Jump in: Time for exercising</h2>
+<section id="basic-exercises" class="level3">
+<h3 class="anchored" data-anchor-id="basic-exercises">Basic Exercises</h3>
+<ul>
+<li><p>Regress <code>rent</code> on <code>height</code> and <code>shoesize</code></p></li>
+<li><p>Calculate the mean difference between <code>r_experience</code> by <code>class</code> and perform a t-test</p></li>
+<li><p>Do <code>r_experience</code> and <code>interest_data</code> correlate?</p></li>
+</ul>
+</section>
+<section id="advanced-exercises" class="level3 smaller">
+<h3 class="smaller anchored" data-anchor-id="advanced-exercises">Advanced exercises:</h3>
+<ul>
+<li>Add a column containing the shoe size converted to the US system and correlate US with EU shoesize</li>
+<li>Hint: load the <code>shoesizes</code> dataset from Canvas and look for potential information that might match with our data</li>
+</ul>
+<!-- -->
+</section>
+</section>
+<section id="prepare-your-questions-for-tomorrows-qa" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-your-questions-for-tomorrows-qa">Prepare your questions for tomorrow’s Q&amp;A</h2>
+<ul>
+<li><p>Specific to your projects?</p></li>
+<li><p>Put them on Canvas or bring them to the lecture</p></li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

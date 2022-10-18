@@ -465,7 +465,7 @@
 </section>
 <section id="r-rstudio" class="slide level2">
 <h2>R &amp; RStudio</h2>
-<p>RStudio is an integrated development environment (IDE) for R. It helps the user effectively use R by making things easier with features such as:</p>
+<p>RStudio is an integrated development environment (IDE) for R. It helps the user to effectively use R by making things easier with features such as:</p>
 <ul>
 <li>Syntax highlighting,</li>
 <li>Code completion,</li>
@@ -986,8 +986,8 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 <h2>Boolean Algebra</h2>
 <table>
 <colgroup>
-<col style="width: 24%">
-<col style="width: 24%">
+<col style="width: 25%">
+<col style="width: 25%">
 <col style="width: 50%">
 </colgroup>
 <thead>
@@ -1112,7 +1112,7 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 </section>
 <section id="functions" class="slide level2">
 <h2>Functions</h2>
-<p>So far, you have seen at least two built-in functions: <code>class()</code> &amp; <code>c()</code>. Another useful function is <code>mean()</code>.</p>
+<p>So far, you have seen several built-in functions: <code>class()</code> &amp; <code>c()</code>.</p>
 <p>You can recognize a function either via <code>class()</code><sup>1</sup> or by the parentheses.</p>
 <p>To call a function, you have to provide some argument(s). The <code>mean()</code> function needs some sort of vector, for instance.</p>
 <aside><ol class="aside-footnotes"><li id="fn1"><p><code>class(class)</code> returns <code>"function"</code>, for instance.</p></li></ol></aside></section>
@@ -1168,8 +1168,8 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 <li>Install <code>tidyverse</code>, which contains the lubridate package with a function called <code>year()</code></li>
 <li>get the documentation for the following function: <code>Sys.Date()</code></li>
 <li>execute <code>Sys.Date() %&gt;% year()</code></li>
-<li>Load <code>tidyverse</code></li>
-<li>execute <code>Sys.Date() %&gt;% year()</code></li>
+<li>Load <code>lubridate</code></li>
+<li>execute <code>Sys.Date() %&gt;% lubridate::year()</code></li>
 </ol>
 </div>
 </div>
@@ -1234,7 +1234,7 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 <ul>
 <li>create a vector called <code>vec</code> containing <code>1</code>, <code>2</code>, <code>3</code>, <code>99</code></li>
 <li>calculate the <code>mean()</code> using both methods</li>
-<li>round the results (one digit) and assign it to objects called <code>res1</code> &amp; <code>res1</code></li>
+<li>round the results (one digit) and assign it to objects called <code>res1</code> &amp; <code>res2</code></li>
 <li>show that both are equal</li>
 </ul>
 </div>

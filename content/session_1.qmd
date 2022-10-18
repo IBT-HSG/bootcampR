@@ -25,7 +25,7 @@ RStudio helps you write R code. You can easily and seamlessly organize and combi
 
 ## R & RStudio
 
-RStudio is an integrated development environment (IDE) for R. It helps the user effectively use R by making things easier with features such as:
+RStudio is an integrated development environment (IDE) for R. It helps the user to effectively use R by making things easier with features such as:
 
 -   Syntax highlighting,
 -   Code completion,
@@ -129,12 +129,10 @@ In the most simple form, R is an advanced calculator. Operators are symbols you 
 13 %% 5
 ```
 
-
 ::: callout-tip
 ## Exercise
 
-What does _Integer Division_ (line 6) and _Remainder_ (line 7) actually mean? 
-Run these lines and try to find out while tweaking the numbers a little.
+What does *Integer Division* (line 6) and *Remainder* (line 7) actually mean? Run these lines and try to find out while tweaking the numbers a little.
 :::
 
 ## Assign Values to Objects {.scrollable}
@@ -334,10 +332,9 @@ as.logical(1)
 You can create obejcts such as vectors^[We'll cover this today.], data.frames^[On tomorrow's menu.], lists, etc. to store these data types in multiple dimensions.
 -->
 ```
-
 ## Vectors {.scrollable}
 
-We can **c**ombine objects with the `c()` command to create a vector. 
+We can **c**ombine objects with the `c()` command to create a vector.
 
 The documentation says:
 
@@ -354,7 +351,7 @@ test  <- c(1, 3, 5, "seven")
 ::: callout-tip
 ## Exercise
 
-What does _All arguments are coerced to a common type_ actually mean? Hint: use `class()` for `a` & `test`.
+What does *All arguments are coerced to a common type* actually mean? Hint: use `class()` for `a` & `test`.
 :::
 
 ## Break
@@ -399,22 +396,20 @@ TRUE & FALSE
 You can also abbreviate `TRUE` and `FALSE` with `T` and `F`.
 :::
 
-
 ## Boolean Algebra {.smaller}
 
-| Operation | Description           | Output                                                       |
-|------------------|------------------|-------------------------------------|
+| Operation | Description           | Output                                                      |
+|------------------|------------------|------------------------------------|
 | x \< y    | Less than             | TRUE if x is smaller than y. FALSE otherwise                |
 | x \<= y   | Less or equal than    | TRUE if x is smaller or equal than y. FALSE otherwise       |
 | x \> y    | Greater than          | TRUE if x is greater than y. FALSE otherwise                |
 | x \>= y   | Greater or equal than | TRUE if x is greater or equal than y. FALSE otherwise       |
 | x == y    | Exactly equal to      | TRUE if and only if x is equal to y. FALSE otherwise        |
 | x != y    | Not equal to          | TRUE if and only if x is not equal to y. FALSE otherwise    |
-|           |                       |                                                              |
+|           |                       |                                                             |
 | !x        | Negation              | TRUE if x is equal to FALSE or 0. FALSE otherwise           |
 | x \| y    | OR                    | TRUE if x or y or both are TRUE . FALSE otherwise           |
 | x & y     | AND                   | TRUE if and only if x and y are both TRUE . FALSE otherwise |
-
 
 ## Selecting
 
@@ -439,8 +434,6 @@ Show whether the vector contains `"EN"` with `"EN" %in% countries`.
 ::: callout-tip
 Show where the vector contains `"DK"` with `match("DK", countries)`.
 :::
-
-
 
 ## Functions
 
@@ -477,7 +470,6 @@ Assume you want to learn how to use the `mean()` function.
 [Source](https://bookdown.org/ndphillips/YaRrr/packages.html)
 :::
 
-
 ##  {background-image="https://hbctraining.github.io/Intro-to-R/img/tidyverse_website.png" background-size="contain" background-repeat="no-repeat"}
 
 ```{r}
@@ -503,8 +495,8 @@ library(package_name)
 1.  Install `tidyverse`, which contains the lubridate package with a function called `year()`
 2.  get the documentation for the following function: `Sys.Date()`
 3.  execute `Sys.Date() %>% year()`
-4.  Load `tidyverse`
-5.  execute `Sys.Date() %>% year()`
+4.  Load `lubridate`
+5.  execute `Sys.Date() %>% lubridate::year()` 
 :::
 
 ::: callout-note
@@ -555,7 +547,7 @@ paste0(round(sqrt(82), digit = 2), " is your result!") == sqrt(82) %>% round(dig
 
 -   create a vector called `vec` containing `1`, `2`, `3`, `99`
 -   calculate the `mean()` using both methods
--   round the results (one digit) and assign it to objects called `res1` & `res1`
+-   round the results (one digit) and assign it to objects called `res1` & `res2`
 -   show that both are equal
 :::
 
@@ -622,15 +614,15 @@ It, thus, makes your code more reproducible and less likely to break.
 
 ## Exercises {.smaller .scrollable}
 
-1. create a new variable called `my_num` that contains 6 numbers
-2. multiply `my_num` by 4
-3. create a second variable called `my_char` that contains 5 character strings
-4. combine the two variables `my_num` and `my_char` into a variable called `both` (hint: you can use the `c()` function)
-5. what is the length of `both` (hint: try the `length()` function)
-6. what class is `both`?
-7. divide `both` by 3, what happens?
-8. create a vector with elements 1 2 3 4 5 6 and call it `x`
-9. create another vector with elements 10 20 30 40 50 and call it `y`
+1.  create a new variable called `my_num` that contains 6 numbers
+2.  multiply `my_num` by 4
+3.  create a second variable called `my_char` that contains 5 character strings
+4.  combine the two variables `my_num` and `my_char` into a variable called `both` (hint: you can use the `c()` function)
+5.  what is the length of `both` (hint: try the `length()` function)
+6.  what class is `both`?
+7.  divide `both` by 3, what happens?
+8.  create a vector with elements 1 2 3 4 5 6 and call it `x`
+9.  create another vector with elements 10 20 30 40 50 and call it `y`
 10. what happens if you try to add `x` and `y` together? why?
 11. append the value 60 onto the vector `y` (hint: you can use the `c()` function)
 12. add `x` and `y` together
