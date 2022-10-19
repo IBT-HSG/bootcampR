@@ -1,29 +1,101 @@
----
-title: "Template"
-output: html_document
-date: "`r Sys.Date()`"
----
+# Template
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+## Packages
+
+```{r install_packages}
+#| echo: true
+#| eval: false
+
+# install.packages('tidyverse')
 ```
 
-## R Markdown
+```{r load_packages}
+#| echo: true
+#| eval: false
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+library(tidyverse)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+## Constants
+
+This is the place where you assign constants, e.g. the [Swiss VAT](https://www.estv.admin.ch/estv/en/home/value-added-tax/vat-rates-switzerland.html):
+
+```{r constants}
+#| echo: true
+#| eval: false
+
+VAT <- 0.077 # Swiss VAT (7.7%)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Remember that we use a different naming convention for constants, i.e. uppercase letters.
+
+
+
+## Working Directories
+
+RMarkdown files are a little special when it comes to working directories. But nevermind.
+
+```{r wd}
+#| echo: true
+#| eval: false
+
+getwd() # identify your current directory
+setwd() # adjust it if needed
+```
+
+
+## Read Data
+
+Ideally, you have a folder called `data` that contains two subfolders:
+
+- `raw` from where you read the original data &
+- `processed` where you store the data after you have transformed it
+
+```{r read_data}
+#| echo: true
+#| eval: false
+
+raw <- read.csv(file = 'data/raw/mtcars.csv',
+                sep  = ',')
+```
+
+## Data Exploration
+
+## Data Transformation
+
+Do something with the data...
+
+```{r data_manipulation}
+#| echo: true
+#| eval: false
+
+processed <- raw
+```
+
+
+
+## Save Data
+
+There are different formats you can use. CSV is the most compatible format.
+
+```{r save_data}
+#| echo: true
+#| eval: false
+
+write.csv(x = processed,
+          file = 'data/processed/transformed_data.csv')
+
+save(processed, 
+     file = 'transformed_data.rda')
+```
+
+
+
+## Data Analyses
+
+```{r data_analyses}
+
+```
+

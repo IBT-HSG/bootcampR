@@ -1350,8 +1350,8 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 <li>To make your code even more organized and reproducible, use <a href="https://www.r-bloggers.com/2020/01/rstudio-projects-and-working-directories-a-beginners-guide/">R Projects</a>.</li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn2"><p>Which is great for these slides, reports and quantitative master theses, for instance.</p></li></ol></aside></section>
-<section id="ressources" class="slide level2">
-<h2>Ressources</h2>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
 <p><code>swirl</code> is a great start as it teaches you R interactively, at your own pace, and right in the R console! Run the following code to get started.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">install.packages</span>(<span class="st">"swirl"</span>) <span class="co"># install this package once</span></span>
@@ -1359,8 +1359,8 @@ You can create obejcts such as vectors^[We'll cover this today.], data.frames^[O
 <span id="cb32-3"><a href="#cb32-3"></a><span class="fu">siwrl</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="ressources-1" class="slide level2">
-<h2>Ressources</h2>
+<section id="resources-1" class="slide level2">
+<h2>Resources</h2>
 <p>Resources we found helpful creating the slides:</p>
 <ul>
 <li><a href="https://bookdown.org/ndphillips/YaRrr/">YaRrrr</a></li>
@@ -1982,10 +1982,282 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 <li><p>Put them on Canvas or bring them to the lecture</p></li>
 </ul>
 </section></section>
-<section>
 <section id="welcome-to-session-3" class="title-slide slide level1 center">
 <h1>Welcome to Session 3</h1>
 
+</section>
+
+<section>
+<section id="belated-session-2-bonus" class="title-slide slide level1 center">
+<h1>Belated Session 2 Bonus</h1>
+
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tidyverse</strong></p>
+</div>
+<div class="callout-content">
+<p>You have seen that there are many functions such as <code>filter()</code>, <code>select()</code>, etc. in the <code>dplyr</code> package. Please name other functions the package provides.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="recap-1" class="slide level2">
+<h2>Recap</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Resource</strong></p>
+</div>
+<div class="callout-content">
+<p>Visit <a href="https://tidydatatutor.com/">tidydatatutor.com</a> and scroll down a little. You’ll find helpful visualizations over there.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="base-r" class="slide level2">
+<h2>Base R</h2>
+<p>We’ll use tidyverse functions as a reference today and explain how to do similar stuff in <code>base R</code>, that is, without loading any packages.</p>
+<p>To illustrate this, we’ll first load some data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="fu">data</span>(<span class="st">"USArrests"</span>)</span>
+<span id="cb81-2"><a href="#cb81-2"></a><span class="fu">head</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           Murder Assault UrbanPop Rape
+Alabama      13.2     236       58 21.2
+Alaska       10.0     263       48 44.5
+Arizona       8.1     294       80 31.0
+Arkansas      8.8     190       50 19.5
+California    9.0     276       91 40.6
+Colorado      7.9     204       78 38.7</code></pre>
+</div>
+</div>
+</section>
+<section id="back-to-vectors" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Back to vectors</h2>
+<p>Remember how we selected items in (one-dimensional) vectors?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb83-1" class="hljs-ln-code"><a href="#cb83-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>)</span>
+<span id="cb83-2" class="hljs-ln-code"><a href="#cb83-2"></a></span>
+<span id="cb83-3" class="hljs-ln-code"><a href="#cb83-3"></a>vec[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="back-to-vectors-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Back to vectors</h2>
+<p>Remember how we selected items in (one-dimensional) vectors?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb84-1" class="hljs-ln-code"><a href="#cb84-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>)</span>
+<span id="cb84-2" class="hljs-ln-code"><a href="#cb84-2"></a></span>
+<span id="cb84-3" class="hljs-ln-code"><a href="#cb84-3"></a>vec[<span class="dv">2</span>]</span>
+<span id="cb84-4" class="hljs-ln-code"><a href="#cb84-4"></a><span class="co"># [1] "a"</span></span>
+<span id="cb84-5" class="hljs-ln-code"><a href="#cb84-5"></a></span>
+<span id="cb84-6" class="hljs-ln-code"><a href="#cb84-6"></a>vec[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="back-to-vectors-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Back to vectors</h2>
+<p>Remember how we selected items in (one-dimensional) vectors?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb85-1" class="hljs-ln-code"><a href="#cb85-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>)</span>
+<span id="cb85-2" class="hljs-ln-code"><a href="#cb85-2"></a></span>
+<span id="cb85-3" class="hljs-ln-code"><a href="#cb85-3"></a>vec[<span class="dv">2</span>]</span>
+<span id="cb85-4" class="hljs-ln-code"><a href="#cb85-4"></a><span class="co"># [1] "a"</span></span>
+<span id="cb85-5" class="hljs-ln-code"><a href="#cb85-5"></a></span>
+<span id="cb85-6" class="hljs-ln-code"><a href="#cb85-6"></a>vec[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span>
+<span id="cb85-7" class="hljs-ln-code"><a href="#cb85-7"></a><span class="co"># [1] "a" "c"</span></span>
+<span id="cb85-8" class="hljs-ln-code"><a href="#cb85-8"></a></span>
+<span id="cb85-9" class="hljs-ln-code"><a href="#cb85-9"></a>vec[<span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="back-to-vectors-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Back to vectors</h2>
+<p>Remember how we selected items in (one-dimensional) vectors?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb86-1" class="hljs-ln-code"><a href="#cb86-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>)</span>
+<span id="cb86-2" class="hljs-ln-code"><a href="#cb86-2"></a></span>
+<span id="cb86-3" class="hljs-ln-code"><a href="#cb86-3"></a>vec[<span class="dv">2</span>]</span>
+<span id="cb86-4" class="hljs-ln-code"><a href="#cb86-4"></a><span class="co"># [1] "b"</span></span>
+<span id="cb86-5" class="hljs-ln-code"><a href="#cb86-5"></a></span>
+<span id="cb86-6" class="hljs-ln-code"><a href="#cb86-6"></a>vec[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span>
+<span id="cb86-7" class="hljs-ln-code"><a href="#cb86-7"></a><span class="co"># [1] "a" "c"</span></span>
+<span id="cb86-8" class="hljs-ln-code"><a href="#cb86-8"></a></span>
+<span id="cb86-9" class="hljs-ln-code"><a href="#cb86-9"></a>vec[<span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)]</span>
+<span id="cb86-10" class="hljs-ln-code"><a href="#cb86-10"></a><span class="co"># [1] "d"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Here is a more practical example where we want to rename the column <code>UrbanPop</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a><span class="fu">names</span>(USArrests) <span class="co"># this is a vector</span></span>
+<span id="cb87-2"><a href="#cb87-2"></a><span class="co"># [1] "Murder"   "Assault"  "UrbanPop" "Rape" </span></span>
+<span id="cb87-3"><a href="#cb87-3"></a></span>
+<span id="cb87-4"><a href="#cb87-4"></a><span class="co"># vector ------- condition -------------------- re-assignment</span></span>
+<span id="cb87-5"><a href="#cb87-5"></a><span class="fu">names</span>(USArrests)[<span class="fu">names</span>(USArrests) <span class="sc">==</span> <span class="st">'UrbanPop'</span>] <span class="ot">&lt;-</span> <span class="st">'urban_pop'</span></span>
+<span id="cb87-6"><a href="#cb87-6"></a></span>
+<span id="cb87-7"><a href="#cb87-7"></a><span class="fu">names</span>(USArrests)</span>
+<span id="cb87-8"><a href="#cb87-8"></a><span class="co"># [1] "Murder"   "Assault"  "urban_pop" "Rape" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-cells" class="slide level2">
+<h2>Select Cells</h2>
+<p>We can do the same thing with (two dimensional) data frames without using the tidyverse:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a>USArrests[<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb88-2"><a href="#cb88-2"></a><span class="co"># [1] 236</span></span>
+<span id="cb88-3"><a href="#cb88-3"></a></span>
+<span id="cb88-4"><a href="#cb88-4"></a>USArrests[<span class="dv">1</span>, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span>
+<span id="cb88-5"><a href="#cb88-5"></a><span class="co">#         Murder Assault</span></span>
+<span id="cb88-6"><a href="#cb88-6"></a><span class="co"># Alabama   13.2     236</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filter-data" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Filter Data</h2>
+<p>With <code>dplyr::filter()</code> we were able to display all the rows that match a certain condition, such as <code>Murder &gt; 10</code>.</p>
+<p>How shall we do this with base R?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb89-1" class="hljs-ln-code"><a href="#cb89-1"></a>USArrests<span class="sc">$</span>Murder <span class="sc">&gt;</span> <span class="dv">10</span></span>
+<span id="cb89-2" class="hljs-ln-code"><a href="#cb89-2"></a><span class="co"># [1]  TRUE FALSE FALSE FALSE FALSE ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filter-data-1" class="slide level2">
+<h2>Filter Data</h2>
+<p>With <code>dplyr::filter()</code> we were able to display all the rows that match a certain condition, such as <code>Murder &gt; 10</code>.</p>
+<p>How shall we do this with base R?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a>USArrests<span class="sc">$</span>Murder <span class="sc">&gt;</span> <span class="dv">10</span></span>
+<span id="cb90-2"><a href="#cb90-2"></a><span class="co"># [1]  TRUE FALSE FALSE FALSE FALSE ...</span></span>
+<span id="cb90-3"><a href="#cb90-3"></a></span>
+<span id="cb90-4"><a href="#cb90-4"></a>USArrests[USArrests<span class="sc">$</span>Murder <span class="sc">&gt;</span> <span class="dv">10</span>,]</span>
+<span id="cb90-5"><a href="#cb90-5"></a><span class="co">#                Murder Assault UrbanPop Rape</span></span>
+<span id="cb90-6"><a href="#cb90-6"></a><span class="co"># Alabama          13.2     236       58 21.2</span></span>
+<span id="cb90-7"><a href="#cb90-7"></a><span class="co"># Florida          15.4     335       80 31.9</span></span>
+<span id="cb90-8"><a href="#cb90-8"></a><span class="co"># Georgia          17.4     211       60 25.8</span></span>
+<span id="cb90-9"><a href="#cb90-9"></a><span class="co"># ...              ...      ...       .. ...</span></span>
+<span id="cb90-10"><a href="#cb90-10"></a><span class="co"># Texas            12.7     201       80 25.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-columns" class="slide level2">
+<h2>Select Columns</h2>
+<p>We talked about this yesterday.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a>USArrests<span class="sc">$</span>Murder</span>
+<span id="cb91-2"><a href="#cb91-2"></a><span class="co"># [1] 13.2 10.0  8.1  8.8 ...</span></span>
+<span id="cb91-3"><a href="#cb91-3"></a></span>
+<span id="cb91-4"><a href="#cb91-4"></a>USArrests[, <span class="st">'Murder'</span>]</span>
+<span id="cb91-5"><a href="#cb91-5"></a><span class="co"># [1] 13.2 10.0  8.1  8.8 ...</span></span>
+<span id="cb91-6"><a href="#cb91-6"></a></span>
+<span id="cb91-7"><a href="#cb91-7"></a>USArrests[[<span class="dv">1</span>]]</span>
+<span id="cb91-8"><a href="#cb91-8"></a><span class="co"># [1] 13.2 10.0  8.1  8.8 ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Select Assalt Statistics</strong></p>
+</div>
+<div class="callout-content">
+<p>Inspect the data and look for the <code>Assault</code> Variable. Then select it using all of the three options displayed above.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-1-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Exercise 1</h2>
+<p>Please show all the states with an above-median number of Assaults.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>               Murder Assault UrbanPop Rape
+Alabama          13.2     236       58 21.2
+Alaska           10.0     263       48 44.5
+Arizona           8.1     294       80 31.0
+Arkansas          8.8     190       50 19.5
+California        9.0     276       91 40.6
+Colorado          7.9     204       78 38.7
+Delaware          5.9     238       72 15.8
+Florida          15.4     335       80 31.9
+Georgia          17.4     211       60 25.8
+Illinois         10.4     249       83 24.0
+Louisiana        15.4     249       66 22.2
+Maryland         11.3     300       67 27.8
+Michigan         12.1     255       74 35.1
+Mississippi      16.1     259       44 17.1
+Missouri          9.0     178       70 28.2
+Nevada           12.2     252       81 46.0
+New Mexico       11.4     285       70 32.1
+New York         11.1     254       86 26.1
+North Carolina   13.0     337       45 16.1
+Rhode Island      3.4     174       87  8.3
+South Carolina   14.4     279       48 22.5
+Tennessee        13.2     188       59 26.9
+Texas            12.7     201       80 25.5
+Wyoming           6.8     161       60 15.6</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-1-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Exercise 1</h2>
+<p>Please show all the states with an above-median number of Assaults.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb93-1" class="hljs-ln-code"><a href="#cb93-1"></a>USArrests[USArrests<span class="sc">$</span>Assault <span class="sc">&gt;</span> <span class="fu">median</span>(USArrests<span class="sc">$</span>Assault), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Murder Assault UrbanPop Rape
+Alabama          13.2     236       58 21.2
+Alaska           10.0     263       48 44.5
+Arizona           8.1     294       80 31.0
+Arkansas          8.8     190       50 19.5
+California        9.0     276       91 40.6
+Colorado          7.9     204       78 38.7
+Delaware          5.9     238       72 15.8
+Florida          15.4     335       80 31.9
+Georgia          17.4     211       60 25.8
+Illinois         10.4     249       83 24.0
+Louisiana        15.4     249       66 22.2
+Maryland         11.3     300       67 27.8
+Michigan         12.1     255       74 35.1
+Mississippi      16.1     259       44 17.1
+Missouri          9.0     178       70 28.2
+Nevada           12.2     252       81 46.0
+New Mexico       11.4     285       70 32.1
+New York         11.1     254       86 26.1
+North Carolina   13.0     337       45 16.1
+Rhode Island      3.4     174       87  8.3
+South Carolina   14.4     279       48 22.5
+Tennessee        13.2     188       59 26.9
+Texas            12.7     201       80 25.5
+Wyoming           6.8     161       60 15.6</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-2-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Exercise 2</h2>
+<p>What is the average number of murders in these states?</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11.175</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-2-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Exercise 2</h2>
+<p>What is the average number of murders in these states?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb96-1" class="hljs-ln-code"><a href="#cb96-1"></a><span class="fu">mean</span>(USArrests[USArrests<span class="sc">$</span>Assault <span class="sc">&gt;</span> <span class="fu">median</span>(USArrests<span class="sc">$</span>Assault), <span class="st">'Murder'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11.175</code></pre>
+</div>
+</div>
 </section>
 <section id="recap-session-2" class="slide level2">
 <h2>Recap Session 2</h2>
@@ -2003,11 +2275,11 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 <h2>Recap: import and export data</h2>
 <p>Reading in</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/raw/student_experiment.csv"</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> T) <span class="co"># you need to adapt this to your working directory file path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/raw/student_experiment.csv"</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">header =</span> T) <span class="co"># you need to adapt this to your working directory file path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Saving</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="fu">write.table</span>(data, <span class="st">"data/processed/student_experiment_processed.csv"</span>) <span class="co"># writes the final dataframe as a .csv file into your specified directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1"></a><span class="fu">write.table</span>(data, <span class="st">"data/processed/student_experiment_processed.csv"</span>) <span class="co"># writes the final dataframe as a .csv file into your specified directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="recap-exploring-data" class="slide level2">
@@ -2022,14 +2294,29 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 <h2>Overview Session 3</h2>
 <ol type="1">
 <li>Visualization</li>
+<li>Organize your project</li>
 <li>Analysis Template: putting everything together</li>
-<li>R6 intro (?)</li>
 <li>Questions</li>
 </ol>
 </section>
 <section id="why-visualization" class="slide level2">
 <h2>Why visualization?</h2>
-<p>Data visualization is the practice of representing data in a graphical form (e.g.&nbsp;plots). This is a powerful way to visualize information in a way that is understandable to the majority of the audience. For this reason it is crucial to select the type of visualization that best fits our data and our goal!</p>
+<p>Data visualization is the practice of representing data in a graphical form (e.g.&nbsp;plots). This is a powerful way to visualize information in a way that is understandable to the majority of the audience (and impress your professors when presenting the empirical project). For this reason it is crucial to select the type of visualization that best fits our data and our goal!</p>
+</section>
+<section id="ggplot---grammar-of-graphics" class="slide level2">
+<h2>Ggplot - grammar of graphics</h2>
+<p><a href="https://ggplot2.tidyverse.org/reference/">Ggplot</a> is a powerful package for creating visualizations. Its strength relies on the underlying <a href="https://doi.org/10.1007/0-387-28695-0"><em>Grammar of Graphics</em></a>, a set of rules of combining independent elements into a graphical representations.</p>
+</section>
+<section id="elements-of-grammar-of-graphics" class="slide level2 smaller">
+<h2>Elements of grammar of graphics</h2>
+<ul>
+<li>Data: variables mapped to aesthetic features of the graph.</li>
+<li>Geoms: objects/shapes on the graph.</li>
+<li>Stats: statistical transformations that summarize data,(e.g mean, confidence intervals).</li>
+<li>Scales: mappings of aesthetic values to data values. Legends and axes visualize scales.</li>
+<li>Coordinate systems: the plane on which data are mapped on the graphic.</li>
+<li>Faceting: splitting the data into subsets to create multiple variations of the same graph (paneling).</li>
+</ul>
 </section>
 <section id="ggplot-bulding-blocks" class="slide level2 smaller">
 <h2>Ggplot bulding blocks</h2>
@@ -2055,7 +2342,7 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-53-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-63-1.png" width="960"></p>
 <p></p><figcaption>bar plot (left) histogram with kernel distribution (right)</figcaption><p></p>
 </figure>
 </div>
@@ -2063,11 +2350,11 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>cut))</span>
-<span id="cb83-2"><a href="#cb83-2"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> depth)) <span class="sc">+</span> </span>
-<span id="cb83-3"><a href="#cb83-3"></a>        <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">y =</span> ..density..),</span>
-<span id="cb83-4"><a href="#cb83-4"></a>                 <span class="at">colour =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb83-5"><a href="#cb83-5"></a>        <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>cut))</span>
+<span id="cb100-2"><a href="#cb100-2"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> depth)) <span class="sc">+</span> </span>
+<span id="cb100-3"><a href="#cb100-3"></a>        <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">y =</span> ..density..),</span>
+<span id="cb100-4"><a href="#cb100-4"></a>                 <span class="at">colour =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb100-5"><a href="#cb100-5"></a>        <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2088,14 +2375,14 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span></span>
-<span id="cb84-2"><a href="#cb84-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(</span>
-<span id="cb84-3"><a href="#cb84-3"></a>           <span class="at">x =</span> carat, </span>
-<span id="cb84-4"><a href="#cb84-4"></a>           <span class="at">y =</span> price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span></span>
+<span id="cb101-2"><a href="#cb101-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(</span>
+<span id="cb101-3"><a href="#cb101-3"></a>           <span class="at">x =</span> carat, </span>
+<span id="cb101-4"><a href="#cb101-4"></a>           <span class="at">y =</span> price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-55-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-65-1.png" width="960"></p>
 <p></p><figcaption>scatter plot</figcaption><p></p>
 </figure>
 </div>
@@ -2103,14 +2390,14 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a><span class="fu">ggplot</span>(diamonds,<span class="fu">aes</span>(<span class="at">x =</span> carat, </span>
-<span id="cb85-2"><a href="#cb85-2"></a>           <span class="at">y =</span> price)) <span class="sc">+</span></span>
-<span id="cb85-3"><a href="#cb85-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb85-4"><a href="#cb85-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1"></a><span class="fu">ggplot</span>(diamonds,<span class="fu">aes</span>(<span class="at">x =</span> carat, </span>
+<span id="cb102-2"><a href="#cb102-2"></a>           <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb102-3"><a href="#cb102-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb102-4"><a href="#cb102-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-56-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-66-1.png" width="960"></p>
 <p></p><figcaption>scatter plot and line of best fit</figcaption><p></p>
 </figure>
 </div>
@@ -2125,13 +2412,13 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> </span>
-<span id="cb86-2"><a href="#cb86-2"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> color, </span>
-<span id="cb86-3"><a href="#cb86-3"></a>           <span class="at">fill =</span> cut), <span class="at">position =</span> <span class="st">"stack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> </span>
+<span id="cb103-2"><a href="#cb103-2"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> color, </span>
+<span id="cb103-3"><a href="#cb103-3"></a>           <span class="at">fill =</span> cut), <span class="at">position =</span> <span class="st">"stack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-57-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-67-1.png" width="960"></p>
 <p></p><figcaption>stacked bar plot</figcaption><p></p>
 </figure>
 </div>
@@ -2139,13 +2426,13 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> </span>
-<span id="cb87-2"><a href="#cb87-2"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> color, </span>
-<span id="cb87-3"><a href="#cb87-3"></a>           <span class="at">fill =</span> cut), <span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span> </span>
+<span id="cb104-2"><a href="#cb104-2"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> color, </span>
+<span id="cb104-3"><a href="#cb104-3"></a>           <span class="at">fill =</span> cut), <span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-58-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-68-1.png" width="960"></p>
 <p></p><figcaption>grouped bar plot</figcaption><p></p>
 </figure>
 </div>
@@ -2160,15 +2447,15 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a><span class="fu">ggplot</span>(diamonds, </span>
-<span id="cb88-2"><a href="#cb88-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> color, </span>
-<span id="cb88-3"><a href="#cb88-3"></a>           <span class="at">y =</span> price)) <span class="sc">+</span></span>
-<span id="cb88-4"><a href="#cb88-4"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb88-5"><a href="#cb88-5"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Salary distribution by rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1"></a><span class="fu">ggplot</span>(diamonds, </span>
+<span id="cb105-2"><a href="#cb105-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> color, </span>
+<span id="cb105-3"><a href="#cb105-3"></a>           <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb105-4"><a href="#cb105-4"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb105-5"><a href="#cb105-5"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Salary distribution by rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-59-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-69-1.png" width="960"></p>
 <p></p><figcaption>Box plots</figcaption><p></p>
 </figure>
 </div>
@@ -2176,15 +2463,15 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a><span class="fu">ggplot</span>(diamonds, </span>
-<span id="cb89-2"><a href="#cb89-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> price, </span>
-<span id="cb89-3"><a href="#cb89-3"></a>           <span class="at">fill =</span> color)) <span class="sc">+</span></span>
-<span id="cb89-4"><a href="#cb89-4"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb89-5"><a href="#cb89-5"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Salary distribution by rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1"></a><span class="fu">ggplot</span>(diamonds, </span>
+<span id="cb106-2"><a href="#cb106-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> price, </span>
+<span id="cb106-3"><a href="#cb106-3"></a>           <span class="at">fill =</span> color)) <span class="sc">+</span></span>
+<span id="cb106-4"><a href="#cb106-4"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb106-5"><a href="#cb106-5"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Salary distribution by rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-60-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-70-1.png" width="960"></p>
 <p></p><figcaption>Grouped kernel distribution plots</figcaption><p></p>
 </figure>
 </div>
@@ -2208,13 +2495,13 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span></span>
-<span id="cb90-2"><a href="#cb90-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, </span>
-<span id="cb90-3"><a href="#cb90-3"></a>           <span class="at">y =</span> price, <span class="at">color=</span>color, <span class="at">shape=</span>cut))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span></span>
+<span id="cb107-2"><a href="#cb107-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, </span>
+<span id="cb107-3"><a href="#cb107-3"></a>           <span class="at">y =</span> price, <span class="at">color=</span>color, <span class="at">shape=</span>cut))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-61-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-71-1.png" width="960"></p>
 <p></p><figcaption>multivarite scatter plot</figcaption><p></p>
 </figure>
 </div>
@@ -2222,13 +2509,13 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span></span>
-<span id="cb91-2"><a href="#cb91-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, </span>
-<span id="cb91-3"><a href="#cb91-3"></a>           <span class="at">y =</span> price, <span class="at">color=</span>color, <span class="at">size=</span>depth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1"></a><span class="fu">ggplot</span>(diamonds) <span class="sc">+</span></span>
+<span id="cb108-2"><a href="#cb108-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, </span>
+<span id="cb108-3"><a href="#cb108-3"></a>           <span class="at">y =</span> price, <span class="at">color=</span>color, <span class="at">size=</span>depth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-62-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-72-1.png" width="960"></p>
 <p></p><figcaption>multivarite scatter plot</figcaption><p></p>
 </figure>
 </div>
@@ -2246,7 +2533,7 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-63-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-73-1.png" width="960"></p>
 <p></p><figcaption>price ($1000) histogram by color and cut</figcaption><p></p>
 </figure>
 </div>
@@ -2254,36 +2541,308 @@ F-statistic: 33.26 on 1 and 11 DF,  p-value: 0.0001252</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1"></a><span class="co"># plot salary histograms by rank and sex</span></span>
-<span id="cb92-2"><a href="#cb92-2"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price<span class="sc">/</span><span class="dv">1000</span>)) <span class="sc">+</span></span>
-<span id="cb92-3"><a href="#cb92-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>,</span>
-<span id="cb92-4"><a href="#cb92-4"></a>                 <span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
-<span id="cb92-5"><a href="#cb92-5"></a>  <span class="fu">facet_grid</span>(cut <span class="sc">~</span> color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1"></a><span class="co"># plot salary histograms by rank and sex</span></span>
+<span id="cb109-2"><a href="#cb109-2"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price<span class="sc">/</span><span class="dv">1000</span>)) <span class="sc">+</span></span>
+<span id="cb109-3"><a href="#cb109-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>,</span>
+<span id="cb109-4"><a href="#cb109-4"></a>                 <span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb109-5"><a href="#cb109-5"></a>  <span class="fu">facet_grid</span>(cut <span class="sc">~</span> color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<p>https://rkabacoff.github.io/datavis/</p>
 </section>
-<section id="resources" class="slide level2">
+<section id="resources-2" class="slide level2">
 <h2>Resources</h2>
 <ul>
 <li>Easy to read <a href="http://qpolr.com/dataviz.html">book chapter</a></li>
 <li><a href="https://ggplot2-book.org/index.html">A full book</a></li>
+<li><a href="https://rkabacoff.github.io/datavis/">And another one</a></li>
 <li><a href="https://ggplot2.tidyverse.org/reference/#geoms">List of geoms</a></li>
 <li>As always: <em>Stackoverflow</em></li>
 </ul>
 </section>
+<section id="organize-your-project" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Organize your project</h2>
+<ol type="1">
+<li>Create a new folder called <code>BootcampR</code></li>
+<li>Create a R script file</li>
+<li>Set your working directory to <code>your_path_to/BootcampR</code></li>
+<li>Create a folder called <code>data</code></li>
+<li>Create two subdirectories: <code>data/raw</code> and <code>data/preprocessed</code></li>
+<li>Move the file <code>mtcars.csv</code> into <code>data/raw</code></li>
+</ol>
+</section>
+<section id="organize-your-project-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Organize your project</h2>
+<ol type="1">
+<li>Create a new folder called <code>BootcampR</code></li>
+<li>Create a R script file</li>
+<li>Set your working directory to <code>your_path_to/BootcampR</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1"></a><span class="fu">setwd</span>(<span class="st">'`your_path_to/BootcampR`'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Create a folder called <code>data</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1"></a><span class="fu">dir.create</span>(<span class="st">'data'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>Create two subdirectories: <code>data/raw</code> and <code>data/preprocessed</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1"></a><span class="fu">dir.create</span>(<span class="st">'data/raw'</span>)</span>
+<span id="cb112-2"><a href="#cb112-2"></a><span class="fu">dir.create</span>(<span class="st">'data/preprocessed'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
+<li>Move the file <code>mtcars.csv</code> into <code>data/raw</code></li>
+</ol>
+</section>
 <section id="break-1" class="slide level2">
 <h2>Break</h2>
-
-<img data-src="img/QR_template.png" class="r-stretch quarto-figure-center"><p class="caption">Please download the template</p></section>
+<p>Download the <code>mtcars.csv</code> file from canvas :)</p>
+</section>
 <section id="analysis-template-putting-everything-together" class="slide level2">
 <h2>Analysis Template: putting everything together</h2>
+</section></section>
+<section>
+<section id="packages-1" class="title-slide slide level1 center">
+<h1>Packages</h1>
+
+</section>
+<section id="task" class="slide level2">
+<h2>Task</h2>
+<p>Install and load the following packages:</p>
+<ul>
+<li>ggplot</li>
+<li>ggcorrplot</li>
+<li>dplyr</li>
+<li>tidyverse</li>
+</ul>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1"></a><span class="fu">install.packages</span>(<span class="st">'tidyverse'</span>)</span>
+<span id="cb113-2"><a href="#cb113-2"></a><span class="fu">install.packages</span>(<span class="st">'ggplot'</span>)</span>
+<span id="cb113-3"><a href="#cb113-3"></a><span class="fu">install.packages</span>(<span class="st">'dplyr'</span>)</span>
+<span id="cb113-4"><a href="#cb113-4"></a><span class="fu">install.packages</span>(<span class="st">"ggcorrplot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb114-2"><a href="#cb114-2"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb114-3"><a href="#cb114-3"></a><span class="fu">library</span>(ggcorrplot)</span>
+<span id="cb114-4"><a href="#cb114-4"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section id="constants" class="title-slide slide level1 center">
+<h1>Constants</h1>
+<p>This is the place where you assign constants, e.g.&nbsp;the <a href="https://www.estv.admin.ch/estv/en/home/value-added-tax/vat-rates-switzerland.html">Swiss VAT</a>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1"></a>VAT <span class="ot">&lt;-</span> <span class="fl">0.077</span> <span class="co"># Swiss VAT (7.7%)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Remember that we use a different naming convention for constants, i.e.&nbsp;uppercase letters.</p>
+</section>
+
+<section id="remember-working-directories" class="title-slide slide level1 center">
+<h1>REMEMBER: Working Directories</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1"></a><span class="fu">getwd</span>() <span class="co"># identify your current directory</span></span>
+<span id="cb116-2"><a href="#cb116-2"></a><span class="fu">setwd</span>() <span class="co"># adjust it if needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section>
+<section id="read-data" class="title-slide slide level1 center">
+<h1>Read Data</h1>
+
+</section>
+<section id="task-1" class="slide level2">
+<h2>Task</h2>
+<p>Import the <code>mtcars.csv</code> file into an object called <code>mtcars_df</code></p>
+</section>
+<section id="solution-1" class="slide level2">
+<h2>Solution</h2>
+<p>Ideally, you have a folder called <code>data</code> that contains two subfolders:</p>
+<ul>
+<li><code>raw</code> from where you read the original data &amp;</li>
+<li><code>processed</code> where you store the data after you have transformed it</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1"></a>mtcars_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'data/raw/mtcars.csv'</span>,</span>
+<span id="cb117-2"><a href="#cb117-2"></a>                <span class="at">sep  =</span> <span class="st">','</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-dictionary" class="slide level2 smaller">
+<h2>Data Dictionary</h2>
+<table>
+<thead>
+<tr class="header">
+<th>variable</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mpg</td>
+<td>Miles/(US) gallon</td>
+</tr>
+<tr class="even">
+<td>cyl</td>
+<td>Number of cylinders</td>
+</tr>
+<tr class="odd">
+<td>disp</td>
+<td>Displacement (cu.in.)</td>
+</tr>
+<tr class="even">
+<td>hp</td>
+<td>Gross horsepower</td>
+</tr>
+<tr class="odd">
+<td>drat</td>
+<td>Rear axle ratio</td>
+</tr>
+<tr class="even">
+<td>wt</td>
+<td>Weight (1000 lbs)</td>
+</tr>
+<tr class="odd">
+<td>qsec</td>
+<td>1/4 mile time</td>
+</tr>
+<tr class="even">
+<td>vs</td>
+<td>Engine (0 = V-shaped, 1 = straight)</td>
+</tr>
+<tr class="odd">
+<td>an</td>
+<td>Transmission (0 = automatic, 1 = manual)</td>
+</tr>
+<tr class="even">
+<td>gear</td>
+<td>Number of forward gears</td>
+</tr>
+<tr class="odd">
+<td>carb</td>
+<td>Number of carburetors</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="data-exploration" class="title-slide slide level1 center">
+<h1>Data Exploration</h1>
+
+</section>
+<section id="task-2" class="slide level2">
+<h2>Task</h2>
+<ul>
+<li>List all the variables in the dataset</li>
+<li>Create a new dataset called <code>new_mtcars</code> which includes only the following columns: <code>mpg</code>, <code>hp</code>, <code>wt</code>, <code>vs</code>, <code>gear</code></li>
+<li>Calculate the summary statistics of the new dataset</li>
+<li>Visualize the bar plot of <code>vs</code> and distribution density of <code>wt</code></li>
+<li>Calculate and visualize a correlation matrix</li>
+</ul>
+</section>
+<section id="solution-2" class="slide level2">
+<h2>Solution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1"></a><span class="fu">names</span>(mtcars_df)</span>
+<span id="cb118-2"><a href="#cb118-2"></a> </span>
+<span id="cb118-3"><a href="#cb118-3"></a>new_mtcars <span class="ot">&lt;-</span> mtcars_df  <span class="sc">%&gt;%</span> <span class="fu">select</span>(mpg, hp, wt, vs, gear)</span>
+<span id="cb118-4"><a href="#cb118-4"></a></span>
+<span id="cb118-5"><a href="#cb118-5"></a><span class="fu">summary</span>(new_mtcars)</span>
+<span id="cb118-6"><a href="#cb118-6"></a></span>
+<span id="cb118-7"><a href="#cb118-7"></a><span class="co">#ggplot(new_mtcars) + geom_bar(mapping=aes(x=vs))</span></span>
+<span id="cb118-8"><a href="#cb118-8"></a><span class="fu">ggplot</span>(new_mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt)) <span class="sc">+</span> </span>
+<span id="cb118-9"><a href="#cb118-9"></a>        <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>wt, <span class="at">y =</span> ..density..),</span>
+<span id="cb118-10"><a href="#cb118-10"></a>                 <span class="at">colour =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb118-11"><a href="#cb118-11"></a>        <span class="fu">geom_density</span>()</span>
+<span id="cb118-12"><a href="#cb118-12"></a></span>
+<span id="cb118-13"><a href="#cb118-13"></a>corr <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">cor</span>(new_mtcars), <span class="dv">1</span>)</span>
+<span id="cb118-14"><a href="#cb118-14"></a><span class="fu">ggcorrplot</span>(corr, <span class="at">lab=</span><span class="cn">TRUE</span>)</span>
+<span id="cb118-15"><a href="#cb118-15"></a><span class="co">#ggcorrplot(corr, lab=TRUE, type='lower')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="data-transformation" class="title-slide slide level1 center">
+<h1>Data Transformation</h1>
+
+</section>
+<section id="task-3" class="slide level2">
+<h2>Task</h2>
+<ul>
+<li>Generate a new variable called <code>hp_wt</code> which is the ration of <code>hp</code> and <code>wt</code></li>
+<li>Remove the variables <code>hp</code> and <code>wt</code></li>
+</ul>
+</section>
+<section id="solution-3" class="slide level2">
+<h2>Solution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1"></a>new_mtcars<span class="sc">$</span>hp_wt <span class="ot">&lt;-</span> new_mtcars<span class="sc">$</span>hp<span class="sc">/</span>new_mtcars<span class="sc">$</span>wt</span>
+<span id="cb119-2"><a href="#cb119-2"></a>new_mtcars <span class="ot">&lt;-</span> <span class="fu">subset</span>(new_mtcars, <span class="at">select=</span><span class="sc">-</span><span class="fu">c</span>(wt,hp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="save-data" class="title-slide slide level1 center">
+<h1>Save Data</h1>
+
+</section>
+<section id="task-4" class="slide level2">
+<h2>Task</h2>
+<ul>
+<li>Save the new dataset in <code>data/processed</code></li>
+</ul>
+</section>
+<section id="solution-4" class="slide level2">
+<h2>Solution</h2>
+<p>There are different formats you can use. CSV is the most compatible format.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> new_mtcars,</span>
+<span id="cb120-2"><a href="#cb120-2"></a>          <span class="at">file =</span> <span class="st">'data/processed/transformed_data.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="data-analyses" class="title-slide slide level1 center">
+<h1>Data Analyses</h1>
+
+</section>
+<section id="task-5" class="slide level2">
+<h2>Task</h2>
+<ul>
+<li>Train a linear regression model that predicts car consumption given engine type (VS or Straight), number of gears and power-to-weight ratio and show the summary statistics</li>
+<li>Visualize the linear relationship between consumption and power-to-weight ratio</li>
+<li>Predict consumption for a new car with straight engine, 6 gears and a power-to-weight ratio of 36.1</li>
+</ul>
+</section>
+<section id="solution-5" class="slide level2">
+<h2>Solution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1"></a>car_mpg_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> vs <span class="sc">+</span> gear <span class="sc">+</span> hp_wt, <span class="at">data =</span> new_mtcars)</span>
+<span id="cb121-2"><a href="#cb121-2"></a><span class="fu">summary</span>(car_mpg_lm)</span>
+<span id="cb121-3"><a href="#cb121-3"></a></span>
+<span id="cb121-4"><a href="#cb121-4"></a><span class="fu">ggplot</span>(new_mtcars,<span class="fu">aes</span>(<span class="at">x =</span> hp_wt, </span>
+<span id="cb121-5"><a href="#cb121-5"></a>           <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb121-6"><a href="#cb121-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb121-7"><a href="#cb121-7"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) </span>
+<span id="cb121-8"><a href="#cb121-8"></a>new_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">vs=</span><span class="dv">1</span>,</span>
+<span id="cb121-9"><a href="#cb121-9"></a>                  <span class="at">gear=</span><span class="dv">6</span>,</span>
+<span id="cb121-10"><a href="#cb121-10"></a>                  <span class="at">hp_wt =</span> <span class="fl">36.1</span>)</span>
+<span id="cb121-11"><a href="#cb121-11"></a></span>
+<span id="cb121-12"><a href="#cb121-12"></a>pred <span class="ot">=</span> <span class="fu">predict</span>(car_mpg_lm, <span class="at">newdata =</span> new_data)</span>
+<span id="cb121-13"><a href="#cb121-13"></a>pred</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank you</h1>
+<p>and good luck on your empirical project :)</p>
 
 <img src="https://github.com/IBT-HSG/bootcampR/blob/main/img/logo.png?raw=true" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://www.ibt.unisg.ch/">Institute of Behavioral Science and Technology</a></p>
 </div>
-</section></section>
+</section>
+
 
     </div>
   </div>

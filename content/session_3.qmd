@@ -1,6 +1,6 @@
-
-
 ```{r, include = FALSE}
+library(ggplot2)
+library(patchwork)
 data("diamonds")
 diamonds <- diamonds[sample(nrow(diamonds), 1000), ]
 ```
@@ -15,7 +15,6 @@ diamonds <- diamonds[sample(nrow(diamonds), 1000), ]
 ## Any experienced difficulties? Anything we should repeat?
 
 ## Recap: import and export data
-
 
 Reading in
 
@@ -33,7 +32,6 @@ Saving
 write.table(data, "data/processed/student_experiment_processed.csv") # writes the final dataframe as a .csv file into your specified directory
 ```
 
-
 ## Recap: Exploring data
 
 -   `head(data)` shows the first few rows of your data
@@ -43,13 +41,26 @@ write.table(data, "data/processed/student_experiment_processed.csv") # writes th
 ## Overview Session 3
 
 1.  Visualization
-2.  Analysis Template: putting everything together
-3.  R6 intro (?)
+2.  Organize your project
+3.  Analysis Template: putting everything together
 4.  Questions
 
 ## Why visualization?
 
-Data visualization is the practice of representing data in a graphical form (e.g. plots). This is a powerful way to visualize information in a way that is understandable to the majority of the audience. For this reason it is crucial to select the type of visualization that best fits our data and our goal!
+Data visualization is the practice of representing data in a graphical form (e.g. plots). This is a powerful way to visualize information in a way that is understandable to the majority of the audience (and impress your professors when presenting the empirical project). For this reason it is crucial to select the type of visualization that best fits our data and our goal!
+
+## Ggplot - grammar of graphics
+
+[Ggplot](https://ggplot2.tidyverse.org/reference/) is a powerful package for creating visualizations. Its strength relies on the underlying [*Grammar of Graphics*](https://doi.org/10.1007/0-387-28695-0), a set of rules of combining independent elements into a graphical representations.
+
+## Elements of grammar of graphics {.smaller}
+
+-   Data: variables mapped to aesthetic features of the graph.
+-   Geoms: objects/shapes on the graph.
+-   Stats: statistical transformations that summarize data,(e.g mean, confidence intervals).
+-   Scales: mappings of aesthetic values to data values. Legends and axes visualize scales.
+-   Coordinate systems: the plane on which data are mapped on the graphic.
+-   Faceting: splitting the data into subsets to create multiple variations of the same graph (paneling).
 
 ## Ggplot bulding blocks {.smaller}
 
@@ -200,7 +211,7 @@ ggplot(diamonds,
 
 ## Type of data visualization III/III {.smaller}
 
-#### Multivariate visualizations 
+#### Multivariate visualizations
 
 Multivariate presentation show the relationship of 3 or more variables. There are two main approaches *grouping* and *faceting*.
 
@@ -274,19 +285,58 @@ ggplot(diamonds, aes(x = price/1000)) +
 :::
 :::
 
-https://rkabacoff.github.io/datavis/
+
 
 ## Resources
 
-- Easy to read [book chapter](http://qpolr.com/dataviz.html)
-- [A full book](https://ggplot2-book.org/index.html)
-- [List of geoms](https://ggplot2.tidyverse.org/reference/#geoms)
-- As always: _Stackoverflow_
+-   Easy to read [book chapter](http://qpolr.com/dataviz.html)
+-   [A full book](https://ggplot2-book.org/index.html)
+-   [And another one](https://rkabacoff.github.io/datavis/)
+-   [List of geoms](https://ggplot2.tidyverse.org/reference/#geoms)
+-   As always: *Stackoverflow*
+
+## Organize your project {.smaller auto-animate="true"}
+
+1. Create a new folder called `BootcampR`
+2. Create a R script file
+3. Set your working directory to `your_path_to/BootcampR`
+4. Create a folder called `data`
+5. Create two subdirectories: `data/raw` and `data/preprocessed`
+6. Move the file `mtcars.csv` into `data/raw`
+
+## Organize your project {.smaller auto-animate="true"} 
+
+1. Create a new folder called `BootcampR`
+2. Create a R script file
+3. Set your working directory to `your_path_to/BootcampR`
+
+```{r}
+#| echo: true
+#| eval: false
+setwd('`your_path_to/BootcampR`')
+```
+
+4. Create a folder called `data`
+
+```{r}
+#| echo: true
+#| eval: false
+dir.create('data')
+```
+
+5. Create two subdirectories: `data/raw` and `data/preprocessed`
+
+```{r}
+#| echo: true
+#| eval: false
+dir.create('data/raw')
+dir.create('data/preprocessed')
+```
+
+6. Move the file `mtcars.csv` into `data/raw`
 
 ## Break
 
-![Please download the template](img/QR_template.png)
+Download the `mtcars.csv` file from canvas :) 
 
 ## Analysis Template: putting everything together
-
-

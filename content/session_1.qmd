@@ -637,7 +637,7 @@ It, thus, makes your code more reproducible and less likely to break.
 
 [^session_1-2]: Which is great for these slides, reports and quantitative master theses, for instance.
 
-## Ressources
+## Resources
 
 `swirl` is a great start as it teaches you R interactively, at your own pace, and right in the R console! Run the following code to get started.
 
@@ -647,7 +647,7 @@ library(swirl)
 siwrl()
 ```
 
-## Ressources
+## Resources
 
 Resources we found helpful creating the slides:
 

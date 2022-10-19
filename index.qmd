@@ -64,4 +64,9 @@ Exercise & Time for Questions
 
 # Welcome to Session 3
 
+{{< include content/session_2_bonus.qmd >}}
+
+
 {{< include content/session_3.qmd >}}
+
+{{< include content/template.qmd >}}

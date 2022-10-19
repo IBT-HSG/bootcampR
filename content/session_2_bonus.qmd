@@ -1,0 +1,230 @@
+# Belated Session 2 Bonus
+
+## Recap
+
+::: callout-note
+## Tidyverse
+You have seen that there are many functions such as `filter()`, `select()`, etc. in the `dplyr` package. Please name other functions the package provides.
+:::
+
+
+## Recap
+ 
+::: callout-tip
+## Resource
+Visit [tidydatatutor.com](https://tidydatatutor.com/) and scroll down a little. You'll find helpful visualizations over there.
+:::
+
+## Base R
+
+We'll use tidyverse functions as a reference today and explain how to do similar stuff in `base R`, that is, without loading any packages.
+
+To illustrate this, we'll first load some data.
+
+```{r load_data}
+#| echo: true
+data("USArrests")
+head(USArrests)
+```
+
+
+## Back to vectors {auto-animate="true"}
+
+Remember how we selected items in (one-dimensional) vectors?
+
+```{r}
+#| echo: true
+#| eval: false
+vec <- c('a', 'b', 'c', 'd')
+
+vec[2]
+```
+
+
+## Back to vectors {auto-animate="true"}
+
+Remember how we selected items in (one-dimensional) vectors?
+
+```{r}
+#| echo: true
+#| eval: false
+vec <- c('a', 'b', 'c', 'd')
+
+vec[2]
+# [1] "a"
+
+vec[c(1, 3)]
+```
+
+
+## Back to vectors {auto-animate="true"}
+
+Remember how we selected items in (one-dimensional) vectors?
+
+```{r}
+#| echo: true
+#| eval: false
+vec <- c('a', 'b', 'c', 'd')
+
+vec[2]
+# [1] "a"
+
+vec[c(1, 3)]
+# [1] "a" "c"
+
+vec[c(FALSE, FALSE, FALSE, TRUE)]
+```
+
+## Back to vectors {auto-animate="true"}
+
+Remember how we selected items in (one-dimensional) vectors?
+
+```{r}
+#| echo: true
+#| eval: false
+vec <- c('a', 'b', 'c', 'd')
+
+vec[2]
+# [1] "b"
+
+vec[c(1, 3)]
+# [1] "a" "c"
+
+vec[c(FALSE, FALSE, FALSE, TRUE)]
+# [1] "d"
+```
+
+
+---
+
+Here is a more practical example where we want to rename the column `UrbanPop`.
+
+```{r vector_example}
+#| echo: true
+#| eval: false
+
+names(USArrests) # this is a vector
+# [1] "Murder"   "Assault"  "UrbanPop" "Rape" 
+
+# vector ------- condition -------------------- re-assignment
+names(USArrests)[names(USArrests) == 'UrbanPop'] <- 'urban_pop'
+
+names(USArrests)
+# [1] "Murder"   "Assault"  "urban_pop" "Rape" 
+```
+
+---
+
+## Select Cells 
+
+We can do the same thing with (two dimensional) data frames without using the tidyverse:
+
+```{r filter_cells}
+#| echo: true
+#| eval: false
+
+USArrests[1, 2]
+# [1] 236
+
+USArrests[1, c(1, 2)]
+#         Murder Assault
+# Alabama   13.2     236
+
+```
+
+## Filter Data {auto-animate="true"}
+
+With `dplyr::filter()` we were able to display all the rows that match a certain condition, such as `Murder > 10`.
+
+How shall we do this with base R?
+
+```{r}
+#| echo: true
+#| eval: false
+
+USArrests$Murder > 10
+# [1]  TRUE FALSE FALSE FALSE FALSE ...
+```
+
+## Filter Data
+
+With `dplyr::filter()` we were able to display all the rows that match a certain condition, such as `Murder > 10`.
+
+How shall we do this with base R?
+
+```{r}
+#| echo: true
+#| eval: false
+
+USArrests$Murder > 10
+# [1]  TRUE FALSE FALSE FALSE FALSE ...
+
+USArrests[USArrests$Murder > 10,]
+#                Murder Assault UrbanPop Rape
+# Alabama          13.2     236       58 21.2
+# Florida          15.4     335       80 31.9
+# Georgia          17.4     211       60 25.8
+# ...              ...      ...       .. ...
+# Texas            12.7     201       80 25.5
+```
+
+## Select Columns
+
+We talked about this yesterday. 
+
+```{r select}
+#| echo: true
+#| eval: false
+
+USArrests$Murder
+# [1] 13.2 10.0  8.1  8.8 ...
+
+USArrests[, 'Murder']
+# [1] 13.2 10.0  8.1  8.8 ...
+
+USArrests[[1]]
+# [1] 13.2 10.0  8.1  8.8 ...
+```
+
+::: callout-note
+## Select Assalt Statistics
+Inspect the data and look for the `Assault` Variable. Then select it using all of the three options displayed above.
+:::
+
+## Exercise 1 {auto-animate="true"}
+
+Please show all the states with an above-median number of Assaults.
+
+```{r}
+USArrests[USArrests$Assault > median(USArrests$Assault), ]
+```
+
+
+## Exercise 1 {auto-animate="true"}
+
+Please show all the states with an above-median number of Assaults.
+
+```{r}
+#| echo: true
+USArrests[USArrests$Assault > median(USArrests$Assault), ]
+```
+
+
+## Exercise 2 {auto-animate="true"}
+
+What is the average number of murders in these states?
+
+```{r}
+mean(USArrests[USArrests$Assault > median(USArrests$Assault), 'Murder'])
+```
+
+## Exercise 2 {auto-animate="true"}
+
+What is the average number of murders in these states?
+
+```{r}
+#| echo: true
+mean(USArrests[USArrests$Assault > median(USArrests$Assault), 'Murder'])
+```
+
+

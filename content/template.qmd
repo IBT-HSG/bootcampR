@@ -1,0 +1,208 @@
+
+# Packages
+
+## Task
+
+Install and load the following packages:
+
+- ggplot
+- ggcorrplot
+- dplyr
+- tidyverse
+
+## Solution
+
+```{r install_packages}
+#| echo: true
+#| eval: false
+
+install.packages('tidyverse')
+install.packages('ggplot')
+install.packages('dplyr')
+install.packages("ggcorrplot")
+
+```
+
+```{r load_packages}
+#| echo: true
+#| eval: false
+
+library(ggplot2)
+library(dplyr)
+library(ggcorrplot)
+library(tidyverse)
+
+```
+
+
+
+# Constants
+
+This is the place where you assign constants, e.g. the [Swiss VAT](https://www.estv.admin.ch/estv/en/home/value-added-tax/vat-rates-switzerland.html):
+
+```{r constants}
+#| echo: true
+#| eval: false
+
+VAT <- 0.077 # Swiss VAT (7.7%)
+```
+
+Remember that we use a different naming convention for constants, i.e. uppercase letters.
+
+
+# REMEMBER: Working Directories
+
+
+```{r wd}
+#| echo: true
+#| eval: false
+
+getwd() # identify your current directory
+setwd() # adjust it if needed
+```
+
+
+# Read Data
+
+
+## Task
+
+Import the `mtcars.csv` file into an object called `mtcars_df`
+
+## Solution
+
+Ideally, you have a folder called `data` that contains two subfolders:
+
+- `raw` from where you read the original data &
+- `processed` where you store the data after you have transformed it
+
+```{r read_data}
+#| echo: true
+#| eval: false
+
+mtcars_df <- read.csv(file = 'data/raw/mtcars.csv',
+                sep  = ',')
+```
+
+## Data Dictionary {.smaller}
+
+| variable | description                              |
+|----------|------------------------------------------|
+| mpg      | Miles/(US) gallon                        |
+| cyl      | Number of cylinders                      |
+| disp     | Displacement (cu.in.)                    |
+| hp       | Gross horsepower                         |
+| drat     | Rear axle ratio                          |
+| wt       | Weight (1000 lbs)                        |
+| qsec     | 1/4 mile time                            |
+| vs       | Engine (0 = V-shaped, 1 = straight)      |
+| an       | Transmission (0 = automatic, 1 = manual) |
+| gear     | Number of forward gears                  |
+| carb     | Number of carburetors                    |
+
+
+# Data Exploration
+
+
+## Task
+
+-   List all the variables in the dataset 
+-   Create a new dataset called `new_mtcars` which includes only the following columns:  `mpg`, `hp`, `wt`, `vs`, `gear`
+-   Calculate the summary statistics of the new dataset
+-   Visualize the bar plot of `vs` and distribution density of `wt`
+-   Calculate and visualize a correlation matrix 
+
+## Solution
+
+```{r}
+#| echo: true
+#| eval: false
+
+names(mtcars_df)
+ 
+new_mtcars <- mtcars_df  %>% select(mpg, hp, wt, vs, gear)
+
+summary(new_mtcars)
+
+#ggplot(new_mtcars) + geom_bar(mapping=aes(x=vs))
+ggplot(new_mtcars, aes(x = wt)) + 
+        geom_histogram(aes(x=wt, y = ..density..),
+                 colour = 1, fill = "white") +
+        geom_density()
+
+corr <- round(cor(new_mtcars), 1)
+ggcorrplot(corr, lab=TRUE)
+#ggcorrplot(corr, lab=TRUE, type='lower')
+```
+
+
+
+# Data Transformation
+
+
+## Task
+
+- Generate a new variable called `hp_wt` which is the ration of `hp` and `wt`
+- Remove the variables `hp` and `wt`
+
+## Solution
+
+```{r data_manipulation}
+#| echo: true
+#| eval: false
+new_mtcars$hp_wt <- new_mtcars$hp/new_mtcars$wt
+new_mtcars <- subset(new_mtcars, select=-c(wt,hp))
+```
+
+
+
+# Save Data
+
+
+## Task
+
+- Save the new dataset in `data/processed`
+
+## Solution
+
+There are different formats you can use. CSV is the most compatible format.
+
+```{r save_data}
+#| echo: true
+#| eval: false
+
+write.csv(x = new_mtcars,
+          file = 'data/processed/transformed_data.csv')
+```
+
+# Data Analyses 
+
+## Task
+- Train a linear regression model that predicts car consumption given engine type (VS or Straight), number of gears and power-to-weight ratio and show the summary statistics
+- Visualize the linear relationship between consumption and power-to-weight ratio
+- Predict consumption for a new car with straight engine, 6 gears and a power-to-weight ratio of 36.1
+
+
+## Solution
+
+```{r data_analyses}
+#| echo: true
+#| eval: false
+car_mpg_lm <- lm(mpg ~ vs + gear + hp_wt, data = new_mtcars)
+summary(car_mpg_lm)
+
+ggplot(new_mtcars,aes(x = hp_wt, 
+           y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm") 
+new_data <- data.frame(vs=1,
+                  gear=6,
+                  hp_wt = 36.1)
+
+pred = predict(car_mpg_lm, newdata = new_data)
+pred
+```
+
+# Thank you
+and good luck on your empirical project :)
+
